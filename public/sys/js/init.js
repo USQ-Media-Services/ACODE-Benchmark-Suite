@@ -5,9 +5,9 @@ var	_scriptTags = document.querySelectorAll('script')
 	scripts = [
 		_baseUrl + 'bower_components/jquery/dist/jquery.min.js',
 		_baseUrl + 'bower_components/angular/angular.min.js',
-		_baseUrl + 'bower_components/firebase/firebase.js',
+		/*_baseUrl + 'bower_components/firebase/firebase.js',*/
 		_baseUrl + 'bower_components/nouislider/distribute/nouislider.min.js',
-		_baseUrl + 'bower_components/angularfire/dist/angularfire.min.js',
+		/*_baseUrl + 'bower_components/angularfire/dist/angularfire.min.js',*/
 		_baseUrl + 'sys/js/main.js'
 	]
 

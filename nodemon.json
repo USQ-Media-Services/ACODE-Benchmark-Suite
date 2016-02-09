@@ -1,0 +1,3 @@
+{
+  "watch": ["apis", "index.js", "libs"]
+}

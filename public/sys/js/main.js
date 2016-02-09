@@ -1,10 +1,10 @@
 
 
-angular.module('2015-1858 - acode-benchmark-assessment-tool', ['tonen'])
+angular.module('2015-1858 - acode-benchmark-assessment-tool', [])
 
 
 /*The controllers*/
-.controller('master', function master ($scope, $sce, $firebaseObject, $firebaseArray) {
+.controller('master', function master ($scope, $sce) {
 	m = $scope
 
 	m.baseUrl = _baseUrl
@@ -17,14 +17,14 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['tonen'])
 	m.setPage()
 
 
-  	m.institutions = $firebaseObject(new Firebase("https://acode-benchmark-tool.firebaseio.com/institution-list"))
+  	//m.institutions = $firebaseObject(new Firebase("https://acode-benchmark-tool.firebaseio.com/institution-list"))
 
   	m.init = function (institution) {
   		if (!institution) return
   			
   		m.setPage('survey.html')
-  		m.survey = $firebaseObject(new Firebase("https://acode-benchmark-tool.firebaseio.com/survey/" + institution))
-		m.survey.$bindTo(m, "survey")
+  		//m.survey = $firebaseObject(new Firebase("https://acode-benchmark-tool.firebaseio.com/survey/" + institution))
+		//m.survey.$bindTo(m, "survey")
   	}
 
 	/*
