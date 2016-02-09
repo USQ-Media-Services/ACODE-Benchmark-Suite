@@ -1,0 +1,27 @@
+{
+  "name": "Multimedia Templates",
+  "version": "1.0.0",
+  "authors": [
+    "Shane Gadsby <shane.gadsby@usq.edu.au>"
+  ],
+  "license": "GNU GPL v3.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.1",
+    "angular": "1.4",
+    "bootstrap": "~3.3.4",
+    "pepjs": "~0.3.0",
+    "open-sans": "~1.1.0",
+    "firebase": "~2.3.2",
+    "angularfire": "~1.1.3",
+    "nouislider": "~8.2.1",
+    "angular-nouislider": "~0.3.1"
+  }
+}

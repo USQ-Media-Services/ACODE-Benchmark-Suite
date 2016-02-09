@@ -1,0 +1,4 @@
+	<select ng-model="institution" ng-options="o as o for o in institutions.list">
+		<option value="">Please select your institution</option>
+	</select>	
+	<button ng-click="init(institution)" ng-disabled="!institution">Start</button>

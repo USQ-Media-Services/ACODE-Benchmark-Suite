@@ -1,0 +1,24 @@
+<form ng-show="survey" class="survey">
+	<h4>PI 2. <i>Specific plans relating to the use of technology enhanced learning are aligned with the institution’s strategic directions and operational plans.</i></h4>
+	<label class="">Specific plans exist:
+		<select ng-model="survey['PI2_1']">
+			<option>Please select one</option>
+			<option value="No specific plans">1 - No specific plans</option>
+			<option value="Immature plans">2 - Immature plans</option>
+			<option value="Some specific plans">3 - Some specific plans</option>
+			<option value="Numerous specific plans">4 - Numerous specific plans</option>
+			<option value="Comprehensive suite of plans">5 - Comprehensive suite of plans</option>
+		</select>
+	</label>
+	<label>Plans are aligned:
+		<select ng-model="survey['PI2_2']">
+			<option value="Not aligned to institution strategic and operational plans">1 - Not aligned to institution strategic and operational plans</option>
+			<option value="Aligned with either institution strategic or operational plans">2 - Aligned with either institution strategic or operational plans</option>
+			<option value="Aligned with both institution strategic and operational plans">3 - Aligned with both institution strategic and operational plans</option>
+			<option value="Aligned with either institution strategic or operational plans">4 - Aligned with either institution strategic or operational plans</option>
+			<option value="Aligned with both institution strategic and operational plans">5 - Aligned with both institution strategic and operational plans</option>
+		</select>
+	</label>
+	<label>Overall rating:
+	<div class="range-slider-overall"></div>
+	</label>
