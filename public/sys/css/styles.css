@@ -41,6 +41,9 @@
     vertical-align: top;
     transition: all 160ms ease-in-out;
     float: right;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
 }
 
 
@@ -178,5 +181,5 @@
 }
 
 .acode-button-continue {
-    width: 270px;
+    width: 280px;
 }
