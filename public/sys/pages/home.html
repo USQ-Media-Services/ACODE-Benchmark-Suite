@@ -1,4 +1,14 @@
-	<select ng-model="institution" ng-options="o as o for o in institutions.list">
-		<option value="">Please select your institution</option>
-	</select>	
-	<button ng-click="init(institution)" ng-disabled="!institution">Start</button>
+<span class="acode-institute-selector" ng-disabled="!!$root.view.institution" uib-dropdown-toggle uib-dropdown on-toggle="toggled(open)">
+	<span id="simple-dropdown">
+		{{$root.view.profiles[institution._id]['56e23d002761400d3e2716b7'] || institution.title || 'Please select your institution'}}
+		<span class="caret"></span>
+	</span>
+	<ul uib-dropdown-menu aria-labelledby="simple-dropdown">
+		<li ng-repeat="o in $root.meta.institutions" ng-class="{'acode-active-list-item': o.title === ($root.view.profiles[o._id]['56e23d002761400d3e2716b7'] || institution.title)}">
+			<a href ng-click="$parent.institution = o">{{$root.view.profiles[o._id]['56e23d002761400d3e2716b7'] || o.title}}</a>
+		</li>
+	</ul>
+</span>
+
+
+<button class="acode-button acode-button-green" ng-click="initBenchmark(institution)" ng-disabled="!institution || !!$root.view.institution">Start</button>

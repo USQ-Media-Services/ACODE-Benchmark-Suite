@@ -31,7 +31,7 @@
 html,
 body{
 	background: #fff;
-	color: #1e1e1e;
+	color: #444;
 	font-size: 14px;
 	font-family: 'Open Sans', 'Arial', sans-serif;
 	height: 100%;
@@ -41,4 +41,159 @@ body{
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
+}
+
+
+.acode-button {
+    border-radius: 5px;
+    border: none;
+    width: 157px;
+    height: 40px;
+    margin: 5px 10px;
+    font-size: 17px;
+    text-transform: uppercase;
+    vertical-align: top;
+    transition: all 160ms ease-in-out;
+    float: right;
+}
+
+body {
+    padding: 20px;
+}
+
+.acode-button-red {
+    background-color: #e63e30;
+    color: #fff;
+}
+
+.acode-button-blue {
+    background-color: #0090ba;
+    color: #fff;
+}
+
+.acode-button-green {
+    background-color: #7ac943;
+    color: #fff;
+}
+
+.acode-institute-selector {
+    width: 375px;
+    display: inline-block;
+    vertical-align: top;
+    height: 40px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    font-size: 14px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.acode-institute-selector .caret {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.acode-institute-selector span {
+    cursor: pointer;
+}
+
+.acode-institute-selector .dropdown-menu {
+    max-height: 250px;
+    overflow: auto;
+    width: 100%;
+}
+
+.acode-active-list-item {
+    background-color: rgba(192, 192, 192, 0.22);
+}
+
+[disabled].acode-button {
+    background-color: #ececec;
+    color: #CCC;
+    cursor: no-drop;
+}
+
+[disabled].acode-institute-selector {
+    opacity: 0.3;
+    background-color: #F5F5F5;
+}
+
+.acode-institute-profile-row-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 162px;
+    padding-right: 22px;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 11px;
+    display: table;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.acode-institute-profile-row-input {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 166px;
+    right: 0;
+    border-left: 5px solid #b2b2b2;
+}
+
+.acode-institute-profile {
+    border: #b2b2b2 solid 1px;
+    margin: 10px;
+}
+
+.acode-institute-profile-row {
+    border-top: 1px solid #b2b2b2;
+    height: 48px;
+    position: relative;
+}
+
+.acode-institute-profile-row-input input {
+    margin-left: -4px;
+    height: 100%;
+    border: none;
+    /* background-color: #f00; */
+    width: calc(100% + 4px);
+    padding: 10px;
+    font-weight: 300;
+}
+
+.acode-institute-profile-row-title span {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.acode-institute-profile-title {
+    background-color: #666666;
+    height: 40px;
+    color: #fff;
+    padding-left: 20px;
+    line-height: 40px;
+    text-transform: uppercase;
+    /* letter-spacing: 1px; */
+}
+
+.acode-survey.ng-scope {
+    padding-bottom: 60px;
+}
+
+.acode-button-continue {
+    width: 270px;
 }

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "bower": "^1.7.7",
     "cache-control": "^1.0.3",
     "compression": "^1.6.1",
@@ -19,7 +20,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bower install "
+    "postinstall": "bower install  --force"
   },
   "repository": {
     "type": "git",
