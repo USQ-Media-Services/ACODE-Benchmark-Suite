@@ -2,6 +2,10 @@
 	min-width: 183px !important;
 }
 
+.content .summary .no-overflow {
+	overflow: initial
+}
+
 @media (max-width: 979px) and (min-width: 769px) {
 	.row-fluid .span8 {
 		width: 63.745856% !important;
