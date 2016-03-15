@@ -1,11 +1,15 @@
 var mongodb = require('mongodb'),
+	mongodbUri = require('mongodb-uri'),
 
 /*Database connection (once it `loads` the APIS will go live)*/
-	dbPort = process.env.mongo_port,
-	dbHost = process.env.mongo_host,
-	dbUser = process.env.mongo_user,
-	dbPass = process.env.mongo_pass,
-	dbDatabase = process.env.mongo_database || 'acode_benchmarks',
+	uri = (process.env.MONGOLAB_URI ? mongodbUri.parse(process.env.MONGOLAB_URI) : {hosts:[{}]}),
+
+/*Database connection (once it `loads` the APIS will go live)*/
+	dbPort = uri.hosts[0].port || process.env.mongo_port,
+	dbHost = uri.hosts[0].host || process.env.mongo_host,
+	dbUser = uri.username || process.env.mongo_user,
+	dbPass = uri.password || process.env.mongo_pass,
+	dbDatabase = uri.database ||'acode_benchmarks',
 	db = false,
 	serv,
 	getDB = function getDB () {
