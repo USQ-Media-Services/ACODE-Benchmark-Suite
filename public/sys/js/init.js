@@ -15,6 +15,7 @@ var	_scriptTags = document.querySelectorAll('script')
 		'bower_components/open-sans/css/open-sans.min.css',
 		'bower_components/font-awesome/css/font-awesome.min.css',
 		'bower_components/bootstrap/dist/css/bootstrap.min.css',
+		'sys/css/moodle-adjustments.css',
 		'sys/css/styles.css'
 	]
 
