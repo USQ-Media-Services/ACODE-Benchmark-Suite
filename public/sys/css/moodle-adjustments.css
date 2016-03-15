@@ -1,20 +1,20 @@
 .row-fluid .span3 {
-	min-width: 183px;
+	min-width: 183px !important;
 }
 
 @media (max-width: 979px) and (min-width: 769px) {
 	.row-fluid .span8 {
-		width: 63.745856%;
+		width: 63.745856% !important;
 	}
 	
 	#block-region-side-post {
-	    margin-left: -5px;
-	    position: relative;
-	    left: 29px
+	    margin-left: -5px !important;
+	    position: relative !important;
+	    left: 29px !important;
 	}
 
 	.row-fluid [class*="span"]:nth-child() {
-	    margin-left: 0px;
+	    margin-left: 0px !important;
 	}
 
 }

@@ -11,7 +11,7 @@ var	_scriptTags = document.querySelectorAll('script')
 		'sys/js/main.js'
 	],
 	styles = [
-		'bower_components/nouislider/distribute/nouislider.min.css',
+		/*'bower_components/nouislider/distribute/nouislider.min.css',*/
 		'bower_components/open-sans/css/open-sans.min.css',
 		'bower_components/font-awesome/css/font-awesome.min.css',
 		'bower_components/bootstrap/dist/css/bootstrap.min.css',
@@ -46,7 +46,7 @@ var	_scriptTags = document.querySelectorAll('script')
 				y.src = _baseUrl + 'concatScripts/' + encodeURIComponent(scripts.join('---'))
 				scripts = []
 				y.onload = finished
-				document.head.appendChild(y)
+				document.head.insertBefore(y, document.head.firstChild)
 			}
 			return
 		}
@@ -65,7 +65,7 @@ var	_scriptTags = document.querySelectorAll('script')
 			var y = document.createElement('link')
 			y.rel = 'stylesheet'
 			y.href = _baseUrl + 'concatStyles/' + encodeURIComponent(styles.join('---'))
-			document.head.appendChild(y)
+			document.head.insertBefore(y, document.head.firstChild)
 		}
 
 		$.get(_baseUrl + 'sys/pages/init.html').then(function (data) {
