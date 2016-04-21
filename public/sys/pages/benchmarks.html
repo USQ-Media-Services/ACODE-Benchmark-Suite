@@ -1,24 +1,43 @@
-<form ng-show="survey" class="survey">
-	<h4>PI 2. <i>Specific plans relating to the use of technology enhanced learning are aligned with the institution’s strategic directions and operational plans.</i></h4>
-	<label class="">Specific plans exist:
-		<select ng-model="survey['PI2_1']">
-			<option>Please select one</option>
-			<option value="No specific plans">1 - No specific plans</option>
-			<option value="Immature plans">2 - Immature plans</option>
-			<option value="Some specific plans">3 - Some specific plans</option>
-			<option value="Numerous specific plans">4 - Numerous specific plans</option>
-			<option value="Comprehensive suite of plans">5 - Comprehensive suite of plans</option>
-		</select>
-	</label>
-	<label>Plans are aligned:
-		<select ng-model="survey['PI2_2']">
-			<option value="Not aligned to institution strategic and operational plans">1 - Not aligned to institution strategic and operational plans</option>
-			<option value="Aligned with either institution strategic or operational plans">2 - Aligned with either institution strategic or operational plans</option>
-			<option value="Aligned with both institution strategic and operational plans">3 - Aligned with both institution strategic and operational plans</option>
-			<option value="Aligned with either institution strategic or operational plans">4 - Aligned with either institution strategic or operational plans</option>
-			<option value="Aligned with both institution strategic and operational plans">5 - Aligned with both institution strategic and operational plans</option>
-		</select>
-	</label>
-	<label>Overall rating:
-	<div class="range-slider-overall"></div>
-	</label>
+
+
+
+
+
+<form class="acode-survey-form">
+	<span style="display: none">{{bm = $root.meta.benchmarks[$root.pageData.benchmark]}}</span>
+
+	<!-- 
+	<h3>Scoping Statement</h2>
+	<div>{{bm['scoping-statement']}}</div>
+	
+	<h3>Good Practice Statement</h2>
+	<div>{{bm['good-practice-statement']}}</div>
+	
+	<h3>Performance Indicators and measures</h2>
+	 -->
+
+	<div class="acode-tabs-holder">
+		<div class="no-select acode-tab" ng-class="{'active-tab': $root.tabTest === 'self-assessment' || !tabTest}" ng-click="$root.tabTest = pageData.tab = 'self-assessment'">Self-assessment</div>
+		<div class="no-select acode-tab" ng-class="{'active-tab': $root.tabTest === 'team-members'}" ng-click="$root.tabTest = pageData.tab = 'team-members'">Team members</div>
+		<div class="no-select acode-tab" ng-class="{'active-tab': $root.tabTest === 'team-consolidation'}" ng-click="$root.tabTest = pageData.tab = 'team-consolidation'">Team consolidation</div>
+	</div>
+	
+
+	<h3 class="acode-benchmark-h3">RATE THE FOLLOWING STATEMENTS:</h2>
+
+	<div class="acode-benchmark-row-wrapper" ng-repeat="row in bm.questions" ng-init="rowIndex = $index">
+		
+		<h4 class="acode-benchmark-h4">
+			<span class="acode-benchmark-h4-bold">PI {{$root.pageData.benchmark+1}}.{{$index + 1}}.</span>
+			<span class="acode-benchmark-h4-title" markdown="row.title"></span>
+		</h4>
+
+		<div ng-repeat="a in asArray(!pageData.consolidation)" class="no-select acode-picker-wrapper acode-picker-wrapper-type-{{row.ratings.length}}" ng-include="'sys/templates/benchmark-' + row.ratings.length + '.html'"></div>
+
+		<div ng-repeat="a in asArray(!!pageData.consolidation)" class="no-select acode-picker-wrapper acode-picker-wrapper-type-{{row.ratings.length}}" ng-include="'sys/templates/benchmark-consolidation-' + row.ratings.length + '.html'"></div>
+		
+		<br>
+	</div>
+
+	<div class="acode-button acode-button-blue acode-button-start" ng-click="saveBenchmark()" ng-disabled="!saveBenchmark(true)">Save</div>
+</form>

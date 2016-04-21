@@ -111,6 +111,7 @@ app.use(express.static(`${process.cwd()}/tmp`))
 
 app.use(express.static(`${process.cwd()}/public`))
 
+app.use('/api/snapshots', require('./apis/snapshots.js'))
 app.use('/api/profiles', require('./apis/profiles.js'))
 app.use('/api/benchmarks', require('./apis/benchmarks.js'))
 app.use('/api/institutions', require('./apis/institutions.js'))

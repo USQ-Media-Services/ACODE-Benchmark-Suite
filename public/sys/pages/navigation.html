@@ -1,0 +1,3 @@
+<div ng-click="setPage('profile')" ng-class="{'active-item': $root.pageData.page === 'profile'}" class="no-select acode-side-menu-item">Institution profile</div>
+<div ng-click="setPage('snapshot')" ng-class="{'active-item': $root.pageData.page === 'snapshot'}" class="no-select acode-side-menu-item">Institution snapshot</div>
+<div ng-click="setPage('benchmarks'); $root.pageData.benchmark = $index" ng-class="{'active-item': $root.pageData.page === 'benchmarks' && $root.pageData.benchmark === $index}" ng-repeat="benchmark in $root.meta.benchmarks" class="no-select acode-side-menu-item">{{benchmark.title}}</div>

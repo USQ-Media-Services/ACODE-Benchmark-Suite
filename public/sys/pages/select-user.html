@@ -1,0 +1,3 @@
+<h3 class="acode-title-h3">Please select which team member you are: </h3>
+<div class="acode-button acode-button-blue-outline acode-user-button" ng-repeat="users in $root.view.profiles[$root.view.institution._id].users"  ng-click="$root.pageData.user = $index; setPage('benchmarks')">Team member {{ $index + 1}}</div>
+<div class="acode-button acode-button-blue acode-user-add-button" ng-click="$root.pageData.user = $root.view.profiles[$root.view.institution._id].users.push({}) - 1; setPage('benchmarks'); api.profiles.save($root.view.profiles[$root.view.institution._id] || {}, $root.view.institution); setPage('benchmarks')">Add team member</div>

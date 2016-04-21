@@ -1,0 +1,40 @@
+<div class="acode-picker-column">
+	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[0].title">{{row.ratings[0].title}}</div>
+	<div class="acode-picker-alignment-wrapper">
+		<div class="acode-picker-alignment" ng-repeat="question in row.ratings[0].options track by $index">
+			<input id="{{bm._id}}-{{rowIndex}}-question-{{0}}-{{$index}}" name="{{bm._id}}-{{rowIndex}}-{{0}}" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex]['ratings' + '-' + 0]" ng-value="$index" type="radio">
+			<label for="{{bm._id}}-{{rowIndex}}-question-{{0}}-{{$index}}" ng-bind="question"></label>		
+		</div>
+
+	</div>
+	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[1].title">{{row.ratings[1].title}}</div>
+	<div class="acode-picker-alignment-wrapper">
+		<div class="acode-picker-alignment" ng-repeat="question in row.ratings[1].options track by $index">
+			<input id="{{bm._id}}-{{rowIndex}}-question-{{1}}-{{$index}}" name="{{bm._id}}-{{rowIndex}}-{{1}}" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex]['ratings' + '-' + 1]" ng-value="$index" type="radio">
+			<label for="{{bm._id}}-{{rowIndex}}-question-{{1}}-{{$index}}" ng-bind="question"></label>		
+		</div>
+
+			<!--
+			{{$parent[bm._id + '-' + rowIndex + '-' + question + '-1-height'] = getHeight($parent[bm._id + '-' + rowIndex + '-' + question + '-1-height'], bm._id + '-' + rowIndex '-' + question + '-1-' + $index)}}
+			{{$parent[bm._id + '-' + rowIndex + '-' + question + '-1-height'] || 'derp'}}
+			 -->
+	</div>
+</div>
+<div class="acode-picker-overall-title">Overall Rating</div>
+<div class="acode-picker-overall">
+	<input id="{{bm._id}}-{{rowIndex}}-overall-1" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].overall" ng-value="1" type="radio">
+	<label for="{{bm._id}}-{{rowIndex}}-overall-1">1</label>
+	<input id="{{bm._id}}-{{rowIndex}}-overall-2" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].overall" ng-value="2" type="radio">
+	<label for="{{bm._id}}-{{rowIndex}}-overall-2">2</label>
+	<input id="{{bm._id}}-{{rowIndex}}-overall-3" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].overall" ng-value="3" type="radio">
+	<label for="{{bm._id}}-{{rowIndex}}-overall-3">3</label>
+	<input id="{{bm._id}}-{{rowIndex}}-overall-4" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].overall" ng-value="4" type="radio">
+	<label for="{{bm._id}}-{{rowIndex}}-overall-4">4</label>
+	<input id="{{bm._id}}-{{rowIndex}}-overall-5" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].overall" ng-value="5" type="radio">
+	<label for="{{bm._id}}-{{rowIndex}}-overall-5">5</label>
+</div>
+
+<br>
+
+<h5 class="acode-picker-rational-title">Rationale and Evidence</h5>
+<textarea class="acode-picker-rational-box" ng-model=" $root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].rationale" placeholder="Comments..."></textarea>

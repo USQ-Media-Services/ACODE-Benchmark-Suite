@@ -1,0 +1,55 @@
+<form class="acode-institute-snapshot" name="profile_form" id="profile_form">
+	<div class="no-select acode-institute-snapshot-title">Educational Technology Snapshot</div>
+	<table>
+		<tr>
+			<th class="acode-snapshot-row-title">&nbsp</th>
+			<th class="acode-snapshot-row-description">
+				Description
+			</th>
+			<th class="acode-snapshot-row-hosted">
+				Hosted
+			</th>
+			<th class="acode-snapshot-row-consideringAlternatives">
+				Considering alternatives?
+			</th>
+			<th class="acode-snapshot-row-piloting">
+				Piloting this year?
+			</th>
+		</tr>
+		<tr ng-repeat="row in $root.meta.snapshot">
+			<td class="no-select acode-snapshot-row-title" class="hint--bottom hint--large hint--bounce " data-hint="{{row.popup}}">{{row.title}}</td>
+			<td class="acode-snapshot-row-description">
+				<input ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].description" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}">
+			</td>
+			<td class="acode-snapshot-row-hosted">
+				<select ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].hosted">
+					<option value="external">Internal</option>
+					<option value="internal">External</option>
+				</select>
+			</td>
+			<td class="acode-snapshot-row-consideringAlternatives">
+				<select ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].consideringAlternatives">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+					<option value="maybe">Maybe</option>
+				</select>
+			</td>
+			<td class="acode-snapshot-row-piloting">
+				<select ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].piloting">
+					<option value="yes">Yes</option>
+					<option value="no">no</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+<!-- 	
+	<div>
+		<div class="acode-institute-profile-row-title"><span></span></div>
+		<div class="acode-institute-profile-row-input">
+			<input ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles.snapshot[$root.view.institution._id][row._id]" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}">
+		</div>
+	</div>
+ -->
+</form>
+
+<div class="acode-button acode-button-blue acode-button-continue" ng-click="api.profiles.save($root.view.profiles[$root.view.institution._id] || {}, $root.view.institution); setPage('benchmarks')" ng-disabled="!profile_form.$valid">Continue to benchmarks</div>

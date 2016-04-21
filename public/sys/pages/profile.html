@@ -8,4 +8,4 @@
 	</div>
 </form>
 
-<div class="acode-button acode-button-blue acode-button-continue" ng-click="api.profiles.save($root.view.profiles[$root.view.institution._id] || {}, $root.view.institution)" ng-disabled="!profile_form.$valid">Continue to benchmarks</div>
+<div class="acode-button acode-button-blue acode-button-continue" ng-click="api.profiles.save($root.view.profiles[$root.view.institution._id] || {}, $root.view.institution); setPage('benchmarks')" ng-disabled="!profile_form.$valid">Continue to benchmarks</div>

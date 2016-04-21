@@ -3,9 +3,9 @@ var r = require('express').Router(),
 	db = require('../libs/db-connector.js')
 
 r.get('/all', function (req, res) {
-	db().collection('profiles').find({hidden: {$ne: true}}).toArray(function (err, profiles) {
-		if (!err && profiles) {
-			res.json(profiles)
+	db().collection('snapshots').find({hidden: {$ne: true}}).toArray(function (err, snapshots) {
+		if (!err && snapshots) {
+			res.json(snapshots)
 		}
 		else if (!!err) {
 			res.sendStatus(500)
@@ -16,7 +16,7 @@ r.get('/all', function (req, res) {
 r.get('/single', function (req, res) {
 	if (req.query.id && req.query.id.length === 24) {
 		var _id = ObjectId(req.query.id)
-		db().collection('profiles').find({_id: _id}).toArray(function (err, profile) {
+		db().collection('snapshots').find({_id: _id}).toArray(function (err, profile) {
 			if (!err && profile[0]) {
 				res.json(profile[0])
 			}
@@ -35,8 +35,8 @@ r.get('/single', function (req, res) {
 })
 
 r.get('/meta', function (req, res) {
-	db().collection('meta_profiles').find({}).sort({required: -1, _id:1}).toArray(function (err, metaProfiles) {
-		res.json(metaProfiles)
+	db().collection('meta_snapshots').find({}).sort({required: -1, _id:1}).toArray(function (err, metaSnapshots) {
+		res.json(metaSnapshots)
 	})
 })
 
@@ -45,8 +45,8 @@ r.post('/save', function (req, res) {
 		var data = req.body.data
 		delete data._id
 		req.body.data.institution = ObjectId(req.body.data.institution)
-		db().collection('profiles').update({'year': (new Date()).getFullYear(), institution: req.body.data.institution}, {$set: data}, {upsert: true, new: true, doc:true}, function (err, doc) {
-			db().collection('profiles').update({'year': (new Date()).getFullYear() - 1, institution: req.body.data.institution}, {$set: {hidden: true}})
+		db().collection('snapshots').update({'year': (new Date()).getFullYear(), institution: req.body.data.institution}, {$set: data}, {upsert: true, new: true, doc:true}, function (err, doc) {
+			db().collection('snapshots').update({'year': (new Date()).getFullYear() - 1, institution: req.body.data.institution}, {$set: {hidden: true}})
 			if (err) {
 				console.log(err)
 				res.sendStatus(500)
