@@ -176,7 +176,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 	  	if (!!m.$root.view && !!m.$root.view.profiles[institution._id] && m.$root.view.profiles[institution._id].year === new Date().getFullYear()) {
   			m.$root.view.profiles[institution._id].users = m.$root.view.profiles[institution._id].users || []
-  			console.log(m.$root.pageData.user)
   			if (typeof m.$root.pageData.user === 'number') {
   				m.setPage(page || 'benchmarks')
   			}

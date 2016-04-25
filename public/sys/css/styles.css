@@ -729,3 +729,7 @@ input:checked + .acode-team-consolidation-score-box {
 .acode-includers {
     padding-bottom: 20px;
 }
+.default-cursor,
+.default-cursor * {
+	cursor:default !important;
+}
