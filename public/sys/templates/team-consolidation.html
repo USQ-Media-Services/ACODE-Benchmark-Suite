@@ -1,0 +1,44 @@
+<div class="acode-team-consolidation-wrapper">
+    <div class="acode-team-consolidation-header">
+        <span class="acode-bold-600">Benchmark #{{$root.pageData.benchmark + 1}}:</span>
+        <span class="acode-bold-100">{{bm['sub-title']}}</span>
+    </div>
+    <div class="acode-black-bar"></div>
+    <div class="acode-team-consolidation-questions" ng-repeat="row in bm.questions" ng-init="rowIndex = $index">
+        <div class="acode-team-consolidation-question-title">
+            <span class="acode-bold-600">PI {{$root.pageData.benchmark + 1}}.{{$index + 1}}:</span>
+            <span class="acode-bold-100">{{row.title}}</span>
+        </div>
+        <div class="no-select acode-team-consolidation-score-wrapper">
+
+            <input id="{{bm._id}}-{{rowIndex}}-overall-1" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].team.overall" ng-value="1" type="radio">
+            <label class="acode-team-consolidation-score-box" for="{{bm._id}}-{{rowIndex}}-overall-1">1</label>
+            
+            <input id="{{bm._id}}-{{rowIndex}}-overall-2" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].team.overall" ng-value="2" type="radio">
+            <label class="acode-team-consolidation-score-box" for="{{bm._id}}-{{rowIndex}}-overall-2">2</label>
+            
+            <input id="{{bm._id}}-{{rowIndex}}-overall-3" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].team.overall" ng-value="3" type="radio">
+            <label class="acode-team-consolidation-score-box" for="{{bm._id}}-{{rowIndex}}-overall-3">3</label>
+            
+            <input id="{{bm._id}}-{{rowIndex}}-overall-4" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].team.overall" ng-value="4" type="radio">
+            <label class="acode-team-consolidation-score-box" for="{{bm._id}}-{{rowIndex}}-overall-4">4</label>
+            
+            <input id="{{bm._id}}-{{rowIndex}}-overall-5" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].team.overall" ng-value="5" type="radio">
+            <label class="acode-team-consolidation-score-box" for="{{bm._id}}-{{rowIndex}}-overall-5">5</label>
+
+
+        </div>
+        <div class="acode-team-consolidation-rational-and-evidence-wrapper">
+            
+            <div class="acode-team-consolidation-rational-and-evidence-item-wrapper">
+                <div class="acode-team-consolidation-rational-and-evidence-title">Rationale</div>
+                <textarea class="acode-team-consolidation-rational-and-evidence-textarea" placeholder="Comments..." ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].team.rationale"></textarea>
+            </div>
+
+            <div class="acode-team-consolidation-rational-and-evidence-item-wrapper">
+                <div class="acode-team-consolidation-rational-and-evidence-title">Evidence</div>
+                <textarea class="acode-team-consolidation-rational-and-evidence-textarea" placeholder="Comments..." ng-model="$root.view.profiles[$root.view.institution._id].users[$root.pageData.user].benchmarks[bm._id][rowIndex].team.evidence"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

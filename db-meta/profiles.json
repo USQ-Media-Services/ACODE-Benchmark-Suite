@@ -1,0 +1,93 @@
+{ 
+    "56e23d002761400d3e2716b7" : "Auckland University of Technology", 
+    "56e23d002761400d3e2716b8" : "This is a fake unit", 
+    "56e23d002761400d3e2716b9" : "Thad Testington", 
+    "56e23d002761400d3e2716bb" : "Chad Fakington", 
+    "56e240c12761400d3e2716c3" : {
+        "hosted" : "external"
+    }, 
+    "56e240c12761400d3e2716c4" : {
+        "piloting" : "no"
+    }, 
+    "56e240c12761400d3e2716c5" : {
+        "hosted" : "internal"
+    }, 
+    "56e240c12761400d3e2716c6" : {
+        "consideringAlternatives" : "maybe"
+    }, 
+    "56e240c12761400d3e2716d0" : {
+        "consideringAlternatives" : "yes", 
+        "description" : "asdasd"
+    }, 
+    "_id" : ObjectId("56e2fa93384e2064ac50e835"), 
+    "institution" : ObjectId("56e0f4562761400d3e271689"), 
+    "snapshot" : {
+        "56e240c12761400d3e2716c3" : {
+            "description" : "asd", 
+            "hosted" : "external", 
+            "consideringAlternatives" : "no", 
+            "piloting" : "yes"
+        }, 
+        "56e240c12761400d3e2716c8" : {
+            "description" : "asdasd"
+        }
+    }, 
+    "users" : {
+        "0" : {
+            "benchmarks" : {
+                "56fe161a2761e9d9c38588c4" : {
+                    "0" : {
+                        "ratings-0" : NumberInt(2), 
+                        "overall" : NumberInt(2)
+                    }, 
+                    "1" : {
+                        "ratings-0" : NumberInt(1), 
+                        "ratings-1" : NumberInt(1), 
+                        "overall" : NumberInt(2)
+                    }, 
+                    "2" : {
+                        "ratings-0" : NumberInt(2), 
+                        "overall" : NumberInt(2)
+                    }, 
+                    "3" : {
+                        "ratings-0" : NumberInt(1), 
+                        "ratings-1" : NumberInt(1), 
+                        "overall" : NumberInt(2)
+                    }, 
+                    "4" : {
+                        "ratings-0" : NumberInt(1), 
+                        "ratings-1" : NumberInt(1), 
+                        "overall" : NumberInt(2)
+                    }, 
+                    "5" : {
+                        "ratings-0" : NumberInt(1), 
+                        "ratings-1" : NumberInt(1), 
+                        "overall" : NumberInt(2)
+                    }, 
+                    "6" : {
+                        "ratings-0" : NumberInt(1), 
+                        "ratings-1" : NumberInt(1), 
+                        "overall" : NumberInt(2)
+                    }, 
+                    "7" : {
+                        "ratings-0" : NumberInt(1), 
+                        "ratings-1" : NumberInt(1), 
+                        "overall" : NumberInt(2)
+                    }
+                }, 
+                "571410132761e3ff4de7080b" : {
+                    "0" : {
+                        "ratings-0" : NumberInt(0), 
+                        "ratings-1" : NumberInt(0)
+                    }, 
+                    "2" : {
+                        "ratings-0" : NumberInt(0), 
+                        "ratings-1" : NumberInt(2), 
+                        "overall" : NumberInt(5)
+                    }
+                }
+            }
+        }
+    }, 
+    "year" : NumberInt(2016)
+}

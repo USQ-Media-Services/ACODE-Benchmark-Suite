@@ -1,13 +1,4 @@
 
-setInterval(function () {
-	if (typeof m !== 'object') return false
-		m.$root.pageData = m.hash()
-	if (m.$root.pageData.page === 'home' || !m.$root.pageData.page) {
-		m.$root.view.institution = null
-		m.tab = m.$root.pageData
-	}
-	m.$applyAsync()
-}, 100)
 
 
 angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
@@ -37,6 +28,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 		var j = Qs.parse(decodeURIComponent(location.hash.replace('#/', '').replace('#', '')))
 		if (j.user) j.user = (parseInt(j.user, 0) !== NaN ? parseInt(j.user, 0) : j.user)
+		if (j.readOnlyUser) j.readOnlyUser = (parseInt(j.readOnlyUser, 0) !== NaN ? parseInt(j.readOnlyUser, 0) : j.readOnlyUser)
 
 		if (j.benchmark) j.benchmark = (parseInt(j.benchmark, 0) !== NaN ? parseInt(j.benchmark, 0) : j.benchmark)
 		else j.benchmark = 0
@@ -184,6 +176,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 	  	if (!!m.$root.view && !!m.$root.view.profiles[institution._id] && m.$root.view.profiles[institution._id].year === new Date().getFullYear()) {
   			m.$root.view.profiles[institution._id].users = m.$root.view.profiles[institution._id].users || []
+  			console.log(m.$root.pageData.user)
   			if (typeof m.$root.pageData.user === 'number') {
   				m.setPage(page || 'benchmarks')
   			}
@@ -195,7 +188,12 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   			m.$root.view.profiles[institution._id] = m.$root.view.profiles[institution._id] || {}
   			m.$root.view.profiles[institution._id].users = m.$root.view.profiles[institution._id].users || []
   			m.$root.view.profiles[institution._id]['56e23d002761400d3e2716b7'] = m.$root.view.profiles[institution._id]['56e23d002761400d3e2716b7'] || institution.title
-			m.setPage(page || 'profile')
+  			if (typeof m.$root.pageData.user === 'number') {
+				m.setPage(page || 'profile')
+  			}
+  			else {
+  				m.setPage('select-user')
+  			}		
   		}
   	}
 
@@ -249,6 +247,13 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   	m.test = function (a) {
   		console.log('Test!')
   	}
+
+
+	m.$root.pageData = m.hash()
+	if (m.$root.pageData.page === 'home' || !m.$root.pageData.page) {
+		m.$root.view.institution = null
+		m.tab = m.$root.pageData
+	}
 
   	m.initApp()
 

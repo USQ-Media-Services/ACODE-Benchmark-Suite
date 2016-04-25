@@ -17,27 +17,21 @@
 	 -->
 
 	<div class="acode-tabs-holder">
-		<div class="no-select acode-tab" ng-class="{'active-tab': $root.tabTest === 'self-assessment' || !tabTest}" ng-click="$root.tabTest = pageData.tab = 'self-assessment'">Self-assessment</div>
-		<div class="no-select acode-tab" ng-class="{'active-tab': $root.tabTest === 'team-members'}" ng-click="$root.tabTest = pageData.tab = 'team-members'">Team members</div>
-		<div class="no-select acode-tab" ng-class="{'active-tab': $root.tabTest === 'team-consolidation'}" ng-click="$root.tabTest = pageData.tab = 'team-consolidation'">Team consolidation</div>
+		<div class="no-select acode-tab" ng-class="{'active-tab': $root.pageData.tab === 'self-assessment' || !$root.pageData.tab}" ng-click="$root.pageData.tab = 'self-assessment'">Self-assessment</div>
+		<div class="no-select acode-tab" ng-class="{'active-tab': $root.pageData.tab === 'team-members'}" ng-click="$root.pageData.tab = 'team-members'">Team members</div>
+		<div class="no-select acode-tab" ng-class="{'active-tab': $root.pageData.tab === 'team-consolidation'}" ng-click="$root.pageData.tab = 'team-consolidation'">Team consolidation</div>
 	</div>
-	
+	<span style="display:none;">{{readOnly = $root.pageData.tab === 'team-members'}}</span>
+	<span style="display: none">{{user = readOnly ? $root.pageData.readOnlyUser : $root.pageData.user}}</span>
 
-	<h3 class="acode-benchmark-h3">RATE THE FOLLOWING STATEMENTS:</h2>
 
-	<div class="acode-benchmark-row-wrapper" ng-repeat="row in bm.questions" ng-init="rowIndex = $index">
-		
-		<h4 class="acode-benchmark-h4">
-			<span class="acode-benchmark-h4-bold">PI {{$root.pageData.benchmark+1}}.{{$index + 1}}.</span>
-			<span class="acode-benchmark-h4-title" markdown="row.title"></span>
-		</h4>
+	<!--Team member buttons-->
+	<div ng-show="$root.pageData.tab === 'team-members'">
 
-		<div ng-repeat="a in asArray(!pageData.consolidation)" class="no-select acode-picker-wrapper acode-picker-wrapper-type-{{row.ratings.length}}" ng-include="'sys/templates/benchmark-' + row.ratings.length + '.html'"></div>
-
-		<div ng-repeat="a in asArray(!!pageData.consolidation)" class="no-select acode-picker-wrapper acode-picker-wrapper-type-{{row.ratings.length}}" ng-include="'sys/templates/benchmark-consolidation-' + row.ratings.length + '.html'"></div>
-		
-		<br>
+		<div class="acode-button acode-button-blue-outline acode-user-button" ng-class="{'active-button': $root.pageData.readOnlyUser === $index || (!$root.pageData.readOnlyUser && $root.pageData.readOnlyUser !== 0 && $index === $root.pageData.user)}" ng-repeat="users in $root.view.profiles[$root.view.institution._id].users" ng-click="$root.pageData.readOnlyUser = $index;">Team member {{ $index + 1}}</div>
 	</div>
+
+    <div class="acode-includers" ng-include="'sys/templates/' + ($root.pageData.tab === 'team-consolidation' ? 'team-consolidation' : 'self-assessment-includer') + '.html'"></div>
 
 	<div class="acode-button acode-button-blue acode-button-start" ng-click="saveBenchmark()" ng-disabled="!saveBenchmark(true)">Save</div>
 </form>

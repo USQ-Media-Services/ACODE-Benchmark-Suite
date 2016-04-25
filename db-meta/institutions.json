@@ -1,0 +1,180 @@
+{ 
+    "_id" : ObjectId("56e0f4562761400d3e271689"), 
+    "title" : "Auckland University of Technology"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27168a"), 
+    "title" : "Australian Catholic University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27168b"), 
+    "title" : "Central Queensland University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27168c"), 
+    "title" : "Charles Darwin University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27168d"), 
+    "title" : "Charles Sturt University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27168e"), 
+    "title" : "Curtin University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27168f"), 
+    "title" : "Deakin University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271690"), 
+    "title" : "Edith Cowan University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271691"), 
+    "title" : "Federation University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271692"), 
+    "title" : "Flinders University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271693"), 
+    "title" : "Griffith University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271694"), 
+    "title" : "La Trobe University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271695"), 
+    "title" : "Lincoln University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271696"), 
+    "title" : "Macquarie University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271697"), 
+    "title" : "Massey University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271698"), 
+    "title" : "Monash University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e271699"), 
+    "title" : "Murdoch University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27169a"), 
+    "title" : "Open Universities Australia"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27169b"), 
+    "title" : "Queensland University of Technology"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27169c"), 
+    "title" : "Royal Melbourne Institute of Technology"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27169d"), 
+    "title" : "Southern Cross University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27169e"), 
+    "title" : "Swinburne University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e27169f"), 
+    "title" : "University of Adelaide"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a0"), 
+    "title" : "University of Auckland"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a1"), 
+    "title" : "University of Canberra"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a2"), 
+    "title" : "University of Canterbury"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a3"), 
+    "title" : "University of Melbourne"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a4"), 
+    "title" : "University of New England"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a5"), 
+    "title" : "University of New South Wales"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a6"), 
+    "title" : "University of Newcastle"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a7"), 
+    "title" : "University of Notre Dame"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a8"), 
+    "title" : "University of Otago"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716a9"), 
+    "title" : "University of Queensland"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716aa"), 
+    "title" : "University of Southern Queensland"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716ab"), 
+    "title" : "University of Sydney"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716ac"), 
+    "title" : "University of Tasmania"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716ad"), 
+    "title" : "University of Technology, Sydney"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716ae"), 
+    "title" : "University of Waikato"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716af"), 
+    "title" : "University of Western Australia"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716b0"), 
+    "title" : "University of Western Sydney"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716b1"), 
+    "title" : "University of Wollongong"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716b2"), 
+    "title" : "University of the South Pacific"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716b3"), 
+    "title" : "University of the Sunshine Coast"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716b4"), 
+    "title" : "Victoria University"
+}
+{ 
+    "_id" : ObjectId("56e0f4572761400d3e2716b5"), 
+    "title" : "Victoria University of Wellington"
+}

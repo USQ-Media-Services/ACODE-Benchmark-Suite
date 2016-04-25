@@ -1,0 +1,114 @@
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716c3"), 
+    "title" : "Learning Management System (LMS)", 
+    "hidden" : false, 
+    "popup" : "Name the Learning Management System adopted to deliver your online courses"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716c4"), 
+    "title" : "Synchronous online learning and teaching", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted for synchronous online delivery"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716c5"), 
+    "title" : "Communication and collaboration", 
+    "hidden" : false, 
+    "popup" : "List communication and collaboration technologies adopted – excluding those in your LMS (e.g. wikis, blogs, forums, video conferencing)"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716c6"), 
+    "title" : "Assessment", 
+    "hidden" : false, 
+    "popup" : "List assessment technologies adopted – excluding those in your LMS (e.g. online assessment; plagiarism detection; online assignment submission; gradebook)"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716c7"), 
+    "title" : "Offline multimedia", 
+    "hidden" : false, 
+    "popup" : "List offline multimedia technologies adopted (e.g. screen capture, website creation; web content management system)"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716c8"), 
+    "title" : "Digital Object Management System/Digital Object Repository/Learning Content Management System", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted to manage and store digital objects"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716c9"), 
+    "title" : "ePortfolio", 
+    "hidden" : false, 
+    "popup" : "Name the system adopted for creating electronic portfolios"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716ca"), 
+    "title" : "POD/VOD casting", 
+    "hidden" : false, 
+    "popup" : "List audio/video technologies adopted for POD/VOD casts – excluding those in your LMS"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716cb"), 
+    "title" : "Mobile learning", 
+    "hidden" : false, 
+    "popup" : "List mobile technologies adopted specific to your institution or learning and teaching (e.g. Apps, responsive themes, Wi-Fi)"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716cc"), 
+    "title" : "eSimulations", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted to develop and deliver electronic, interactive simulations"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716cd"), 
+    "title" : "Document learning design", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted to develop online collaborative learning activities (e.g. LAMS)"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716ce"), 
+    "title" : "Learning and teaching evaluation", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted to develop and deliver learning and teaching evaluations"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716cf"), 
+    "title" : "Email and calendar: staff and students", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted for staff and students to manage their email and calendar"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716d0"), 
+    "title" : "Portal environment (s)", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted for your institutions portal"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716d1"), 
+    "title" : "Student Management System", 
+    "hidden" : false, 
+    "popup" : "Name the Student Management System adopted to manage student records"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716d2"), 
+    "title" : "Service desk software solution / job tracking software", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted to manage the service desk and job tracking"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716d3"), 
+    "title" : "Institutional research repository", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted to manage and store research data"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716d4"), 
+    "title" : "Communication and collaborative tools used across high speed network", 
+    "hidden" : false, 
+    "popup" : "List technologies adopted to enable education and research collaboration (e.g. AARNET, KAREN)"
+}
+{ 
+    "_id" : ObjectId("56e240c12761400d3e2716d5"), 
+    "title" : "Other", 
+    "hidden" : false, 
+    "popup" : ""
+}
