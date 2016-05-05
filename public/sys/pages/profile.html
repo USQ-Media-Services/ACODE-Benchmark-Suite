@@ -1,11 +1,15 @@
 <form class="acode-institute-profile" name="profile_form" id="profile_form">
 	<div class="acode-institute-profile-title">Institutional/Unit Profile</div>
-	<div class="acode-institute-profile-row" ng-repeat="row in $root.meta.profile">
-		<div class="acode-institute-profile-row-title"><span>{{row.title}}</span></div>
-		<div class="acode-institute-profile-row-input">
-			<input ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id][row._id]" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}">
-		</div>
-	</div>
+	<table class="acode-institute-profile-wrapper">
+		
+		<tr class="acode-institute-profile-row" ng-repeat="row in $root.meta.profile | orderBy: 'index'">
+			<td class="acode-institute-profile-row-title"><span>{{row.title}}</span></td>
+			<td class="acode-institute-profile-row-input">
+				<input ng-repeat="a in asArray(!row.multiline)" ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id][row._id]" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}">
+				<div multiline ng-repeat="a in asArray(!!row.multiline)" ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id][row._id]" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}"></div>
+			</td>
+		</tr>
+	</table>
 </form>
 
-<div class="acode-button acode-button-blue acode-button-continue" ng-click="api.profiles.save($root.view.profiles[$root.view.institution._id] || {}, $root.view.institution); setPage('benchmarks')" ng-disabled="!profile_form.$valid">Continue to benchmarks</div>
+<div class="acode-button acode-button-blue acode-button-continue" ng-click="saveProfile() " ng-disabled="!profile_form.$valid || loading">Save</div>

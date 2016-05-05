@@ -6,32 +6,33 @@
 <form class="acode-survey-form">
 	<span style="display: none">{{bm = $root.meta.benchmarks[$root.pageData.benchmark]}}</span>
 
-	<!-- 
-	<h3>Scoping Statement</h2>
-	<div>{{bm['scoping-statement']}}</div>
-	
-	<h3>Good Practice Statement</h2>
-	<div>{{bm['good-practice-statement']}}</div>
-	
-	<h3>Performance Indicators and measures</h2>
-	 -->
-
 	<div class="no-select acode-tabs-holder">
 		<div class="acode-tab" ng-class="{'active-tab': $root.pageData.tab === 'self-assessment' || !$root.pageData.tab}" ng-click="$root.pageData.tab = 'self-assessment'">Self-assessment</div>
 		<div class="acode-tab" ng-class="{'active-tab': $root.pageData.tab === 'team-members'}" ng-click="$root.pageData.tab = 'team-members'">Team members</div>
 		<div class="acode-tab" ng-class="{'active-tab': $root.pageData.tab === 'team-consolidation'}" ng-click="$root.pageData.tab = 'team-consolidation'">Team consolidation</div>
 	</div>
+	
+	<!--Team member buttons-->
+	<div ng-show="$root.pageData.tab === 'team-members'">
+		<div class="no-select acode-button acode-button-blue-outline acode-user-button" ng-class="{'active-button': $root.pageData.readOnlyUser === $index || (!$root.pageData.readOnlyUser && $root.pageData.readOnlyUser !== 0 && $index === $root.pageData.user)}" ng-repeat="users in $root.view.profiles[$root.view.institution._id].users" ng-click="$root.pageData.readOnlyUser = $index;">Team member {{ $index + 1}}</div>
+	</div>
+
+	<h3 class="acode-scoping-statement-title">Scoping Statement</h2>
+	<div class="acode-scoping-statement-text" ng-bind-html="trust(bm['scoping-statement'])"></div>
+	
+	<h3 class="acode-scoping-statement-title">Good Practice Statement</h2>
+	<div class="acode-scoping-statement-text" markdown ng-bind-html="trust(bm['good-practice-statement'])"></div>
+	<br>
+	<br>
+	
+
+
 	<span style="display:none;">{{readOnly = $root.pageData.tab === 'team-members'}}</span>
 	<span style="display: none">{{user = readOnly ? $root.pageData.readOnlyUser : $root.pageData.user}}</span>
 
 
-	<!--Team member buttons-->
-	<div ng-show="$root.pageData.tab === 'team-members'">
-
-		<div class="no-select acode-button acode-button-blue-outline acode-user-button" ng-class="{'active-button': $root.pageData.readOnlyUser === $index || (!$root.pageData.readOnlyUser && $root.pageData.readOnlyUser !== 0 && $index === $root.pageData.user)}" ng-repeat="users in $root.view.profiles[$root.view.institution._id].users" ng-click="$root.pageData.readOnlyUser = $index;">Team member {{ $index + 1}}</div>
-	</div>
 
     <div ng-class="{'default-cursor': readOnly}" class="acode-includers" ng-include="'sys/templates/' + ($root.pageData.tab === 'team-consolidation' ? 'team-consolidation' : 'self-assessment-includer') + '.html'"></div>
 
-	<div class="acode-button acode-button-blue acode-button-start" ng-click="saveBenchmark()" ng-disabled="!saveBenchmark(true)">Save</div>
+	<div class="acode-button acode-button-blue acode-button-start" ng-click="!!loading || saveBenchmark()" ng-disabled="!saveBenchmark(true) || loading">Save</div>
 </form>

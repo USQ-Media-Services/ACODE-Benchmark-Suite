@@ -118,30 +118,33 @@
 }
 
 .acode-institute-profile-row-title {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     top: 0;
     bottom: 0;
-    width: 162px;
+    width: 198px;
     padding-right: 22px;
-    height: 100%;
+    height: 48px;
     padding: 0 10px;
     font-size: 11px;
-    display: table;
+    /* display: table; */
     font-weight: 600;
     text-transform: uppercase;
+    vertical-align: middle;
 }
 
 .acode-institute-profile-row-input {
-    display: inline-block;
-    vertical-align: top;
-    height: 100%;
-    position: absolute;
+    /* display: inline-block; */
+    vertical-align: middle;
+    /* height: auto; */
+    /* position: absolute; */
     top: 0;
-    bottom: 0;
-    left: 166px;
-    right: 0;
+    /* bottom: 0; */
+    /* left: 166px; */
+    /* right: 0; */
     border-left: 5px solid #b2b2b2;
+    position: relative;
+    max-width: 540px;
 }
 
 .acode-institute-profile {
@@ -157,18 +160,26 @@
 
 .acode-institute-profile-row {
     border-top: 1px solid #b2b2b2;
-    height: 48px;
-    position: relative;
+    /* min-height: 48px; */
+    /* position: relative; */
+    /* height: auto; */
 }
 
 .acode-institute-profile-row-input input {
     margin-left: -4px;
+    min-height: 47px;
     height: 100%;
     border: none;
     /* background-color: #f00; */
-    width: calc(100% + 4px);
+    width: 48px;
     padding: 10px;
     font-weight: 300;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .acode-institute-profile-row-title span {
@@ -200,7 +211,7 @@
 }
 
 .acode-button-continue {
-    width: 280px;
+    /* width: 127px; */
     float: right;
 }
 
@@ -391,6 +402,7 @@
     padding: 15px;
     font-size: 16px;
     max-width: 100%;
+    cursor: text;
 }
 
 .acode-picker-rational-box::-webkit-input-placeholder {
@@ -467,7 +479,7 @@
 }
 
 div .acode-benchmark-h4 {
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 div:nth-child(3) .acode-benchmark-h4 {
@@ -574,13 +586,20 @@ div:nth-child(3) .acode-benchmark-h4 {
     font-size: 14px;
     font-weight: 100;
     text-transform: none;
-    width: 235px;
+    /* width: 235px; */
     line-height: 15px;
-    display: block;
-    height: auto;
-    white-space: initial;
+    display: block !important;
+    /* height: auto; */
+    white-space: pre-wrap;
     bottom: 100%;
     left: 0;
+    position: absolute;
+    z-index: 10000000;
+    max-width: 230px;
+    overflow: auto;
+    /* word-wrap: break-word; */
+    /* min-height: 30px!important; */
+    white-space: initial !important;
 }
 
 .acode-tab {
@@ -732,4 +751,42 @@ input:checked + .acode-team-consolidation-score-box {
 .default-cursor,
 .default-cursor * {
 	cursor:default !important;
+}
+
+.acode-scoping-statement-text {
+    font-size: 15px;
+    /* padding-left: 30px; */
+    font-weight: 100;
+    padding-bottom: 0;
+}
+
+.acode-scoping-statement-title {
+    text-transform: uppercase;
+}
+
+.acode-institute-profile-row-input > div {
+    margin-left: -4px;
+    background-color: #fff;
+    /* min-height: 300px; */
+    height: 140px;
+    overflow: auto;
+    padding: 10px;
+    /* padding-top: 7px; */
+    line-height: 6px;
+}
+
+.acode-institute-profile-wrapper {
+    width: 704px;
+}
+
+.acode-institute-profile-row-input > div * {
+    line-height: normal;
+}
+
+.acode-institute-profile-row-input > div:focus {
+    outline: 1px solid #2B62FF;
+}
+
+.acode-scoping-statement-title {
+    font-size: 18px;
 }

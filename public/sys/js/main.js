@@ -8,6 +8,8 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 .controller('master', function master ($scope, $sce) {
 	m = $scope
 
+	m.hasChanged = false
+
 	m.standalone = typeof standalone === 'boolean' && !!standalone
 
 	m.querystring = function querystring () {
@@ -24,8 +26,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 	    return vars
 	}
 
-	m.hash = function hash (data) {
-
+	m.hash = function hash (data, skipSave) {
 		var j = Qs.parse(decodeURIComponent(location.hash.replace('#/', '').replace('#', '')))
 		if (j.user) j.user = (parseInt(j.user, 0) !== NaN ? parseInt(j.user, 0) : j.user)
 		if (j.readOnlyUser) j.readOnlyUser = (parseInt(j.readOnlyUser, 0) !== NaN ? parseInt(j.readOnlyUser, 0) : j.readOnlyUser)
@@ -44,10 +45,14 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 			var t = j
 			for (var i in data) {
 				t[i] = data[i]
+				console.log(i, data[i], t)
+
 				if (data[i] === null) delete t[i]
 			}
 
-			location.hash = '/' + Qs.stringify(t)
+			setTimeout(function () {
+				location.hash = '/' + Qs.stringify(t)
+			}, 32)
 		}				
 	}
 
@@ -59,15 +64,46 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 	m.$root.pageData = m.hash()
 
+	m.confirmLeavePage = function () {
+		!confirm('This page has not been saved, are you sure you want to navigate away?')
+	}
+
 	m.setPage = function (page) {
-		if (!!page) m.$root.pageData.page = page.replace('.html', '')
+		if (!!m.loaded && !!m.hasChanged && !confirm('This page has not been saved, are you sure you want to navigate away?')) return false
+		else if (!!page) {
+  			m.hasChanged = false
+
+			m.$root.pageData.page = page.replace('.html', '')
 			$('body').scrollTop(0)
+		}
 		m.$applyAsync()
+		return true
 	}
 
 	m.asArray = function (a) {
 		if (!!a) return [0]
 		else return []
+	}
+
+	m.saveProfile = function () {
+		m.loading = true;
+		m.$applyAsync()
+		m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution, function () {
+			toastr["success"]('Institution Profile saved')
+			m.loading = false;
+			m.$applyAsync()
+		})
+	}
+
+
+	m.saveSnapshot = function () {
+		m.loading = true;
+		m.$applyAsync()
+		m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution, function () {
+			toastr["success"]('Institution Snapshot saved')
+			m.loading = false
+			m.$applyAsync()
+		})
 	}
 
 	m.api = {
@@ -89,7 +125,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 			single: function (id) {
 				return $.get(m.baseUrl + 'api/profiles/single?id=' + id, null, 'json')
 			},
-			save: function (data, institution) {
+			save: function (data, institution, callback) {
 				data.institution = institution._id
 				data.year = new Date().getFullYear()
 				return $.ajax({
@@ -97,8 +133,11 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 					url: m.baseUrl + 'api/profiles/save',
 					dataType: 'json',
 					data: JSON.stringify({data: data}),
-				    contentType : 'application/json'
-				})					
+				    contentType : 'application/json',
+				    success: callback,
+				    error: callback,
+				    then: callback
+				})
 			},
 			meta: function (data) {
 				return $.get(m.baseUrl + 'api/profiles/meta', null, 'json')
@@ -149,13 +188,16 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 			single: function (id) {
 				return $.get(m.baseUrl + 'api/benchmarks/single?id=' + id, null, 'json')
 			},
-			save: function (data) {
+			save: function (data, callback) {
 				return $.ajax({
 					type: "POST",
 					url: m.baseUrl + 'api/benchmarks/save',
 					dataType: 'json',
 					data: JSON.stringify({data: data}),
-				    contentType : 'application/json'
+				    contentType : 'application/json',
+				    success: callback,
+				    error: callback,
+				    then: callback
 				})					
 			},
 			meta: function (data) {
@@ -172,7 +214,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   		
 	  	m.$root.view.institution = institution
 		
-		m.hash({institution: institution._id})
+		m.$root.pageData.institution = institution._id
 
 	  	if (!!m.$root.view && !!m.$root.view.profiles[institution._id] && m.$root.view.profiles[institution._id].year === new Date().getFullYear()) {
   			m.$root.view.profiles[institution._id].users = m.$root.view.profiles[institution._id].users || []
@@ -235,11 +277,18 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   	m.saveBenchmark = function (test) {
   		if (!m.$root.view.profiles || !m.$root.view.profiles[m.$root.view.institution._id] || !m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user]) return false
   		if (test) return true
+  		m.loading = true;
+	  	m.$applyAsync()
   		m.api.benchmarks.save({
   			user: m.$root.pageData.user,
   			institution: m.$root.pageData.institution,
   			benchmarkData: m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user].benchmarks[m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id],
   			benchmarkID: m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id
+  		}, function () {
+			toastr["success"](m.$root.meta.benchmarks[m.$root.pageData.benchmark].title + ' saved')
+  			m.loading = false
+  			m.hasChanged = false
+	  		m.$applyAsync()
   		})
   	}
 
@@ -249,6 +298,11 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 
 	m.$root.pageData = m.hash()
+
+	m.trust = $sce.trustAsHtml
+
+	m.loading = false
+
 	if (m.$root.pageData.page === 'home' || !m.$root.pageData.page) {
 		m.$root.view.institution = null
 		m.tab = m.$root.pageData
@@ -258,7 +312,16 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
   	m.$watch('$root.pageData', function (a, b) {
   		m.hash(a)
-  		m.pageUrl = $sce.trustAsResourceUrl(m.baseUrl + 'sys/pages/' + (a.page || 'home') + '.html')
+  		if (a.page !== b.page || !m.pageUrl) m.pageUrl = $sce.trustAsResourceUrl(m.baseUrl + 'sys/pages/' + (a.page || 'home') + '.html')
+  	}, true)
+
+  	m.loaded = 0
+  	m.$watch('$root.view.profiles["' + m.$root.pageData.institution + '"].users[' + m.$root.pageData.user + ']', function () {
+  		if (m.loaded < 2) m.loaded++
+  		else {
+  			m.hasChanged = true
+  		}
+  		
   	}, true)
 })
 
@@ -267,21 +330,40 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 	return function (scope, element, attrs) {
 		scope.$watch(attrs.markdown, function (a) {
 			element.html(markdown.toHTML(a || String(' ')))
-			element.find('a')
-				.off()
-				.bind('click', function (e) {
-					e.preventDefault()
-					e.stopPropagation()
-				})
-				.each(function (i, el) {
-					$(el)
-						.addClass('hint--top')
-						.attr('data-hint', el.href)
-
-				})
 		})
 	}
 })
+
+.directive('multiline', function () {
+	return function (scope, element, attrs) {
+
+		element.html(scope.$eval(attrs.ngModel) || 'Comments...')
+
+		var options = {
+			editor: element[0], // {DOM Element} [required]
+			class: 'pen', // {String} class of the editor,
+			debug: false, // {Boolean} false by default
+			textarea: '<textarea name="content"></textarea>', // fallback for old browsers
+			stay: false,
+		},
+
+		editor = new Pen(options),
+
+		changed = function () {
+			scope.$eval(attrs.ngModel + ' = _data', {_data: editor._prevContent })
+  			m.hasChanged = false
+		}
+
+		editor.on('input', changed)
+		editor.on('change', changed)
+
+
+	}
+})
+
+.config(['$compileProvider', function ($compileProvider) {
+	$compileProvider.debugInfoEnabled(false);
+}])
 
 
 /*Directives*/

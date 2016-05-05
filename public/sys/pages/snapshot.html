@@ -16,7 +16,7 @@
 				Piloting this year?
 			</th>
 		</tr>
-		<tr ng-repeat="row in $root.meta.snapshot">
+		<tr ng-repeat="row in $root.meta.snapshot | orderBy: 'index'">
 			<td class="no-select acode-snapshot-row-title" class="hint--bottom hint--large hint--bounce " data-hint="{{row.popup}}">{{row.title}}</td>
 			<td class="acode-snapshot-row-description">
 				<input ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].description" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}">
@@ -37,7 +37,8 @@
 			<td class="acode-snapshot-row-piloting">
 				<select ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].piloting">
 					<option value="yes">Yes</option>
-					<option value="no">no</option>
+					<option value="no">No</option>
+					<option value="maybe">Maybe</option>
 				</select>
 			</td>
 		</tr>
@@ -52,4 +53,4 @@
  -->
 </form>
 
-<div class="acode-button acode-button-blue acode-button-continue" ng-click="api.profiles.save($root.view.profiles[$root.view.institution._id] || {}, $root.view.institution); setPage('benchmarks')" ng-disabled="!profile_form.$valid">Continue to benchmarks</div>
+<div class="acode-button acode-button-blue acode-button-continue" ng-click="saveSnapshot()" ng-disabled="!profile_form.$valid">Save</div>
