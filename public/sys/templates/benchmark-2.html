@@ -13,11 +13,6 @@
 			<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-question-{{1}}-{{$index}}" name="{{bm._id}}-{{rowIndex}}-{{1}}" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-' + 1]" ng-value="$index" type="radio">
 			<label for="{{bm._id}}-{{rowIndex}}-question-{{1}}-{{$index}}" ng-bind="question"></label>		
 		</div>
-
-			<!--
-			{{$parent[bm._id + '-' + rowIndex + '-' + question + '-1-height'] = getHeight($parent[bm._id + '-' + rowIndex + '-' + question + '-1-height'], bm._id + '-' + rowIndex '-' + question + '-1-' + $index)}}
-			{{$parent[bm._id + '-' + rowIndex + '-' + question + '-1-height'] || 'derp'}}
-			 -->
 	</div>
 </div>
 <div class="acode-picker-overall-title">Overall Rating</div>
