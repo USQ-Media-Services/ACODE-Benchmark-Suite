@@ -297,6 +297,8 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   	}
 
 
+
+
 	m.$root.pageData = m.hash()
 
 	m.trust = $sce.trustAsHtml
@@ -394,3 +396,24 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 })
 
 
+
+
+/*keyboard shortcuts*/
+key = {}
+document.addEventListener('keydown', function (e) {
+	key[e.keyCode] = true
+	var ctrl = (key[17] || key[91] || key[93] || key[224])
+	
+
+	/*CTRL S*/
+	if (ctrl && key[83]) {
+		m.saveBenchmark()
+		m.saveProfile()
+		e.preventDefault()
+		e.stopPropagation()
+	}
+})
+
+document.addEventListener('keyup', function (e) {
+	key[e.keyCode] = false
+})
