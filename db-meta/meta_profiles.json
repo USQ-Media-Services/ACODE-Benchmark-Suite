@@ -1,117 +1,105 @@
 { 
-    "_id" : ObjectId("56e23d002761400d3e2716b9"), 
-    "title" : "Head of unit and contact details", 
-    "hidden" : false, 
-    "tooltip" : "Name your unit head and their main contact details (e.g. phone, email)"
-}
-{ 
-    "_id" : ObjectId("56e23d002761400d3e2716ba"), 
-    "title" : "Reporting relationship of head", 
-    "hidden" : false, 
-    "tooltip" : "Describe the reporting relationship of your unit head"
-}
-{ 
-    "_id" : ObjectId("56e23d002761400d3e2716bc"), 
-    "title" : "ACODE alternate", 
-    "hidden" : false, 
-    "tooltip" : "Name an alternate ACODE nominee"
-}
-{ 
-    "_id" : ObjectId("56e23d002761400d3e2716bd"), 
-    "hidden" : false, 
-    "title" : "Unit's functional responsibilities", 
-    "tooltip" : "List the main functional responsibilities of your unit"
-}
-{ 
-    "_id" : ObjectId("56e23d002761400d3e2716be"), 
-    "title" : "Current initiatives", 
-    "hidden" : false, 
-    "tooltip" : "List current learning technology initiatives your institution is implementing"
-}
-{ 
-    "_id" : ObjectId("56e23d002761400d3e2716bf"), 
-    "title" : "Current challenges", 
-    "hidden" : false, 
-    "tooltip" : "List the current challenges your unit/institution face"
-}
-{ 
-    "_id" : ObjectId("56e23d002761400d3e2716c0"), 
-    "title" : "Staffing", 
-    "hidden" : false, 
-    "tooltip" : "Provide the number of staff employed in your unit and institution"
-}
-{ 
-    "_id" : ObjectId("56e23d002761400d3e2716c1"), 
-    "title" : "Current collaborative activities with IT and Library", 
-    "hidden" : false, 
-    "tooltip" : "List collaborative activities involving your unit, IT and the Library"
-}
-{ 
-    "_id" : ObjectId("56e23d002761400d3e2716b7"), 
+    "_id" : "56e23d002761400d3e2716b7", 
     "title" : "Name of university", 
     "hidden" : false, 
     "required" : true, 
-    "tooltip" : "Provide the full name of your institution (can conclude with an abbreviation)"
+    "tooltip" : "Provide the full name of your institution (can conclude with an abbreviation)", 
+    "index" : NumberInt(0)
 }
 { 
-    "_id" : ObjectId("56e23d002761400d3e2716b8"), 
+    "_id" : "56e23d002761400d3e2716b8", 
     "title" : "Name of unit", 
     "hidden" : false, 
     "required" : true, 
-    "tooltip" : "Provide the full name of your unit "
+    "tooltip" : "Provide the full name of your unit ", 
+    "index" : NumberInt(1)
 }
 { 
-    "_id" : ObjectId("56e23d002761400d3e2716bb"), 
+    "_id" : "56e23d002761400d3e2716bb", 
     "hidden" : false, 
     "required" : true, 
     "title" : "ACODE nominee", 
-    "tooltip" : "Name your ACODE nominee"
+    "tooltip" : "Name your ACODE nominee", 
+    "index" : NumberInt(2)
 }
 { 
-    "_id" : ObjectId("56e26a082761400d3e2716dc"), 
-    "title" : "Head of unit and contact details", 
+    "_id" : "56e23d002761400d3e2716b9", 
+    "title" : "Head of unit", 
     "hidden" : false, 
-    "tooltip" : "Name your unit head and their main contact details (e.g. phone, email)"
+    "tooltip" : "Name your unit head", 
+    "index" : NumberInt(4)
 }
 { 
-    "_id" : ObjectId("56e26a082761400d3e2716dd"), 
+    "_id" : "56e23d002761400d3e2716ba", 
     "title" : "Reporting relationship of head", 
     "hidden" : false, 
-    "tooltip" : "Describe the reporting relationship of your unit head"
+    "tooltip" : "Describe the reporting relationship of your unit head", 
+    "index" : NumberInt(6)
 }
 { 
-    "_id" : ObjectId("56e26a082761400d3e2716df"), 
+    "_id" : "56e23d002761400d3e2716bc", 
     "title" : "ACODE alternate", 
     "hidden" : false, 
-    "tooltip" : "Name an alternate ACODE nominee"
+    "tooltip" : "Name an alternate ACODE nominee", 
+    "index" : NumberInt(7)
 }
 { 
-    "_id" : ObjectId("56e26a082761400d3e2716e0"), 
-    "title" : "Unit’s functional responsibilities", 
+    "_id" : "56e23d002761400d3e2716bd", 
     "hidden" : false, 
-    "tooltip" : "List the main functional responsibilities of your unit"
+    "title" : "Unit's functional responsibilities", 
+    "tooltip" : "List the main functional responsibilities of your unit", 
+    "index" : NumberInt(8)
 }
 { 
-    "_id" : ObjectId("56e26a082761400d3e2716e1"), 
-    "title" : "Current initiatives", 
+    "_id" : "56e23d002761400d3e2716bf", 
     "hidden" : false, 
-    "tooltip" : "List current learning technology initiatives your institution is implementing"
-}
-{ 
-    "_id" : ObjectId("56e26a082761400d3e2716e2"), 
+    "index" : NumberInt(10), 
+    "multiline" : true, 
     "title" : "Current challenges", 
-    "hidden" : false, 
     "tooltip" : "List the current challenges your unit/institution face"
 }
 { 
-    "_id" : ObjectId("56e26a082761400d3e2716e3"), 
-    "title" : "Staffing", 
+    "_id" : "56e23d002761400d3e2716c1", 
+    "title" : "Current collaborative activities with IT and Library", 
     "hidden" : false, 
+    "tooltip" : "List collaborative activities involving your unit, IT and the Library", 
+    "index" : NumberInt(12)
+}
+{ 
+    "_id" : "56e26a082761400d3e2716e0", 
+    "title" : "Unit’s functional responsibilities", 
+    "hidden" : false, 
+    "tooltip" : "List the main functional responsibilities of your unit", 
+    "index" : NumberInt(13)
+}
+{ 
+    "_id" : ObjectId("572a83a3885194210099805a"), 
+    "hidden" : false, 
+    "required" : true, 
+    "title" : "ACODE nominee contact email", 
+    "tooltip" : "Your ACODE nominee's email address", 
+    "index" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("572a83a3885194210099805b"), 
+    "hidden" : false, 
+    "index" : NumberInt(5), 
+    "title" : "Head of unit contact email", 
+    "tooltip" : "The contact email address of the head of unit"
+}
+{ 
+    "_id" : "56e23d002761400d3e2716c0", 
+    "hidden" : false, 
+    "index" : NumberInt(11), 
+    "multiline" : true, 
+    "title" : "Staffing", 
     "tooltip" : "Provide the number of staff employed in your unit and institution"
 }
 { 
-    "_id" : ObjectId("56e26a082761400d3e2716e4"), 
-    "title" : "Current collaborative activities with IT and Library", 
+    "_id" : "56e23d002761400d3e2716be", 
     "hidden" : false, 
-    "tooltip" : "List collaborative activities involving your unit, IT and the Library"
+    "index" : NumberInt(9), 
+    "new_field" : true, 
+    "title" : "Current initiatives", 
+    "tooltip" : "List current learning technology initiatives your institution is implementing"
 }

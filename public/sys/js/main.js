@@ -31,9 +31,10 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 		if (j.user) j.user = (parseInt(j.user, 0) !== NaN ? parseInt(j.user, 0) : j.user)
 		if (j.readOnlyUser) j.readOnlyUser = (parseInt(j.readOnlyUser, 0) !== NaN ? parseInt(j.readOnlyUser, 0) : j.readOnlyUser)
 
-		if (j.benchmark) j.benchmark = (parseInt(j.benchmark, 0) !== NaN ? parseInt(j.benchmark, 0) : j.benchmark)
-		else j.benchmark = 0
+        if (j.benchmark) j.benchmark = (parseInt(j.benchmark, 0) !== NaN ? parseInt(j.benchmark, 0) : j.benchmark)
+        else j.benchmark = 0
 
+		if (j.report) j.report = (parseInt(j.report, 0) !== NaN ? parseInt(j.report, 0) : j.report)
 
 		if (typeof data === 'string' || typeof data === 'number') {
 			return j[data] || ""
@@ -85,11 +86,11 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 		else return []
 	}
 
-	m.saveProfile = function () {
+	m.saveProfile = function (skipMessage) {
 		m.loading = true;
 		m.$applyAsync()
 		m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution, function () {
-			toastr["success"]('Institution Profile saved')
+			if (!skipMessage) toastr["success"]('Institution Profile saved')
 			m.loading = false;
 			m.$applyAsync()
 		})
@@ -141,6 +142,9 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 			},
 			meta: function (data) {
 				return $.get(m.baseUrl + 'api/profiles/meta', null, 'json')
+			},
+			allFromId: function (id, callback) {
+				return $.get(m.baseUrl + 'api/profiles//all-from-institution?id=' + id, callback, 'json').error(callback)
 			},
 			saveMeta: function (data) {
 				return $.ajax({
@@ -216,6 +220,12 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 		
 		m.$root.pageData.institution = institution._id
 
+		m.api.profiles.allFromId(institution._id, function (a) {
+			console.log(a)
+			m.$root.meta.institutionProfiles = a
+			m.$applyAsync()
+		})
+
 	  	if (!!m.$root.view && !!m.$root.view.profiles[institution._id] && m.$root.view.profiles[institution._id].year === new Date().getFullYear()) {
   			m.$root.view.profiles[institution._id].users = m.$root.view.profiles[institution._id].users || []
   			if (typeof m.$root.pageData.user === 'number') {
@@ -274,17 +284,22 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   		})
   	}
 
-  	m.saveBenchmark = function (test) {
+  	m.saveBenchmark = function (test, consolidation) {
   		if (!m.$root.view.profiles || !m.$root.view.profiles[m.$root.view.institution._id] || !m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user]) return false
   		if (test) return true
   		m.loading = true;
 	  	m.$applyAsync()
-  		m.api.benchmarks.save({
-  			user: m.$root.pageData.user,
-  			institution: m.$root.pageData.institution,
-  			benchmarkData: m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user].benchmarks[m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id],
-  			benchmarkID: m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id
-  		}, function () {
+        console.log(consolidation)
+        var data = {
+            user: m.$root.pageData.user,
+            institution: m.$root.pageData.institution,
+            benchmarkData: m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user].benchmarks[m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id],
+            benchmarkID: m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id
+        }
+        if (consolidation) {
+            m.saveProfile(true)
+        }
+  		m.api.benchmarks.save(data, function () {
 			toastr["success"](m.$root.meta.benchmarks[m.$root.pageData.benchmark].title + ' saved')
   			m.loading = false
   			m.hasChanged = false
@@ -301,7 +316,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 	m.$root.pageData = m.hash()
 
-	m.trust = $sce.trustAsHtml
+    m.trust = m.trustAsHtml = $sce.trustAsHtml
 
 	m.loading = false
 

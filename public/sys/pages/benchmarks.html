@@ -32,5 +32,5 @@
 
     <div ng-class="{'default-cursor': readOnly}" class="acode-includers" ng-include="'sys/templates/' + ($root.pageData.tab === 'team-consolidation' ? 'team-consolidation' : 'self-assessment-includer') + '.html'"></div>
 
-	<div class="acode-button acode-button-blue acode-button-start" ng-click="!!loading || saveBenchmark()" ng-disabled="!saveBenchmark(true) || loading">Save</div>
+	<div class="acode-button acode-button-blue acode-button-start" ng-click="!!loading || saveBenchmark(null, $root.pageData.tab === 'team-consolidation')" ng-disabled="!saveBenchmark(true) || loading">Save</div>
 </form>

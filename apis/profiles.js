@@ -13,6 +13,27 @@ r.get('/all', function (req, res) {
 	})
 })
 
+r.get('/all-from-institution', function (req, res) {
+	if (req.query.id && req.query.id.length === 24) {
+		var _id = ObjectId(req.query.id)
+		db().collection('profiles').find({institution: _id}).toArray(function (err, profiles) {
+			if (!err && profiles.length > 0) {
+				res.json(profiles)
+			}
+			else if (!!err) {
+				console.log(err)
+				res.sendStatus(500)
+			}
+			else {
+				res.sendStatus(404)
+			}
+		})
+	}
+	else {
+		res.sendStatus(412)
+	}
+})
+
 r.get('/single', function (req, res) {
 	if (req.query.id && req.query.id.length === 24) {
 		var _id = ObjectId(req.query.id)

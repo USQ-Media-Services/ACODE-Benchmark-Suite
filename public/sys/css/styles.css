@@ -250,6 +250,11 @@
     color: #fff;
 }
 
+.acode-side-menu-sub-item .acode-side-menu-item.active-item {
+    background-color: rgba(77, 77, 77, 0.6) !important;
+    color: #fff;
+}
+
 
 [ng-include="pageUrl"] {
     width: calc(726px);
@@ -596,9 +601,9 @@ div:nth-child(3) .acode-benchmark-h4 {
     position: absolute;
     z-index: 10000000;
     max-width: 230px;
-    overflow: auto;
+    /* overflow: auto; */
     /* word-wrap: break-word; */
-    /* min-height: 30px!important; */
+    min-height: 30px!important;
     white-space: initial !important;
 }
 
@@ -726,6 +731,8 @@ div:nth-child(3) .acode-benchmark-h4 {
     background-color: #F2F2F2;
     border: 1px solid #b2b2b2;
     margin-bottom: -1px;
+    margin-top: -1px;
+    margin-right: 1px;
     padding: 10px;
 }
 
@@ -789,4 +796,79 @@ input:checked + .acode-team-consolidation-score-box {
 
 .acode-scoping-statement-title {
     font-size: 18px;
+}
+
+.acode-benchmark-report-wrapper {}
+
+div {}
+
+.acode-report-institute-title {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px;
+    width: 250px;
+    /* border-bottom: 1px solid #B2B2B2; */
+}
+
+td {}
+
+.acode-benchmark-report {
+}
+
+.acode-benchmark-report-wrapper {
+    border: 1px solid #B2B2B2;
+    border-radius: 5px;
+    /* overflow: hidden; */
+}
+
+.acode-benchmark-report td {
+    border-bottom: 1px solid #B2B2B2;
+    border-right: 1px solid #B2b2b2;
+    text-align: center;
+    padding: 5px;
+    position: relative;
+}
+
+.acode-benchmark-report tr:last-child td {
+    border-bottom: none;
+}
+
+.acode-benchmark-report td:last-child {
+    border-right: none;
+}
+
+.acode-benchmark-report-pi-title {
+    font-weight: 700;
+}
+
+.acode-benchmark-report-pi-title-number {
+    color: #f00;
+    font-weight: 700;
+}
+
+[data-hint] {
+    cursor: default;
+}
+
+.acode-benchmark-report-results-title div {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+}
+
+
+
+.acode-benchmark-report [data-hint]:after {
+    max-width: 770px;
+    width: 800px;
+    font-size: 10px;
+}
+
+.acode-team-consolidation-wrapper {
+    margin-top: 20px;
 }

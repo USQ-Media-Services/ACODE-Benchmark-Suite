@@ -16,6 +16,7 @@ var mongodb = require('mongodb'),
 		return db
 	}
 
+
 	getDB.callback = function () {}
 
 	serv = new mongodb.Server(dbHost, dbPort, {
