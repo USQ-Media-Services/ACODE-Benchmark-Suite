@@ -295,7 +295,7 @@ ef {
 }
 
 .acode-picker-overall label {
-    width: 146px;
+    width: 145.5px;
     text-align: center;
     cursor: pointer;
     border-left: 1px solid #b2b2b2;
@@ -407,6 +407,7 @@ ef {
     font-size: 16px;
     max-width: 100%;
     cursor: text;
+    font-family: "Open Sans";
 }
 
 .acode-picker-rational-box::-webkit-input-placeholder {
@@ -780,6 +781,7 @@ input:checked + .acode-team-consolidation-score-box {
     padding: 10px;
     /* padding-top: 7px; */
     line-height: 6px;
+    font-family: "Open Sans";
 }
 
 .acode-institute-profile-wrapper {
@@ -807,6 +809,7 @@ div {}
     font-weight: 700;
     padding: 5px;
     width: 250px;
+    text-align: left !important;
     /* border-bottom: 1px solid #B2B2B2; */
 }
 
@@ -829,6 +832,7 @@ td {}
     padding: 5px;
     position: relative;
     /* border: 1px solid #b2b2b2; */
+    /* cursor: pointer; */
 }
 
 .acode-benchmark-report tr:last-child td {
@@ -885,14 +889,95 @@ table.acode-team-consolidation-question-overall {
 
 .acode-team-consolidation-rational-title {
     text-align: left;
+    padding-left: 11px;
 }
 
 .acode-team-consolidation-evidence-title {
     text-align: left;
+    padding-left: 11px;
+    padding-bottom: 10px;
 }
 
-span.acode-bold-700 {}
+span.acode-bold-700 {
+    font-weight: 700;
+}
 
 .acode-team-consolidation-question-overall td {
     /* border-left: 1px solid #b2b2b2; */
+    border-top: 1px solid #b2b2b2;
+    padding: 10px;
+    border-bottom: 1px solid #b2b2b2 !important;
+}
+
+table.acode-team-consolidation-question-overall {
+    margin-top: -10px;
+    width: calc(100% - 1px);
+}
+
+.acode-team-consolidation-question-overall td:first-child {
+    border-left: none;
+}
+
+.acode-team-consolidation-question-overall td:last-child {
+    border-right: 1px solid #b2b2b2;
+}
+
+.acode-benchmark-report-results.acode-active-report-item {
+    background-color: #0090ba;
+    color: #fff;
+}
+
+.acode-benchmark-report-results {
+    cursor: pointer;
+}
+
+.acode-team-consolidation-question-overall td:first-child {
+    border-left: 1px solid #b2b2b2;
+    position: static;
+}
+
+.acode-benchmark-report-results-title {
+    text-align: left !important;
+}
+
+.acode-benchmark-report-results-title input {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    left: 1px;
+}
+
+.acode-benchmark-report-results-title label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 43px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.acode-team-consolidation-question-overall td.active-item {
+    background-color: #7ac943;
+    color: #fff;
+}
+
+.acode-results-overview-table {
+    margin: -11px;
+}
+
+.acode-results-overview-title {
+    padding: 10px !important;
+    padding-left: 16px !important;
+    padding-top: 17px !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+td.acode-benchmark-report-results.acode-no-data {
+    cursor: default;
 }

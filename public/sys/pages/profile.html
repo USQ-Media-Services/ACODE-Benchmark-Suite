@@ -6,7 +6,8 @@
 			<td class="acode-institute-profile-row-title"><span>{{row.title}}</span></td>
 			<td class="acode-institute-profile-row-input">
 				<input ng-repeat="a in asArray(!row.multiline)" ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id][row._id]" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}">
-				<div multiline ng-repeat="a in asArray(!!row.multiline)" ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id][row._id]" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}"></div>
+
+				<div multiline ng-repeat="a in asArray(!!row.multiline)" ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id][row._id]" placeholder="'<span style=\'color: #aaa\'>' + row.tooltip"></div>
 			</td>
 		</tr>
 	</table>

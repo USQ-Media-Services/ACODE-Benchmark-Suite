@@ -289,7 +289,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   		if (test) return true
   		m.loading = true;
 	  	m.$applyAsync()
-        console.log(consolidation)
         var data = {
             user: m.$root.pageData.user,
             institution: m.$root.pageData.institution,
@@ -374,8 +373,8 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 .directive('multiline', function () {
 	return function (scope, element, attrs) {
-
-		element.html(scope.$eval(attrs.ngModel) || 'Comments...')
+		console.log(attrs.placeholder)
+		element.html(scope.$eval(attrs.ngModel) || scope.$eval(attrs.placeholder) || '')
 
 		var options = {
 			editor: element[0], // {DOM Element} [required]
@@ -415,6 +414,16 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 	};
 })
 
+.directive('usqClick', function () {
+	return function (scope, element, attrs) {
+		element.bind('click', function () {
+			try {
+				if (!element.attr('disabled') && !element.hasClass('disabled') ) scope.$applyAsync(attrs.usqClick)
+			} catch (e) {}
+		});
+	};
+})
+
 
 .config(function($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([
@@ -443,7 +452,7 @@ document.addEventListener('keydown', function (e) {
 
 	/*CTRL S*/
 	if (ctrl && key[83]) {
-		m.saveBenchmark()
+		m.saveBenchmark(false, true)
 		m.saveProfile()
 		e.preventDefault()
 		e.stopPropagation()
