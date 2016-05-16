@@ -12,6 +12,7 @@ var	_scriptTags = document.querySelectorAll('script')
 		'bower_components/toastr/toastr.min.js',
 		'bower_components/pen/src/pen.js',
 		'bower_components/qs/dist/qs.js',
+		'bower_components/sweetalert/dist/sweetalert.min.js',
 		'sys/js/main.js'
 	],
 	styles = [
@@ -21,6 +22,7 @@ var	_scriptTags = document.querySelectorAll('script')
 		'bower_components/open-sans/css/open-sans.min.css',
 		'bower_components/font-awesome/css/font-awesome.min.css',
 		'bower_components/bootstrap/dist/css/bootstrap.min.css',
+		'bower_components/sweetalert/dist/sweetalert.css',
 		'bower_components/toastr/toastr.min.css',
 		'sys/css/moodle-adjustments.css',
 		'sys/css/styles.css'

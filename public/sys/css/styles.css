@@ -32,8 +32,7 @@
     cursor: default;
 }
 
-.acode-survey,
-.acode-survey * {
+ef {
     font-family: 'Open Sans', 'Arial', sans-serif !important;
 }
 
@@ -734,6 +733,7 @@ div:nth-child(3) .acode-benchmark-h4 {
     margin-top: -1px;
     margin-right: 1px;
     padding: 10px;
+    text-align: left;
 }
 
 .acode-team-consolidation-score-wrapper {}
@@ -819,6 +819,7 @@ td {}
     border: 1px solid #B2B2B2;
     border-radius: 5px;
     /* overflow: hidden; */
+    margin-bottom: 40px;
 }
 
 .acode-benchmark-report td {
@@ -827,6 +828,7 @@ td {}
     text-align: center;
     padding: 5px;
     position: relative;
+    /* border: 1px solid #b2b2b2; */
 }
 
 .acode-benchmark-report tr:last-child td {
@@ -871,4 +873,26 @@ td {}
 
 .acode-team-consolidation-wrapper {
     margin-top: 20px;
+}
+
+table.acode-team-consolidation-question-overall {
+    width: 100%;
+}
+
+.acode-results-overview-title {
+    text-align: left !important;
+}
+
+.acode-team-consolidation-rational-title {
+    text-align: left;
+}
+
+.acode-team-consolidation-evidence-title {
+    text-align: left;
+}
+
+span.acode-bold-700 {}
+
+.acode-team-consolidation-question-overall td {
+    /* border-left: 1px solid #b2b2b2; */
 }

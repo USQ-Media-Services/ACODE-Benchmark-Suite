@@ -311,6 +311,27 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   		console.log('Test!')
   	}
 
+  	m.addUser = function () {
+  		swal({
+			title: "Add new team member",
+			text: "Please enter the name of the new team member:",
+			type: "input",
+			showCancelButton: true,
+			closeOnConfirm: true,
+			animation: "slide-from-top",
+			inputPlaceholder: "Name of team member"
+		}, function(inputValue) {
+			if (inputValue === false) return false;
+			if (inputValue === "") {
+				swal.showInputError("You need to write something!");
+				return false
+			}
+			var puid = new Date().getTime()
+			m.$root.pageData.user = m.$root.view.profiles[m.$root.view.institution._id].users[puid] = {name: inputValue}
+			m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution)
+			m.$applyAsync()
+		});
+  	}
 
 
 
