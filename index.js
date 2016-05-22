@@ -86,12 +86,14 @@ var express = require('express'),
 	    		res.sendFile(`${process.cwd()}/tmp/${file}`)
 	    	}
     	})
-    }
+    },
+    json2csv = require('nice-json2csv')
 
 
 del.sync('tmp', {force:true})
 
 app.use(require('cors')())
+app.use(json2csv.expressDecorator)
 
 app.use(require('body-parser').json())
 

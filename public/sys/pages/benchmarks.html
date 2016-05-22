@@ -14,7 +14,7 @@
 	
 	<!--Team member buttons-->
 	<div ng-show="$root.pageData.tab === 'team-members'">
-		<div class="no-select acode-button acode-button-blue-outline acode-user-button" ng-class="{'active-button': $root.pageData.readOnlyUser === $index || (!$root.pageData.readOnlyUser && $root.pageData.readOnlyUser !== 0 && $index === $root.pageData.user)}" ng-repeat="users in $root.view.profiles[$root.view.institution._id].users" ng-click="$root.pageData.readOnlyUser = $index;">Team member {{ $index + 1}}</div>
+		<div class="no-select acode-button acode-button-blue-outline acode-user-button" ng-class="{'active-button': $root.pageData.readOnlyUser === $index || (!$root.pageData.readOnlyUser && $root.pageData.readOnlyUser !== 0 && $index === $root.pageData.user)}" ng-repeat="users in $root.view.profiles[$root.view.institution._id].users" ng-click="$root.pageData.readOnlyUser = $index;">{{users.name}}</div>
 	</div>
 
 	<h3 class="acode-scoping-statement-title">Scoping Statement</h2>

@@ -1,10 +1,12 @@
 <div ng-repeat="bm in $root.meta.benchmarks" class="acode-benchmark-report-wrapper">
-
+	<h3 class="acode-benchmark-report-title">{{bm.title}}</h3>
 	<table class="acode-benchmark-report" width="100%">
 		<tr>
-			<td class="acode-benchmark-report-results-title">
+			<td class="no-select acode-benchmark-report-results-title">
 				<label>
-					Anonymize: <input type="checkbox" ng-value-true="true" ng-value-false="false" ng-model="anonymized">
+					Anonymise: <input type="checkbox" ng-value-true="true" ng-value-false="false" ng-model="anonymized">
+					<br>
+					<a ng-href="{{_baseUrl}}/api/benchmarks/export?year={{$root.pageData.report}}&benchmark={{bm._id}}&anonymised={{anonymized ? $root.pageData.institution : ''}}">Download (CSV)</a>
 				</label>
 			</td>
 			<td class="acode-benchmark-report-results-title" ng-repeat="pi in bm.questions">

@@ -10,6 +10,8 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 	m.hasChanged = false
 
+    m._baseUrl = _baseUrl
+
 	m.standalone = typeof standalone === 'boolean' && !!standalone
 
 	m.querystring = function querystring () {
@@ -221,7 +223,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 		m.$root.pageData.institution = institution._id
 
 		m.api.profiles.allFromId(institution._id, function (a) {
-			console.log(a)
 			m.$root.meta.institutionProfiles = a
 			m.$applyAsync()
 		})
@@ -292,7 +293,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
         var data = {
             user: m.$root.pageData.user,
             institution: m.$root.pageData.institution,
-            benchmarkData: m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user].benchmarks[m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id],
+            benchmarkData: (m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user].benchmarks || {})[m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id],
             benchmarkID: m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id
         }
         if (consolidation) {
@@ -325,9 +326,14 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 				swal.showInputError("You need to write something!");
 				return false
 			}
-			var puid = new Date().getTime()
-			m.$root.pageData.user = m.$root.view.profiles[m.$root.view.institution._id].users[puid] = {name: inputValue}
-			m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution)
+			var puid = new Date().getTime() + '-' + (Math.random() * 10000000000).toFixed(0)
+			m.$root.view.profiles[m.$root.view.institution._id].users.push({id: puid, name: inputValue})
+			m.$root.pageData.user = puid
+
+			m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution, function () {
+				m.initBenchmark(m.$root.view.institution)
+			})
+
 			m.$applyAsync()
 		});
   	}

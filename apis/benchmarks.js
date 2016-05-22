@@ -61,5 +61,64 @@ r.post('/save', function (req, res, next) {
 	}
 })
 
+r.get('/export', function (req, res, next) {
+	if (!!req.query.year && !!req.query.benchmark) {
+		db().collection('institutions').find({}).toArray(function (err, institutions) {
+			db().collection('profiles').find({'year': parseInt(req.query.year, 0)}).toArray(function (err, profiles) {
+				db().collection('meta_benchmarks').find({}).toArray(function (err, benchmarks) {
+					if (err) {
+						console.log(err)
+						res.sendStatus(500)
+					}
+					else {
+
+						var benchmarksKeyed = {},
+							institutionsKeyed = {},
+							profilesKeyed = {},
+							col1 = [],
+							counter = 0
+
+						for (var i in benchmarks) {
+							benchmarksKeyed[benchmarks[i]._id] = benchmarks[i]
+						}
+
+						for (var i in institutions) {
+							institutionsKeyed[institutions[i]._id] = institutions[i]
+						}
+
+						for (var i in profiles) {
+							profilesKeyed[profiles[i].institution] = profiles[i]
+						}
+
+						for (var i in institutionsKeyed) {
+							counter++
+							var newData = {}
+							if (!req.query.anonymised || req.query.anonymised === i) newData.Institution = institutionsKeyed[i].title
+							else newData.Institution = 'Insititution ' + counter
+
+							for (var k in benchmarksKeyed[req.query.benchmark].questions) {
+								if (profilesKeyed[i] && profilesKeyed[i].benchmarks && profilesKeyed[i].benchmarks[req.query.benchmark] && profilesKeyed[i].benchmarks[req.query.benchmark][k])  {
+									newData['PI ' + (parseInt(k, 0) + 1)] = profilesKeyed[i].benchmarks[req.query.benchmark][k].overall || '-'
+								}
+								else {
+									newData['PI ' + (parseInt(k, 0) + 1)] = '-'
+								}
+
+							}
+							col1.push(newData)
+						}
+
+						res.csv(col1, benchmarksKeyed[req.query.benchmark].title + ".csv")
+					}
+
+				})
+			})
+		})
+	}
+	else {
+		res.sendStatus(412)
+	}
+})
+
 
 module.exports = r
