@@ -1,20 +1,22 @@
 <div class="acode-picker-column">
 	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[0].title">{{row.ratings[0].title}}</div>
-	<div class="acode-picker-alignment-wrapper">
-		<div class="acode-picker-alignment" ng-repeat="question in row.ratings[0].options track by $index">
-			<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-question-{{0}}-{{$index}}" name="{{bm._id}}-{{rowIndex}}-{{0}}" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-' + 0]" ng-value="$index" type="radio">
-			<label for="{{bm._id}}-{{rowIndex}}-question-{{0}}-{{$index}}" ng-bind="question"></label>		
-		</div>
-
-	</div>
+	<table class="acode-picker-alignment-wrapper">
+		<tr>
+			<td ng-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[0].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] - 2 === $index}">
+				{{question}}
+			</td>
+		</tr> 
+	</table>
 	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[1].title">{{row.ratings[1].title}}</div>
-	<div class="acode-picker-alignment-wrapper">
-		<div class="acode-picker-alignment" ng-repeat="question in row.ratings[1].options track by $index">
-			<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-question-{{1}}-{{$index}}" name="{{bm._id}}-{{rowIndex}}-{{1}}" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-' + 1]" ng-value="$index" type="radio">
-			<label for="{{bm._id}}-{{rowIndex}}-question-{{1}}-{{$index}}" ng-bind="question"></label>		
-		</div>
-	</div>
+		<table class="acode-picker-alignment-wrapper">
+		<tr>
+			<td ng-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[1].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] - 2 === $index}">
+				{{question}}
+			</td>
+		</tr> 
+	</table>
 </div>
+
 <div class="acode-picker-overall-title">Overall Rating</div>
 <div class="acode-picker-overall">
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-1" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="1" type="radio">

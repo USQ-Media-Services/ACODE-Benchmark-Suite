@@ -379,7 +379,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 .directive('multiline', function () {
 	return function (scope, element, attrs) {
-		console.log(attrs.placeholder)
 		element.html(scope.$eval(attrs.ngModel) || scope.$eval(attrs.placeholder) || '')
 
 		var options = {
@@ -388,6 +387,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 			debug: false, // {Boolean} false by default
 			textarea: '<textarea name="content"></textarea>', // fallback for old browsers
 			stay: false,
+  			list: ['bold', 'italic', 'underline', 'createlink', 'insertorderedlist', 'insertunorderedlist'] // editor menu list
 		},
 
 		editor = new Pen(options),
