@@ -2,7 +2,7 @@
 	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[0].title">{{row.ratings[0].title}}</div>
 	<table class="acode-picker-alignment-wrapper">
 		<tr>
-			<td ng-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[0].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] - 2 === $index}">
+			<td ng-disabled="readOnly" usq-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[0].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] - 2 === $index}">
 				{{question}}
 			</td>
 		</tr> 
@@ -10,7 +10,7 @@
 	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[1].title">{{row.ratings[1].title}}</div>
 		<table class="acode-picker-alignment-wrapper">
 		<tr>
-			<td ng-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[1].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] - 2 === $index}">
+			<td ng-disabled="readOnly" usq-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[1].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] - 2 === $index}">
 				{{question}}
 			</td>
 		</tr> 
@@ -18,7 +18,7 @@
 	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[2].title">{{row.ratings[2].title}}</div>
 		<table class="acode-picker-alignment-wrapper">
 		<tr>
-			<td ng-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-2'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[1].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-2'] === $index + 1, 'green-border-left': ($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-2'] - 2) === $index}">
+			<td ng-disabled="readOnly" usq-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-2'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[1].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-2'] === $index + 1, 'green-border-left': ($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-2'] - 2) === $index}">
 				{{question}}
 			</td>
 		</tr> 
@@ -46,8 +46,10 @@
 
 
 <h5 class="acode-picker-rational-title">Rationale</h5>
-<div multiline ng-readonly="readOnly" class="acode-picker-rational-box" ng-model=" $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].rationale" placeholder="'Comments...'"></div>
+<div ng-show="!readOnly" multiline ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-model=" $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].rationale" placeholder="'Comments...'"></div>
+<div ng-show="readOnly" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust(openLinksInNewWindow($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].rationale))" placeholder="'Comments...'"></div>
 <br>
 
 <h5 class="acode-picker-rational-title">Evidence</h5>
-<div multiline ng-readonly="readOnly" class="acode-picker-rational-box" ng-model=" $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].evidence" placeholder="'Comments...'"></div>
+<div ng-show="!readOnly" multiline ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-model=" $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].evidence" placeholder="'Comments...'"></div>
+<div ng-show="readOnly" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust(openLinksInNewWindow($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].evidence))" placeholder="'Comments...'"></div>

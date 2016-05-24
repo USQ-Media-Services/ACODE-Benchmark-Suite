@@ -30,15 +30,13 @@
         </div>
         <div class="acode-team-consolidation-rational-and-evidence-wrapper">
             
-            <div class="acode-team-consolidation-rational-and-evidence-item-wrapper">
-                <div class="acode-team-consolidation-rational-and-evidence-title">Rationale</div>
-                <textarea class="acode-team-consolidation-rational-and-evidence-textarea" placeholder="Comments..." ng-model="$root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].rationale"></textarea>
-            </div>
+            <h5 class="acode-picker-rational-title">Rationale</h5>
+            <div multiline class="acode-picker-rational-box" ng-model="$root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].rationale" placeholder="'Comments...'"></div>
+            <br>
 
-            <div class="acode-team-consolidation-rational-and-evidence-item-wrapper">
-                <div class="acode-team-consolidation-rational-and-evidence-title">Evidence</div>
-                <textarea class="acode-team-consolidation-rational-and-evidence-textarea" placeholder="Comments..." ng-model="$root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].evidence"></textarea>
-            </div>
+            <h5 class="acode-picker-rational-title">Evidence</h5>
+            <div multiline class="acode-picker-rational-box" ng-model="$root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].evidence" placeholder="'Comments...'"></div>
+
         </div>
     </div>
 </div>

@@ -48,7 +48,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 			var t = j
 			for (var i in data) {
 				t[i] = data[i]
-				console.log(i, data[i], t)
+				//console.log(i, data[i], t)
 
 				if (data[i] === null) delete t[i]
 			}
@@ -146,7 +146,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 				return $.get(m.baseUrl + 'api/profiles/meta', null, 'json')
 			},
 			allFromId: function (id, callback) {
-				return $.get(m.baseUrl + 'api/profiles//all-from-institution?id=' + id, callback, 'json').error(callback)
+				return $.get(m.baseUrl + 'api/profiles/all-from-institution?id=' + id, callback, 'json').error(callback)
 			},
 			saveMeta: function (data) {
 				return $.ajax({
@@ -311,6 +311,17 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   		console.log('Test!')
   	}
 
+  	m.openLinksInNewWindow = function (html) {
+  		var j = $('<p>' + html + '</p>')
+
+  		j.find('a').each(function (i, el) {
+  			el.target = '_blank'
+  		})
+
+  		console.log(j.html())
+  		return j.html()
+  	}
+
   	m.addUser = function () {
   		swal({
 			title: "Add new team member",
@@ -379,6 +390,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 .directive('multiline', function () {
 	return function (scope, element, attrs) {
+
 		element.html(scope.$eval(attrs.ngModel) || scope.$eval(attrs.placeholder) || '')
 
 		var options = {
@@ -423,8 +435,9 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 .directive('usqClick', function () {
 	return function (scope, element, attrs) {
 		element.bind('click', function () {
+			if (!!element.attr('disabled') || !!element.hasClass('disabled') || (!!element.attr('readonly') || !!element.hasClass('readonly'))) return
 			try {
-				if (!element.attr('disabled') && !element.hasClass('disabled') ) scope.$applyAsync(attrs.usqClick)
+				scope.$applyAsync(attrs.usqClick)
 			} catch (e) {}
 		});
 	};
