@@ -6,6 +6,19 @@
 	overflow: initial
 }
 
+.dropdown .caret {
+    margin-top: 18px;
+}
+
+.nav-collapse.collapse {
+	display: block;
+	visibility: visible;
+}
+
+[role="main"] > div > .no-overflow {
+    overflow:visible
+}
+
 @media (max-width: 979px) and (min-width: 769px) {
 	.row-fluid .span8 {
 		width: 63.745856% !important;

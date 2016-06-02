@@ -1,7 +1,7 @@
 <div ng-controller="master" class="acode-survey" ng-class="{'acode-standalone': standalone}" ng-click="fixLabels()" >
 	<input id="hiddenInput" style="opacity: 0; position: fixed; left: -10000000000px">
 
-	<div class="acode-side-menu" ng-show="standalone && !!$root.pageData.page && $root.pageData.page !== 'home' && $root.pageData.page !== 'select-user'" ng-include="'sys/pages/navigation.html'"></div>
+	<div class="acode-side-menu" ng-show="standalone && !!$root.pageData.page && $root.pageData.page !== 'home' && $root.pageData.page !== 'select-user'" ng-include="_baseUrl + 'sys/pages/navigation.html'"></div>
 
 	<div ng-cloak ng-include="pageUrl"></div>
 </div>	
