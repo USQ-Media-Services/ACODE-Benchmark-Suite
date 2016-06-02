@@ -33,9 +33,6 @@ var	_scriptTags = document.querySelectorAll('script')
 
 
 
-
-
-
 	finished = function () {
 		
 		var t = scripts.shift()

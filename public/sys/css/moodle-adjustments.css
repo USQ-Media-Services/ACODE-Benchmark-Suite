@@ -15,6 +15,15 @@
 	visibility: visible;
 }
 
+[role="presentation"] {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	box-sizing: content-box;
+
+}
+
 [role="main"] > div > .no-overflow {
     overflow:visible
 }
