@@ -1,13 +1,14 @@
-<div ng-click="setPage('profile')" ng-class="{'active-item': $root.pageData.page === 'profile'}" class="no-select acode-side-menu-item">Institution profile</div>
-<div ng-click="setPage('snapshot')" ng-class="{'active-item': $root.pageData.page === 'snapshot'}" class="no-select acode-side-menu-item">Technology snapshot</div>
-<div ng-click="setPage('benchmarks'); $root.pageData.benchmark=0" ng-class="{'active-item': $root.pageData.page === 'benchmarks'}" class="no-select acode-side-menu-item">Benchmarks</div>
+<div usq-click="setPage('home')" class="no-select acode-side-menu-item">Choose institution</div>
+<div usq-click="setPage('profile')" ng-class="{'active-item': $root.pageData.page === 'profile'}" class="no-select acode-side-menu-item">Institution profile</div>
+<div usq-click="setPage('snapshot')" ng-class="{'active-item': $root.pageData.page === 'snapshot'}" class="no-select acode-side-menu-item">Technology snapshot</div>
+<div ng-show="$root.pageData.readOnlyProfiles !== true" usq-click="setPage('benchmarks'); $root.pageData.benchmark=0" ng-class="{'active-item': $root.pageData.page === 'benchmarks'}" class="no-select acode-side-menu-item">Benchmarks</div>
 
-<div class="acode-side-menu-sub-item" ng-repeat="a in asArray($root.pageData.page !== 'reporting')" >
-	<div  ng-show="$root.pageData.page === 'benchmarks'" ng-click="setPage('benchmarks') ? $root.pageData.benchmark = $index : false" ng-class="{'active-item': $root.pageData.page === 'benchmarks' && $root.pageData.benchmark === $index}" ng-repeat="benchmark in $root.meta.benchmarks" class="no-select acode-side-menu-item">{{benchmark.title}}</div>
+<div ng-show="$root.pageData.readOnlyProfiles !== true" class="acode-side-menu-sub-item" ng-repeat="a in asArray($root.pageData.page !== 'reporting')" >
+	<div ng-show="$root.pageData.page === 'benchmarks'" usq-click="setPage('benchmarks') ? $root.pageData.benchmark = $index : false" ng-class="{'active-item': $root.pageData.page === 'benchmarks' && $root.pageData.benchmark === $index}" ng-repeat="benchmark in $root.meta.benchmarks" class="no-select acode-side-menu-item">{{benchmark.title}}</div>
 </div>
 
-<div ng-click="setPage('reporting'); $root.pageData.report = 0; $root.reportActive = null" ng-class="{'active-item': $root.pageData.page === 'reporting'}" class="no-select acode-side-menu-item">Reports</div>
+<div ng-show="$root.pageData.readOnlyProfiles !== true" usq-click="setPage('reporting'); $root.pageData.report = $root.meta.institutionProfiles[0].year" ng-class="{'active-item': $root.pageData.page === 'reporting'}" class="no-select acode-side-menu-item">Reports</div>
 
-<div class="acode-side-menu-sub-item" ng-repeat="a in asArray($root.pageData.page === 'reporting')" >
-	<div ng-click="setPage('reporting') ? $root.pageData.report = report.year : false" ng-class="{'active-item': $root.pageData.page === 'reporting' && $root.pageData.report === report.year}" ng-repeat="report in $root.meta.institutionProfiles" class="no-select acode-side-menu-item">{{report.year}}</div>
+<div ng-show="$root.pageData.readOnlyProfiles !== true" class="acode-side-menu-sub-item" ng-repeat="a in asArray($root.pageData.page === 'reporting')" >
+	<div usq-click="setPage('reporting') ? $root.pageData.report = report.year : false" ng-class="{'active-item': $root.pageData.page === 'reporting' && $root.pageData.report === report.year}" ng-repeat="report in $root.meta.institutionProfiles" class="no-select acode-side-menu-item">{{report.year}}</div>
 </div>

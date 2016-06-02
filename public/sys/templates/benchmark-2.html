@@ -2,7 +2,7 @@
 	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[0].title">{{row.ratings[0].title}}</div>
 	<table class="acode-picker-alignment-wrapper">
 		<tr>
-			<td ng-disabled="readOnly" usq-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[0].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] - 2 === $index}">
+			<td ng-disabled="readOnly" usq-click="$root.hasChanged = true; $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[0].options track by $index" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] - 2 === $index}">
 				{{question}}
 			</td>
 		</tr> 
@@ -10,7 +10,7 @@
 	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[1].title">{{row.ratings[1].title}}</div>
 		<table class="acode-picker-alignment-wrapper">
 		<tr>
-			<td ng-disabled="readOnly" usq-click="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[1].options" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] - 2 === $index}">
+			<td ng-disabled="readOnly" usq-click="$root.hasChanged = true; $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[1].options track by $index" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-1'] - 2 === $index}">
 				{{question}}
 			</td>
 		</tr> 
@@ -20,28 +20,28 @@
 <div class="acode-picker-overall-title">Overall Rating</div>
 <div class="acode-picker-overall">
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-1" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="1" type="radio">
-	<label for="{{bm._id}}-{{rowIndex}}-overall-1">1</label>
+	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-1">1</label>
 	
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-2" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="2" type="radio">
-	<label for="{{bm._id}}-{{rowIndex}}-overall-2">2</label>
+	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-2">2</label>
 	
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-3" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="3" type="radio">
-	<label for="{{bm._id}}-{{rowIndex}}-overall-3">3</label>
+	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-3">3</label>
 	
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-4" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="4" type="radio">
-	<label for="{{bm._id}}-{{rowIndex}}-overall-4">4</label>
+	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-4">4</label>
 	
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-5" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="5" type="radio">
-	<label for="{{bm._id}}-{{rowIndex}}-overall-5">5</label>
+	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-5">5</label>
 </div>
 
 <br>
 
 <h5 class="acode-picker-rational-title">Rationale</h5>
-<div ng-show="!readOnly" multiline ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-model=" $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].rationale" placeholder="'Comments...'"></div>
-<div ng-show="readOnly" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust(openLinksInNewWindow($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].rationale))" placeholder="'Comments...'"></div>
+<div ng-show="!readOnly" usq-click="showEditor($parent, 'Rationale', '$root.view.profiles[\'' + $root.view.institution._id + '\'].users[' + user + '].benchmarks[\'' + bm._id + '\'][' + rowIndex + '].rationale')" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].rationale || 'Comments...')"></div>
+<div ng-show="readOnly" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust(openLinksInNewWindow($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].rationale || 'Comments...'))"></div>
 <br>
 
 <h5 class="acode-picker-rational-title">Evidence</h5>
-<div ng-show="!readOnly" multiline ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-model=" $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].evidence" placeholder="'Comments...'"></div>
-<div ng-show="readOnly" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust(openLinksInNewWindow($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].evidence))" placeholder="'Comments...'"></div>
+<div ng-show="!readOnly" usq-click="showEditor($parent, 'Evidence', '$root.view.profiles[\'' + $root.view.institution._id + '\'].users[' + user + '].benchmarks[\'' + bm._id + '\'][' + rowIndex + '].evidence')" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].evidence || 'Comments...')"></div>
+<div ng-show="readOnly" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust(openLinksInNewWindow($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].evidence || 'Comments...'))"></div>

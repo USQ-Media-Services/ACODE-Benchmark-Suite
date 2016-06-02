@@ -28,14 +28,18 @@
 
 
         </div>
+        
         <div class="acode-team-consolidation-rational-and-evidence-wrapper">
-            
-            <h5 class="acode-picker-rational-title">Rationale</h5>
-            <div multiline class="acode-picker-rational-box" ng-model="$root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].rationale" placeholder="'Comments...'"></div>
+
+        <h5 class="acode-picker-rational-title">Rationale</h5>
+            <div ng-show="!readOnly" usq-click="showEditor($parent, 'Rationale', '$root.view.profiles[\'' + $root.view.institution._id + '\'].benchmarks[\'' + bm._id + '\'][\'' + rowIndex + '\'].rationale')" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust($root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].rationale || 'Comments...')"></div>
+            <div ng-show="readOnly" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust(openLinksInNewWindow($root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].rationale || 'Comments...'))"></div>
             <br>
 
             <h5 class="acode-picker-rational-title">Evidence</h5>
-            <div multiline class="acode-picker-rational-box" ng-model="$root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].evidence" placeholder="'Comments...'"></div>
+            <div ng-show="!readOnly" usq-click="showEditor($parent, 'Evidence', '$root.view.profiles[\'' + $root.view.institution._id + '\'].benchmarks[\'' + bm._id + '\'][\'' + rowIndex + '\'].evidence')" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust($root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].evidence || 'Comments...')"></div>
+            <div ng-show="readOnly" ng-disabled="readOnly" ng-readonly="readOnly" ng-class="{'disabled': readOnly}" class="acode-picker-rational-box" ng-bind-html="trust(openLinksInNewWindow($root.view.profiles[$root.view.institution._id].benchmarks[bm._id][rowIndex].evidence || 'Comments...'))"></div>
+
 
         </div>
     </div>

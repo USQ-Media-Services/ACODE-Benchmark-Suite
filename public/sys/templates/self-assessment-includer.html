@@ -10,7 +10,6 @@
 
     <div ng-repeat="a in asArray(!pageData.consolidation)" class="no-select acode-picker-wrapper acode-picker-wrapper-type-{{row.ratings.length}}" ng-include="'sys/templates/benchmark-'  + ($root.pageData.tab === 'team-consolidation' ? 'consolidation' : row.ratings.length) + '.html'"></div>
 
-    <!-- <div ng-repeat="a in asArray(!!pageData.consolidation)" class="no-select acode-picker-wrapper acode-picker-wrapper-type-{{row.ratings.length}}" ng-include="'sys/templates/benchmark-consolidation.html'"></div> -->
     
     <br>
 </div>

@@ -98,10 +98,10 @@ r.get('/export', function (req, res, next) {
 
 							for (var k in benchmarksKeyed[req.query.benchmark].questions) {
 								if (profilesKeyed[i] && profilesKeyed[i].benchmarks && profilesKeyed[i].benchmarks[req.query.benchmark] && profilesKeyed[i].benchmarks[req.query.benchmark][k])  {
-									newData['PI ' + (parseInt(k, 0) + 1)] = profilesKeyed[i].benchmarks[req.query.benchmark][k].overall || '-'
+									newData['PI ' + benchmarksKeyed[req.query.benchmark].title.replace('Benchmark ', '') +'.' + (parseInt(k, 0) + 1)] = profilesKeyed[i].benchmarks[req.query.benchmark][k].overall || '-'
 								}
 								else {
-									newData['PI ' + (parseInt(k, 0) + 1)] = '-'
+									newData['PI ' + benchmarksKeyed[req.query.benchmark].title.replace('Benchmark ', '') +'.' + (parseInt(k, 0) + 1)] = '-'
 								}
 
 							}

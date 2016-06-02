@@ -1,14 +1,17 @@
+var m = {}
 
+$.ajaxSetup({
+    cache: false
+})
 
-
-angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
+angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', 'ui.tinymce'])
 
 
 /*The controllers*/
 .controller('master', function master ($scope, $sce) {
 	m = $scope
 
-	m.hasChanged = false
+	m.$root.hasChanged = false
 
     m._baseUrl = _baseUrl
 
@@ -30,8 +33,9 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 	m.hash = function hash (data, skipSave) {
 		var j = Qs.parse(decodeURIComponent(location.hash.replace('#/', '').replace('#', '')))
-		if (j.user) j.user = (parseInt(j.user, 0) !== NaN ? parseInt(j.user, 0) : j.user)
+		if (j.user) j.user = (parseInt(j.user, 0) !== NaN ? parseInt(j.user, 0) : null)
 		if (j.readOnlyUser) j.readOnlyUser = (parseInt(j.readOnlyUser, 0) !== NaN ? parseInt(j.readOnlyUser, 0) : j.readOnlyUser)
+		if (j.readOnlyProfiles) j.readOnlyProfiles = JSON.parse(j.readOnlyProfiles)
 
         if (j.benchmark) j.benchmark = (parseInt(j.benchmark, 0) !== NaN ? parseInt(j.benchmark, 0) : j.benchmark)
         else j.benchmark = 0
@@ -72,12 +76,22 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 	}
 
 	m.setPage = function (page) {
-		if (!!m.loaded && !!m.hasChanged && !confirm('This page has not been saved, are you sure you want to navigate away?')) return false
+		if (!!m.loaded && !!m.$root.hasChanged && !confirm('This page has not been saved, are you sure you want to navigate away?')) return false
 		else if (!!page) {
-  			m.hasChanged = false
-
+  			m.$root.hasChanged = false
 			m.$root.pageData.page = page.replace('.html', '')
 			$('body').scrollTop(0)
+			if (page === 'home') {
+				m.$root.pageData = {
+					"benchmark": 0,
+					"institution": false,
+					"page": 'home',
+					"user": false,
+					"readOnlyProfiles": false
+				}
+				m.hash(m.$root.pageData)
+				m.$root.view.institution = false
+			}
 		}
 		m.$applyAsync()
 		return true
@@ -92,8 +106,15 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 		m.loading = true;
 		m.$applyAsync()
 		m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution, function () {
-			if (!skipMessage) toastr["success"]('Institution Profile saved')
+			if (!skipMessage) {
+				toastr["success"]('Institution Profile saved')
+			}
 			m.loading = false;
+			m.$root.hasChanged = false
+			setTimeout(function () {
+				m.$root.hasChanged = false
+				m.$applyAsync()
+			}, 250)
 			m.$applyAsync()
 		})
 	}
@@ -104,7 +125,12 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 		m.$applyAsync()
 		m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution, function () {
 			toastr["success"]('Institution Snapshot saved')
-			m.loading = false
+			m.loading = false;
+			m.$root.hasChanged = false
+			setTimeout(function () {
+				m.$root.hasChanged = false
+				m.$applyAsync()
+			}, 250)
 			m.$applyAsync()
 		})
 	}
@@ -204,7 +230,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 				    success: callback,
 				    error: callback,
 				    then: callback
-				})					
+				})
 			},
 			meta: function (data) {
 				return $.get(m.baseUrl + 'api/benchmarks/meta', null, 'json')
@@ -215,11 +241,12 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 		}
 	}
 
-  	m.initBenchmark = function (institution, page) {
+  	m.initBenchmark = function (institution, page, readonly) {
   		if (!institution) return
   		
 	  	m.$root.view.institution = institution
 		
+		if (readonly) m.$root.pageData.readOnlyProfiles = true
 		m.$root.pageData.institution = institution._id
 
 		m.api.profiles.allFromId(institution._id, function (a) {
@@ -233,7 +260,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   				m.setPage(page || 'benchmarks')
   			}
   			else {
-  				m.setPage('select-user')
+  				m.setPage(page || 'profile')
   			}
   		}
   		else {
@@ -241,10 +268,10 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   			m.$root.view.profiles[institution._id].users = m.$root.view.profiles[institution._id].users || []
   			m.$root.view.profiles[institution._id]['56e23d002761400d3e2716b7'] = m.$root.view.profiles[institution._id]['56e23d002761400d3e2716b7'] || institution.title
   			if (typeof m.$root.pageData.user === 'number') {
-				m.setPage(page || 'profile')
+				m.setPage(page || 'benchmarks')
   			}
   			else {
-  				m.setPage('select-user')
+  				m.setPage('profile')
   			}		
   		}
   	}
@@ -298,11 +325,17 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
         }
         if (consolidation) {
             m.saveProfile(true)
+            setTimeout(function () {
+				m.$root.hasChanged = false
+			}, 100)
         }
   		m.api.benchmarks.save(data, function () {
 			toastr["success"](m.$root.meta.benchmarks[m.$root.pageData.benchmark].title + ' saved')
   			m.loading = false
-  			m.hasChanged = false
+  			m.$root.hasChanged = false
+			setTimeout(function () {
+				m.$root.hasChanged = false
+			}, 100)  			
 	  		m.$applyAsync()
   		})
   	}
@@ -318,8 +351,49 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   			el.target = '_blank'
   		})
 
-  		console.log(j.html())
-  		return j.html()
+
+
+  		return j.html() !== 'undefined' ? j.html()  : 'Comments...'
+  	}
+
+  	m.isReadonly = function () {
+  		return m.$root.pageData.readOnly || m.$root.pageData.readOnlyProfiles
+  	}
+
+  	m.showEditor = function (scope, title, a) {
+  		if (m.isReadonly()) return false
+  		swal({
+  			title: title,
+  			text: "<textarea id=\"text-editor\">"+ (scope.$eval(a) || '') + "</textarea>",
+  			html: true,
+  			},
+  			function (inputValue) {
+				if (inputValue === false) return false
+				if ((scope.$eval(a) || "") != (tinyMCE.activeEditor.getContent() || '')) {
+					m.$root.hasChanged = true
+				}
+				console.log(a)
+				scope.$eval(a + ' = _temp', {_temp: tinyMCE.activeEditor.getContent() || ''})
+				tinymce.execCommand('mceRemoveControl', true, '#text-editor');
+				$('input#hiddenInput').focus()
+				$('input#hiddenInput').click()
+				
+				m.$applyAsync()
+
+			}
+  		)
+
+  		tinymce.init({
+  			selector:'#text-editor',
+			plugins: 'link image code',
+			toolbar: 'bold italic underline fontsizeselect outdent indent |  alignleft aligncenter alignright  image link  bullist numlist',
+			menubar: 'edit insert format ',
+			height: '250px',
+			statusbar: false,  			
+  		}).then(function (a, b) {
+  			text = a
+  			
+  		})
   	}
 
   	m.addUser = function () {
@@ -349,6 +423,13 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 		});
   	}
 
+  	m.fixLabels = function fixLabels () {
+  		$('.mce-label').each(function (i, el) {
+			var el = $(el)
+			if (el.html().trim() === 'Url') el.html(el.html().replace('Url', 'URL'))
+		})
+  	}
+
 
 
 	m.$root.pageData = m.hash()
@@ -365,6 +446,10 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   	m.initApp()
 
   	m.$watch('$root.pageData', function (a, b) {
+		if (a.page === 'benchmarks' && typeof a.user !== 'number') {
+			a.page = 'select-user'
+			console.log(123123)
+		}
   		m.hash(a)
   		if (a.page !== b.page || !m.pageUrl) m.pageUrl = $sce.trustAsResourceUrl(m.baseUrl + 'sys/pages/' + (a.page || 'home') + '.html')
   	}, true)
@@ -373,10 +458,21 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
   	m.$watch('$root.view.profiles["' + m.$root.pageData.institution + '"].users[' + m.$root.pageData.user + ']', function () {
   		if (m.loaded < 2) m.loaded++
   		else {
-  			m.hasChanged = true
+  			m.$root.hasChanged = true
   		}
   		
   	}, true)
+
+
+
+	document.addEventListener('click', m.fixLabels)
+	document.addEventListener('mouseup', m.fixLabels)
+	document.addEventListener('pointerup', m.fixLabels)
+	document.addEventListener('touchend', m.fixLabels)
+
+	
+
+
 })
 
 
@@ -406,7 +502,8 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 		changed = function () {
 			scope.$eval(attrs.ngModel + ' = _data', {_data: editor._prevContent })
-  			m.hasChanged = false
+  			m.$root.hasChanged = true
+  			m.$applyAsync()
 		}
 
 		editor.on('input', changed)
@@ -443,6 +540,12 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 	};
 })
 
+.directive('tipped', function () {
+	return function (scope, element, attrs) {
+		Tipped.create(element, attrs.tipped);
+	};
+})
+
 
 .config(function($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([
@@ -461,7 +564,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap'])
 
 
 
-
 /*keyboard shortcuts*/
 key = {}
 document.addEventListener('keydown', function (e) {
@@ -471,8 +573,11 @@ document.addEventListener('keydown', function (e) {
 
 	/*CTRL S*/
 	if (ctrl && key[83]) {
-		m.saveBenchmark(false, true)
-		m.saveProfile()
+		document.body.blur()
+		setTimeout(function () {
+			m.saveBenchmark(false, false)
+			m.saveProfile()
+		}, 200)
 		e.preventDefault()
 		e.stopPropagation()
 	}

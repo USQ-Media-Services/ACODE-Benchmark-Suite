@@ -5,10 +5,26 @@
 	</span>
 	<ul uib-dropdown-menu aria-labelledby="simple-dropdown">
 		<li ng-repeat="o in $root.meta.institutions" ng-class="{'acode-active-list-item': o.title === institution.title}">
-			<a href ng-click="$parent.institution = o">{{o.title}}</a>
+			<a href usq-click="$parent.institution = o">{{o.title}}</a>
 		</li>
 	</ul>
 </span>
 
 
-<div class="acode-button acode-button-green acode-button-start" ng-click="initBenchmark(institution)" ng-disabled="!institution || !!$root.view.institution">Start</div>
+<div class="acode-button acode-button-green acode-button-start" usq-click="initBenchmark(institution, 'profile')" ng-disabled="!institution || !!$root.view.institution">Start</div>
+<br>
+<br>
+<br>
+<span class="acode-institute-selector" ng-disabled="!!$root.view.institution" uib-dropdown-toggle uib-dropdown on-toggle="toggled(open)">
+	<span id="simple-dropdown">
+		{{institution2.title || 'Please select an institution to view'}}
+		<span class="caret"></span>
+	</span>
+	<ul uib-dropdown-menu aria-labelledby="simple-dropdown">
+		<li ng-repeat="o in $root.meta.institutions" ng-class="{'acode-active-list-item': o.title === institution.title}">
+			<a href usq-click="$parent.institution2 = o">{{o.title}}</a>
+		</li>
+	</ul>
+</span>
+
+<div class="acode-button acode-button-blue acode-button-view-profile" usq-click="initBenchmark(institution2, 'profile', true)" ng-disabled="!institution2 || !!$root.view.institution">View institution</div>

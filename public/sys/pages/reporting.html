@@ -1,17 +1,19 @@
 <div ng-repeat="bm in $root.meta.benchmarks" class="acode-benchmark-report-wrapper">
 	<h3 class="acode-benchmark-report-title">{{bm.title}}</h3>
+	<h3 class="acode-benchmark-report-sub-title">{{bm['sub-title']}}</h3>
 	<table class="acode-benchmark-report" width="100%">
 		<tr>
 			<td class="no-select acode-benchmark-report-results-title">
 				<label>
-					Anonymise: <input type="checkbox" ng-value-true="true" ng-value-false="false" ng-model="anonymized">
+				Downloads:<br>
+					<!-- <a ng-href="{{_baseUrl}}/api/benchmarks/export?year={{$root.pageData.report}}&benchmark={{bm._id}}">CSV</a>, -->
+					<a ng-href="{{_baseUrl}}/api/benchmarks/export?year={{$root.pageData.report}}&benchmark={{bm._id}}&anonymised={{$root.pageData.institution}}">Anonymised CSV</a>
 					<br>
-					<a ng-href="{{_baseUrl}}/api/benchmarks/export?year={{$root.pageData.report}}&benchmark={{bm._id}}&anonymised={{anonymized ? $root.pageData.institution : ''}}">Download (CSV)</a>
 				</label>
 			</td>
 			<td class="acode-benchmark-report-results-title" ng-repeat="pi in bm.questions">
-				<div class="hint--bottom hint--large hint--bounce" data-hint="{{pi.title}}">
-					<span class="acode-benchmark-report-pi-title">PI</span> <span class="acode-benchmark-report-pi-title-number">{{$index + 1}}</span>
+				<div class="hint--bottom hint--large hint--bounce" tipped="{{pi.title}}">
+					<span class="acode-benchmark-report-pi-title">PI</span> <span class="acode-benchmark-report-pi-title-number">{{$parent.$index + 1}}.{{$index + 1}}</span>
 				</div>
 			</td>
 		</tr>
@@ -37,7 +39,7 @@
 						<td>
 					        <div class="acode-team-consolidation-question-title">
 					            <span class="acode-bold-700">PI</span>
-					            <span class="acode-bold-700">{{$root.reportActive[bm._id].piMeta + 1}}.</span>
+					            <span class="acode-bold-700">{{$index + 1}}.{{$root.reportActive[bm._id].piMeta + 1}}</span>
 					            <span class="acode-bold-500">{{$root.reportActive[bm._id].item.title}}</span>
 					        </div>							
 						</td>
@@ -60,9 +62,9 @@
 							<div class="acode-team-consolidation-rational-title">
 								<span class="acode-bold-600">Rationale</span>
 								<br>
-								<div ng-bind-html="trustAsHtml($root.view.profiles[$root.reportActive[bm._id].institute].benchmarks[bm._id][$root.reportActive[bm._id].piMeta].rationale)"></div>
+								<div ng-bind-html="trustAsHtml($root.view.profiles[$root.reportActive[bm._id].institute].benchmarks[bm._id][$root.reportActive[bm._id].piMeta].rationale || '-')"></div>
 							</div>
-							
+							<br>
 						</td>
 					</tr>
 					<tr>
@@ -70,7 +72,7 @@
 							<div class="acode-team-consolidation-evidence-title">
 								<span class="acode-bold-600">Evidence</span>
 								<br>
-								<div ng-bind-html="trustAsHtml($root.view.profiles[$root.reportActive[bm._id].institute].benchmarks[bm._id][$root.reportActive[bm._id].piMeta].evidence)"></div>
+								<div ng-bind-html="trustAsHtml($root.view.profiles[$root.reportActive[bm._id].institute].benchmarks[bm._id][$root.reportActive[bm._id].piMeta].evidence || '-')"></div>
 							</div>
 						</td>
 					</tr>

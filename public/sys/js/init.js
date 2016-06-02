@@ -9,15 +9,18 @@ var	_scriptTags = document.querySelectorAll('script')
 		'bower_components/nouislider/distribute/nouislider.min.js',
 		'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
 		'bower_components/markdown/lib/markdown.js',
+		'bower_components/tinymce-dist/tinymce.js',
+		'bower_components/angular-ui-tinymce/src/tinymce.js',
 		'bower_components/toastr/toastr.min.js',
 		'bower_components/pen/src/pen.js',
 		'bower_components/qs/dist/qs.js',
 		'bower_components/sweetalert/dist/sweetalert.min.js',
+		'sys/js/tipped.js',
 		'sys/js/main.js'
 	],
 	styles = [
 		/*'bower_components/nouislider/distribute/nouislider.min.css',*/
-		'bower_components/hint.css/hint.min.css',
+		'sys/css/tipped.css',
 		'bower_components/pen/src/pen.css',
 		'bower_components/open-sans/css/open-sans.min.css',
 		'bower_components/font-awesome/css/font-awesome.min.css',

@@ -133,6 +133,7 @@ ef {
     line-height: 19px;
     margin: 0;
     border-right: 1px solid #b2b2b2;
+    vertical-align: top;
 }
 
 .acode-institute-profile-row-input {
@@ -153,6 +154,7 @@ ef {
 .acode-institute-profile {
     border: #b2b2b2 solid 1px;
     margin: 10px;
+    width: 706px;
 }
 
 .acode-institute-snapshot {
@@ -166,6 +168,7 @@ ef {
     /* min-height: 48px; */
     /* position: relative; */
     /* height: auto; */
+    vertical-align: top;
 }
 
 .acode-institute-profile-row-input input {
@@ -262,7 +265,7 @@ ef {
 
 
 [ng-include="pageUrl"] {
-    width: calc(726px);
+    width: calc(772px);
     display: inline-block;
     vertical-align: top;
     /* overflow: auto; */
@@ -551,6 +554,7 @@ div:nth-child(3) .acode-benchmark-h4 {
     text-transform: uppercase;
     border-right: 1px solid #b2b2b2;
     display: table-cell;
+    vertical-align: top;
     cursor: default;
 }
 
@@ -573,24 +577,31 @@ div:nth-child(3) .acode-benchmark-h4 {
     width: 151px;
     padding: 5px;
     border-right: 1px solid #b2b2b2;
+    /* font-size: 10px; */
+    font-family: "Open Sans" !important;
+    overflow: hidden;
+    /* cursor: pointer; */
 }
 
 .acode-snapshot-row-hosted {
     border-right: 1px solid #b2b2b2;
     padding: 5px;
     width: 71px;
+    vertical-align: top;
 }
 
 .acode-snapshot-row-consideringAlternatives {
     border-right: 1px solid #b2b2b2;
     width: 79px;
     padding: 5px;
+    vertical-align: top;
 }
 
 .acode-snapshot-row-piloting {
     /* border-right: 1px solid #b2b2b2; */
     padding: 5px;
     width: 70px;
+    vertical-align: top;
 }
 
 .acode-institute-snapshot table {
@@ -851,7 +862,7 @@ td {}
     border-bottom: 1px solid #B2B2B2;
     border-right: 1px solid #B2b2b2;
     text-align: center;
-    padding: 5px;
+    padding: 5px 3px;
     position: relative;
     /* border: 1px solid #b2b2b2; */
     /* cursor: pointer; */
@@ -887,6 +898,8 @@ td {}
     width: 100%;
     height: 100%;
     line-height: 30px;
+    text-align: center;
+    cursor: default;
 }
 
 
@@ -941,7 +954,7 @@ table.acode-team-consolidation-question-overall {
 }
 
 .acode-team-consolidation-question-overall td:last-child {
-    border-right: 1px solid #b2b2b2;
+    /* border-right: 1px solid #b2b2b2; */
 }
 
 .acode-benchmark-report-results.acode-active-report-item {
@@ -989,7 +1002,8 @@ table.acode-team-consolidation-question-overall {
 }
 
 .acode-results-overview-table {
-    margin: -11px;
+    margin: -7px;
+    width: calc(100% + 14px);
 }
 
 .acode-results-overview-title {
@@ -1014,6 +1028,7 @@ td.acode-benchmark-report-results.acode-no-data {
 .acode-benchmark-report-title {
     padding: 10px;
     padding-top: 0;
+    margin-bottom: 0;
 }
 
 .green-border {
@@ -1044,4 +1059,61 @@ td.acode-picker-alignment {}
 
 .acode-team-consolidation-rational-and-evidence-wrapper {
     padding-bottom: 50px;
+}
+
+.acode-benchmark-report--subtitle {}
+
+.acode-benchmark-report-sub-title {
+    font-size: 19px;
+    padding: 10px;
+    padding-top: 0;
+    margin-top: 0p;
+}
+
+.acode-snapshot-row-description * {font-family: "Open Sans";/* max-width: 179px !important; *//* margin-right: -19px; */overflow: auto;/* height: 100%; */}
+
+button.confirm {
+    background-color: rgb(71, 192, 247) !important;
+}
+
+.acode-snapshot-row-description [multiline] {
+    width: 171px;
+    padding: 5px;
+}
+
+.mce-tinymce button {
+    background-color: initial !important;
+    /* height: 10px; */
+    margin: 0;
+}
+
+.sweet-alert {
+    top: 37px;
+    margin-top: 0 !important;
+    position: fixed;
+    z-index: 10000;
+}
+
+.mce-container-body {
+    z-index: 10000000;
+    position: relative;
+}
+
+.grey-text {
+    color: darkgrey;
+}
+
+.mce-tinymce button {
+    border-radius: 0;
+    background-color: transparent !important;
+}
+
+.acode-button-view-profile {
+    display: inline-block;
+    padding: 0 20px;
+    margin-top: 0;
+}
+
+div#mceu_59-body {
+    text-transform: uppercase;
 }

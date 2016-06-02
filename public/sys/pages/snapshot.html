@@ -17,25 +17,27 @@
 			</th>
 		</tr>
 		<tr ng-repeat="row in $root.meta.snapshot | orderBy: 'index'">
-			<td class="no-select acode-snapshot-row-title" class="hint--bottom hint--large hint--bounce " data-hint="{{row.popup}}">{{row.title}}</td>
-			<td class="acode-snapshot-row-description">
-				<input ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].description" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}">
+			<td class="no-select acode-snapshot-row-title" class="hint--bottom hint--large hint--bounce " tipped="{{row.popup}}">{{row.title}}</td>
+			<td usq-click="$root.editText = '$root.view.profiles[\'' + $root.view.institution._id + '\'].snapshot[\'' + row._id + '\'].description'; showEditor($parent, row.title, $root.editText)" class="acode-snapshot-row-description" ng-bind-html="trust($root.view.profiles[$root.view.institution._id].snapshot[row._id].description || row.tooltip + ' ' + (row.required === true ? '(REQUIRED)' : ''))">
 			</td>
 			<td class="acode-snapshot-row-hosted">
-				<select ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].hosted">
+				<select ng-readonly="isReadonly()"  ng-disabled="isReadonly()" ng-change="$root.hasChanged = true" ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].hosted">
+					<option value="">-----</option>
 					<option value="external">Internal</option>
 					<option value="internal">External</option>
 				</select>
 			</td>
 			<td class="acode-snapshot-row-consideringAlternatives">
-				<select ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].consideringAlternatives">
+				<select ng-readonly="isReadonly()"  ng-disabled="isReadonly()" ng-change="$root.hasChanged = true" ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].consideringAlternatives">
+					<option value="">-----</option>
 					<option value="yes">Yes</option>
 					<option value="no">No</option>
 					<option value="maybe">Maybe</option>
 				</select>
 			</td>
 			<td class="acode-snapshot-row-piloting">
-				<select ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].piloting">
+				<select ng-readonly="isReadonly()"  ng-disabled="isReadonly()" ng-change="$root.hasChanged = true" ng-model="$root.view.profiles[$root.view.institution._id].snapshot[row._id].piloting">
+					<option value="">-----</option>
 					<option value="yes">Yes</option>
 					<option value="no">No</option>
 					<option value="maybe">Maybe</option>
@@ -43,6 +45,7 @@
 			</td>
 		</tr>
 	</table>
+
 <!-- 	
 	<div>
 		<div class="acode-institute-profile-row-title"><span></span></div>
@@ -53,4 +56,4 @@
  -->
 </form>
 
-<div class="acode-button acode-button-blue acode-button-continue" ng-click="saveSnapshot()" ng-disabled="!profile_form.$valid">Save</div>
+<div class="acode-button acode-button-blue acode-button-continue" usq-click="saveSnapshot()" ng-disabled="!profile_form.$valid">Save</div>

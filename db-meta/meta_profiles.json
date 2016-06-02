@@ -1,10 +1,10 @@
 { 
     "_id" : "56e23d002761400d3e2716b7", 
-    "title" : "Name of university", 
     "hidden" : false, 
+    "index" : NumberInt(0), 
     "required" : true, 
-    "tooltip" : "Provide the full name of your institution (can conclude with an abbreviation)", 
-    "index" : NumberInt(0)
+    "title" : "Name of Institution", 
+    "tooltip" : "Provide the full name of your institution (can conclude with an abbreviation)"
 }
 { 
     "_id" : "56e23d002761400d3e2716b8", 
@@ -34,26 +34,19 @@
     "title" : "Reporting relationship of head", 
     "hidden" : false, 
     "tooltip" : "Describe the reporting relationship of your unit head", 
-    "index" : NumberInt(6)
+    "index" : NumberInt(5)
 }
 { 
     "_id" : "56e23d002761400d3e2716bc", 
     "title" : "ACODE alternate", 
     "hidden" : false, 
     "tooltip" : "Name an alternate ACODE nominee", 
-    "index" : NumberInt(7)
-}
-{ 
-    "_id" : "56e23d002761400d3e2716bd", 
-    "hidden" : false, 
-    "title" : "Unit's functional responsibilities", 
-    "tooltip" : "List the main functional responsibilities of your unit", 
-    "index" : NumberInt(8)
+    "index" : NumberInt(6)
 }
 { 
     "_id" : "56e23d002761400d3e2716bf", 
     "hidden" : false, 
-    "index" : NumberInt(10), 
+    "index" : NumberInt(11), 
     "multiline" : true, 
     "title" : "Current challenges", 
     "tooltip" : "List the current challenges your unit/institution face"
@@ -63,13 +56,6 @@
     "title" : "Current collaborative activities with IT and Library", 
     "hidden" : false, 
     "tooltip" : "List collaborative activities involving your unit, IT and the Library", 
-    "index" : NumberInt(12)
-}
-{ 
-    "_id" : "56e26a082761400d3e2716e0", 
-    "title" : "Unit’s functional responsibilities", 
-    "hidden" : false, 
-    "tooltip" : "List the main functional responsibilities of your unit", 
     "index" : NumberInt(13)
 }
 { 
@@ -78,19 +64,19 @@
     "required" : true, 
     "title" : "ACODE nominee contact email", 
     "tooltip" : "Your ACODE nominee's email address", 
-    "index" : NumberInt(3)
+    "index" : NumberInt(4)
 }
 { 
     "_id" : ObjectId("572a83a3885194210099805b"), 
     "hidden" : false, 
-    "index" : NumberInt(5), 
+    "index" : NumberInt(6), 
     "title" : "Head of unit contact email", 
     "tooltip" : "The contact email address of the head of unit"
 }
 { 
     "_id" : "56e23d002761400d3e2716c0", 
     "hidden" : false, 
-    "index" : NumberInt(11), 
+    "index" : NumberInt(12), 
     "multiline" : true, 
     "title" : "Staffing", 
     "tooltip" : "Provide the number of staff employed in your unit and institution"
@@ -98,8 +84,25 @@
 { 
     "_id" : "56e23d002761400d3e2716be", 
     "hidden" : false, 
-    "index" : NumberInt(9), 
+    "index" : NumberInt(10), 
+    "multiline" : true, 
     "new_field" : true, 
     "title" : "Current initiatives", 
     "tooltip" : "List current learning technology initiatives your institution is implementing"
+}
+{ 
+    "_id" : ObjectId("572f23780baca870e03703cf"), 
+    "hidden" : false, 
+    "index" : NumberInt(3), 
+    "required" : false, 
+    "title" : "ACODE nominee position title", 
+    "tooltip" : "Your ACODE nominee's position title"
+}
+{ 
+    "_id" : "56e23d002761400d3e2716bd", 
+    "hidden" : false, 
+    "index" : NumberInt(7), 
+    "multiline" : true, 
+    "title" : "Unit's functional responsibilities", 
+    "tooltip" : "List the main functional responsibilities of your unit"
 }

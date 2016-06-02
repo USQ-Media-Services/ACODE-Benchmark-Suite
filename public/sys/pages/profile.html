@@ -5,12 +5,12 @@
 		<tr class="acode-institute-profile-row" ng-repeat="row in $root.meta.profile | orderBy: 'index'">
 			<td class="acode-institute-profile-row-title"><span>{{row.title}}</span></td>
 			<td class="acode-institute-profile-row-input">
-				<input ng-repeat="a in asArray(!row.multiline)" ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id][row._id]" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}">
+				<input ng-readonly="isReadonly()" ng-change="$root.hasChanged = true" ng-repeat="a in asArray(!row.multiline)" ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id][row._id]" placeholder="{{row.tooltip}} {{row.required === true ? '(REQUIRED)' : ''}}">
 
-				<div multiline ng-repeat="a in asArray(!!row.multiline)" ng-required="row.required === true" name="{{row._id}}" ng-model="$root.view.profiles[$root.view.institution._id][row._id]" placeholder="'<span style=\'color: #aaa\'>' + row.tooltip"></div>
+				<div usq-click="showEditor($parent, row.title, '$root.view.profiles[\'' + $root.view.institution._id + '\'][\'' + row._id + '\']')" ng-class="{'grey-text': $root.view.profiles[$root.view.institution._id][row._id] === row.tooltip || !$root.view.profiles[$root.view.institution._id][row._id]}" ng-repeat="a in asArray(!!row.multiline)" ng-required="row.required === true" name="{{row._id}}" ng-bind-html="trust($root.view.profiles[$root.view.institution._id][row._id] || row.tooltip)" placeholder="row.tooltip"></div>
 			</td>
 		</tr>
 	</table>
 </form>
 
-<div class="acode-button acode-button-blue acode-button-continue" ng-click="saveProfile() " ng-disabled="!profile_form.$valid || loading">Save</div>
+<div class="acode-button acode-button-blue acode-button-continue" usq-click="saveProfile() " ng-disabled="!profile_form.$valid || loading">Save</div>
