@@ -15,7 +15,7 @@
 	visibility: visible;
 }
 
-[role="presentation"] {
+[role="presentation"] * {
 	-webkit-box-sizing: content-box  !important;
 	-moz-box-sizing: content-box  !important;
 	-ms-box-sizing: content-box  !important;
