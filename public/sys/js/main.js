@@ -69,6 +69,8 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 	m.$root.meta = {}
 
 	m.baseUrl = _baseUrl
+	
+	m._baseUrl = _baseUrl
 
 	m.$root.pageData = m.hash()
 

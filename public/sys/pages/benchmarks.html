@@ -32,7 +32,7 @@
 
 
 
-    <div ng-class="{'default-cursor': readOnly}" class="acode-includers" ng-include="'sys/templates/' + ($root.pageData.tab === 'team-consolidation' ? 'team-consolidation' : 'self-assessment-includer') + '.html'"></div>
+    <div ng-class="{'default-cursor': readOnly}" class="acode-includers" ng-include="baseUrl + 'sys/templates/' + ($root.pageData.tab === 'team-consolidation' ? 'team-consolidation' : 'self-assessment-includer') + '.html'"></div>
 
 	<div ng-hide="$root.pageData.tab === 'team-members'" class="acode-button acode-button-blue acode-button-start" usq-click="!!loading || saveBenchmark(null, $root.pageData.tab === 'team-consolidation')" ng-disabled="!saveBenchmark(true) || loading">Save</div>
 </form>

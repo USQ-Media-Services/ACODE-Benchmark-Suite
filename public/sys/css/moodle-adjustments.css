@@ -28,6 +28,28 @@
     overflow:visible
 }
 
+.block_html .no-overflow .acode-side-menu {
+    display: block !important;
+}
+
+div#inst136 .content {
+    padding: 0;
+}
+
+div#inst136 {
+    background-color: #fff;
+    min-width: 227px;
+    border: 0;
+}
+
+div#inst136 .content .no-overflow {
+    overflow: visible;
+}
+
+.sweet-alert button {
+    background-position: 0 39px !important;
+}
+
 @media (max-width: 979px) and (min-width: 769px) {
 	.row-fluid .span8 {
 		width: 63.745856% !important;
