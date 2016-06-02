@@ -6,8 +6,8 @@
 	overflow: initial
 }
 
-.dropdown .caret {
-    margin-top: 18px;
+[ng-include="pageUrl"] .dropdown .caret {
+    margin-top: 18px !important;
 }
 
 .nav-collapse.collapse {
