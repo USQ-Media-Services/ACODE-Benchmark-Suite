@@ -13,4 +13,4 @@
 	</table>
 </form>
 
-<div class="acode-button acode-button-blue acode-button-continue" usq-click="saveProfile() " ng-disabled="!profile_form.$valid || loading">Save</div>
+<div class="acode-button acode-button-blue acode-button-continue" ng-show="!isReadonly()" usq-click="saveProfile() " ng-disabled="!profile_form.$valid || loading">Save</div>

@@ -56,4 +56,4 @@
  -->
 </form>
 
-<div class="acode-button acode-button-blue acode-button-continue" usq-click="saveSnapshot()" ng-disabled="!profile_form.$valid">Save</div>
+<div class="acode-button acode-button-blue acode-button-continue" usq-click="saveSnapshot()" ng-show="!isReadonly()" ng-disabled="!profile_form.$valid">Save</div>

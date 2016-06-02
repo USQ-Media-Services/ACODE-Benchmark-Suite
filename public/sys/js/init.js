@@ -38,7 +38,7 @@ var	_scriptTags = document.querySelectorAll('script')
 		var t = scripts.shift()
 
 		if (t) {
-			if(____Debug) {
+			if(1 || ____Debug) {
 
 				if (typeof jQuery === 'function' && t.indexOf('jquery.min.js') > -1) {
 					return finished()
