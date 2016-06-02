@@ -54,7 +54,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 			var t = j
 			for (var i in data) {
 				t[i] = data[i]
-				//console.log(i, data[i], t)
 
 				if (data[i] === null) delete t[i]
 			}
@@ -374,7 +373,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 				if ((scope.$eval(a) || "") != (tinyMCE.activeEditor.getContent() || '')) {
 					m.$root.hasChanged = true
 				}
-				console.log(a)
 				scope.$eval(a + ' = _temp', {_temp: tinyMCE.activeEditor.getContent() || ''})
 				tinymce.execCommand('mceRemoveControl', true, '#text-editor');
 				$('input#hiddenInput').focus()
@@ -450,7 +448,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
   	m.$watch('$root.pageData', function (a, b) {
 		if (a.page === 'benchmarks' && typeof a.user !== 'number') {
 			a.page = 'select-user'
-			console.log(123123)
 		}
   		m.hash(a)
   		if (a.page !== b.page || !m.pageUrl) m.pageUrl = $sce.trustAsResourceUrl(m.baseUrl + 'sys/pages/' + (a.page || 'home') + '.html')
