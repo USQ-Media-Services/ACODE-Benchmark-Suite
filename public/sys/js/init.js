@@ -79,7 +79,9 @@ var	_scriptTags = document.querySelectorAll('script')
 
 		$.get(_baseUrl + 'sys/pages/init.html').then(function (data) {
 			$(data).insertAfter(_scriptTag)
-			angular.bootstrap($('[id="page"]')[0] || $('.acode-survey')[0], ['2015-1858 - acode-benchmark-assessment-tool'])
+			var bootstrap = $('[id="page"]')[0] || $('.acode-survey')[0]
+			$(bootstrap).attr('ng-controller', 'master').prop('ng-controller', 'master')
+			angular.bootstrap(bootstrap, ['2015-1858 - acode-benchmark-assessment-tool'])
 
 		})
 	}
