@@ -62,7 +62,7 @@ var	_scriptTags = document.querySelectorAll('script')
 
 	
 
-		if(____Debug) {
+		if(1 || ____Debug) {
 			for (var i in styles) {
 				var y = document.createElement('link')
 				y.rel = 'stylesheet'
