@@ -1119,3 +1119,7 @@ td.acode-picker-alignment {}
 div#mceu_59-body {
     text-transform: uppercase;
 }
+
+.dropdown-menu>li>a:hover {
+    color: #fff;
+}
