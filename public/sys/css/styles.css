@@ -1125,3 +1125,7 @@ div#mceu_59-body {
 .dropdown-menu>li>a:hover {
     color: #fff;
 }
+
+.sweet-alert button.cancel {
+    background-position: 0px 79px !important;
+}
