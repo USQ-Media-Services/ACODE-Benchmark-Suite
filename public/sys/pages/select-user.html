@@ -1,4 +1,4 @@
 <h3 class="no-select acode-title-h3">Please select which team member you are: </h3>
 <div class="no-select acode-button acode-button-blue-outline acode-user-button" ng-init="$parent.testUsers = true" ng-repeat="(key, user) in $root.view.profiles[$root.view.institution._id].users"  ng-click="$root.pageData.user = (key || $index); initBenchmark($root.view.institution, 'benchmarks')"> {{user.name || 'Team member ' + ($index + 1)}}</div>
 <div class="no-select acode-no-users" ng-show="!testUsers">No users currently added</div>
-<div class="no-select acode-button acode-button-blue acode-user-add-button" ng-click="addUser()">Add team member</div>
+<div class="no-select acode-button acode-button-blue acode-user-add-button" ng-click="addUser(prefillName)">Add team member</div>

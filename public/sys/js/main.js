@@ -64,6 +64,8 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 		}				
 	}
 
+	m.prefillName = $('.logininfo a').text().replace('Log out', '')
+
 	m.$root.view = {}
 
 	m.$root.meta = {}
@@ -398,7 +400,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
   		})
   	}
 
-  	m.addUser = function () {
+  	m.addUser = function (prefill) {
   		swal({
 			title: "Add new team member",
 			text: "Please enter the name of the new team member:",
@@ -421,8 +423,12 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 				m.initBenchmark(m.$root.view.institution)
 			})
 
+			setTimeout(function () {
+				$('.sweet-alert input').val(prefill)
+			}, 100)
+
 			m.$applyAsync()
-		});
+		})
   	}
 
   	m.fixLabels = function fixLabels () {
