@@ -400,7 +400,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
   	}
 
   	m.addUser = function () {
-  		console.log(111, prefill)
   		swal({
 			title: "Add new team member",
 			text: "Please enter the name of the new team member:",
