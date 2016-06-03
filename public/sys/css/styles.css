@@ -1073,8 +1073,9 @@ td.acode-picker-alignment {}
 
 .acode-snapshot-row-description * {font-family: "Open Sans";/* max-width: 179px !important; *//* margin-right: -19px; */overflow: auto;/* height: 100%; */}
 
-button.confirm {
+.sweet-alert button.confirm {
     background-color: rgb(71, 192, 247) !important;
+    background-position: 0px 79px !important;
 }
 
 .acode-snapshot-row-description [multiline] {
