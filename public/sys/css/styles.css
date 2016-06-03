@@ -354,6 +354,7 @@ ef {
 .acode-picker-overall label:nth-child(2) {
     margin-left: 0px;
     border-bottom-left-radius: 5px;
+    display: inline-block;
 }
 
 .acode-picker-overall {
