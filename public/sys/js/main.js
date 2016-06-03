@@ -50,7 +50,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 		else if (typeof data === 'undefined') {
 			return j
 		}
-		else if (typeof data === 'object' && JSON.stringify(data) !== JSON.stringify(j)) {
+		else if (typeof data === 'object' && angular.toJson(data) !== angular.toJson(j)) {
 			var t = j
 			for (var i in data) {
 				t[i] = data[i]
@@ -106,10 +106,14 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 		else return []
 	}
 
+	m.cleanJSON = function (json) {
+		return JSON.parse(angular.toJson(json))
+	}
+
 	m.saveProfile = function (skipMessage) {
 		m.loading = true;
 		m.$applyAsync()
-		m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution, function () {
+		m.api.profiles.save(m.cleanJSON(m.$root.view.profiles[m.$root.view.institution._id] || {}), m.cleanJSON(m.$root.view.institution), function () {
 			if (!skipMessage) {
 				toastr["success"]('Institution Profile saved')
 			}
@@ -127,7 +131,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 	m.saveSnapshot = function () {
 		m.loading = true;
 		m.$applyAsync()
-		m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution, function () {
+		m.api.profiles.save(m.cleanJSON(m.$root.view.profiles[m.$root.view.institution._id] || {}), m.cleanJSON(m.$root.view.institution), function () {
 			toastr["success"]('Institution Snapshot saved')
 			m.loading = false;
 			m.$root.hasChanged = false
@@ -165,7 +169,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 					type: "POST",
 					url: m.baseUrl + 'api/profiles/save',
 					dataType: 'json',
-					data: JSON.stringify({data: data}),
+					data: angular.toJson({data: data}),
 				    contentType : 'application/json',
 				    success: callback,
 				    error: callback,
@@ -183,7 +187,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 					type: "POST",
 					url: m.baseUrl + 'api/profiles/meta',
 					dataType: 'json',
-					data: JSON.stringify({data: data}),
+					data: angular.toJson({data: data}),
 				})				
 			}
 		},
@@ -201,7 +205,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 					type: "POST",
 					url: m.baseUrl + 'api/snapshots/save',
 					dataType: 'json',
-					data: JSON.stringify({data: data}),
+					data: angular.toJson({data: data}),
 				    contentType : 'application/json'
 				})					
 			},
@@ -213,7 +217,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 					type: "POST",
 					url: m.baseUrl + 'api/snapshots/meta',
 					dataType: 'json',
-					data: JSON.stringify({data: data}),
+					data: angular.toJson({data: data}),
 				})				
 			}
 		},
@@ -229,7 +233,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 					type: "POST",
 					url: m.baseUrl + 'api/benchmarks/save',
 					dataType: 'json',
-					data: JSON.stringify({data: data}),
+					data: angular.toJson({data: data}),
 				    contentType : 'application/json',
 				    success: callback,
 				    error: callback,
@@ -321,12 +325,13 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
   		if (test) return true
   		m.loading = true;
 	  	m.$applyAsync()
-        var data = {
+        var data = m.cleanJSON({
             user: m.$root.pageData.user,
             institution: m.$root.pageData.institution,
             benchmarkData: (m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user].benchmarks || {})[m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id],
             benchmarkID: m.$root.meta.benchmarks[m.$root.pageData.benchmark]._id
-        }
+        })
+
         if (consolidation) {
             m.saveProfile(true)
             setTimeout(function () {
@@ -418,7 +423,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 			m.$root.view.profiles[m.$root.view.institution._id].users.push({id: puid, name: inputValue})
 			m.$root.pageData.user = puid
 
-			m.api.profiles.save(m.$root.view.profiles[m.$root.view.institution._id] || {}, m.$root.view.institution, function () {
+			m.api.profiles.save(m.cleanJSON(m.$root.view.profiles[m.$root.view.institution._id] || {}), m.cleanJSON(m.$root.view.institution), function () {
 				m.initBenchmark(m.$root.view.institution)
 			})
 
