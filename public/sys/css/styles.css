@@ -1129,3 +1129,7 @@ div#mceu_59-body {
 .sweet-alert button.cancel {
     background-position: 0px 79px !important;
 }
+
+.acode-survey-form .acode-button-start {
+    float: right;
+}

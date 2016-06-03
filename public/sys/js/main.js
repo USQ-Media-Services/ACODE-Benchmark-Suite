@@ -64,7 +64,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 		}				
 	}
 
-	m.prefillName = $('.logininfo a').text().replace('Log out', '')
+	m.$root.prefillName = $('.logininfo a').text().replace('Log out', '')
 
 	m.$root.view = {}
 
