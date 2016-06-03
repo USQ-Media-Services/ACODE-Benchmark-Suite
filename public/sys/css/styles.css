@@ -743,6 +743,7 @@ div:nth-child(3) .acode-benchmark-h4 {
     text-align: center;
     cursor: pointer;
     vertical-align: top;
+    display: inline-block !important;
 }
 
 .acode-team-consolidation-score-box:nth-child(2) {
