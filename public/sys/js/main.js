@@ -424,8 +424,9 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 			})
 
 			setTimeout(function () {
+				console.log(prefill)
 				$('.sweet-alert input').val(prefill)
-			}, 100)
+			}, 500)
 
 			m.$applyAsync()
 		})
