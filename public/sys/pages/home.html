@@ -4,7 +4,7 @@
 		<span class="caret"></span>
 	</span>
 	<ul uib-dropdown-menu aria-labelledby="simple-dropdown">
-		<li ng-repeat="o in $root.meta.institutions" ng-class="{'acode-active-list-item': o.title === institution.title}">
+		<li ng-repeat="o in $root.meta.institutions | orderBy: 'title'" ng-class="{'acode-active-list-item': o.title === institution.title}">
 			<a href usq-click="$parent.institution = o">{{o.title}}</a>
 		</li>
 	</ul>
@@ -21,7 +21,7 @@
 		<span class="caret"></span>
 	</span>
 	<ul uib-dropdown-menu aria-labelledby="simple-dropdown">
-		<li ng-repeat="o in $root.meta.institutions" ng-class="{'acode-active-list-item': o.title === institution.title}">
+		<li ng-repeat="o in $root.meta.institutions | orderBy: 'title'" ng-class="{'acode-active-list-item': o.title === institution.title}">
 			<a href usq-click="$parent.institution2 = o">{{o.title}}</a>
 		</li>
 	</ul>
