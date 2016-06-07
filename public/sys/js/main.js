@@ -113,7 +113,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 	m.saveProfile = function (skipMessage) {
 		m.loading = true;
 		m.$applyAsync()
-		m.api.profiles.save(m.cleanJSON(m.$root.view.profiles[m.$root.view.institution._id] || {}), m.cleanJSON(m.$root.view.institution), function () {
+		m.api.profiles.save(m.cleanJSON(m.$root.view.profiles[m.$root.view.institution._id] || {}), m.cleanJSON(m.$root.view.institution)).success(function () {
 			if (!skipMessage) {
 				toastr["success"]('Institution Profile saved')
 			}
@@ -125,13 +125,16 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 			}, 250)
 			m.$applyAsync()
 		})
+		.error (function (data) {
+			toastr["error"]('Institution Profile not saved' + (data.responseJSON && data.responseJSON.length ? ': ' + data.responseJSON : ''))
+		})
 	}
 
 
 	m.saveSnapshot = function () {
 		m.loading = true;
 		m.$applyAsync()
-		m.api.profiles.save(m.cleanJSON(m.$root.view.profiles[m.$root.view.institution._id] || {}), m.cleanJSON(m.$root.view.institution), function () {
+		m.api.profiles.save(m.cleanJSON(m.$root.view.profiles[m.$root.view.institution._id] || {}), m.cleanJSON(m.$root.view.institution)).success(function () {
 			toastr["success"]('Institution Snapshot saved')
 			m.loading = false;
 			m.$root.hasChanged = false
@@ -140,6 +143,9 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 				m.$applyAsync()
 			}, 250)
 			m.$applyAsync()
+		})
+		.error (function (data) {
+			toastr["error"]('Institution Snapshot not saved' + (data.responseJSON && data.responseJSON.length ? ': ' + data.responseJSON : ''))
 		})
 	}
 
@@ -172,7 +178,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 					data: angular.toJson({data: data}),
 				    contentType : 'application/json',
 				    success: callback,
-				    error: callback,
 				    then: callback
 				})
 			},
@@ -236,7 +241,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 					data: angular.toJson({data: data}),
 				    contentType : 'application/json',
 				    success: callback,
-				    error: callback,
 				    then: callback
 				})
 			},
@@ -338,7 +342,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 				m.$root.hasChanged = false
 			}, 100)
         }
-  		m.api.benchmarks.save(data, function () {
+  		m.api.benchmarks.save(data).success(function () {
 			toastr["success"](m.$root.meta.benchmarks[m.$root.pageData.benchmark].title + ' saved')
   			m.loading = false
   			m.$root.hasChanged = false
@@ -346,6 +350,10 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 				m.$root.hasChanged = false
 			}, 100)  			
 	  		m.$applyAsync()
+  		})
+  		.error(function (a) {
+  			console.log(a)
+			toastr["error"](m.$root.meta.benchmarks[m.$root.pageData.benchmark].title + ' not saved')
   		})
   	}
 

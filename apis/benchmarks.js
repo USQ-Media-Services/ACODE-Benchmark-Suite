@@ -9,7 +9,7 @@ r.get('/all', function (req, res) {
 		}
 		else if (!!err) {
 			console.log(err)
-			res.sendStatus(500)
+			res.status(500).json()
 		}
 	})
 })
@@ -29,15 +29,15 @@ r.get('/single', function (req, res) {
 			}
 			else if (!!err) {
 				console.log(err)
-				res.sendStatus(500)
+				res.status(500).json('Could not request the data')
 			}
 			else {
-				res.sendStatus(404)
+				res.status(404).json("No benchmark data found")
 			}
 		})
 	}
 	else {
-		res.sendStatus(412)
+		res.status(412).json('Missing parameter')
 	}
 })
 
@@ -51,13 +51,13 @@ r.post('/save', function (req, res, next) {
 		db().collection('profiles').update({'year': (new Date()).getFullYear(), institution: req.body.data.institution}, {$set: newData}, {new: true, doc:true}, function (err, doc) {
 			if (err) {
 				console.log(err)
-				res.sendStatus(500)
+				res.status(500).json('Contains malformed data; please removed any copy-pasted images and re insert them with the editor')
 			}
-			else res.sendStatus(200)
+			else res.status(200).json('OK')
 		})
 	}
 	else {
-		res.sendStatus(412)
+		res.status(412).json('Missing parameter')
 	}
 })
 
@@ -68,7 +68,7 @@ r.get('/export', function (req, res, next) {
 				db().collection('meta_benchmarks').find({}).toArray(function (err, benchmarks) {
 					if (err) {
 						console.log(err)
-						res.sendStatus(500)
+						res.status(500).json('Malformed data')
 					}
 					else {
 
@@ -116,7 +116,7 @@ r.get('/export', function (req, res, next) {
 		})
 	}
 	else {
-		res.sendStatus(412)
+		res.status(412).json('Missing parameter')
 	}
 })
 

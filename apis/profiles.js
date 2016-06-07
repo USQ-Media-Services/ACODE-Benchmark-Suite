@@ -8,7 +8,7 @@ r.get('/all', function (req, res) {
 			res.json(profiles)
 		}
 		else if (!!err) {
-			res.sendStatus(500)
+			res.status(500).json('')
 		}
 	})
 })
@@ -22,15 +22,15 @@ r.get('/all-from-institution', function (req, res) {
 			}
 			else if (!!err) {
 				console.log(err)
-				res.sendStatus(500)
+				res.status(500).json('')
 			}
 			else {
-				res.sendStatus(404)
+				res.status(404).json('No institution prifile found')
 			}
 		})
 	}
 	else {
-		res.sendStatus(412)
+		res.status(412).json('Missing parameter')
 	}
 })
 
@@ -43,15 +43,15 @@ r.get('/single', function (req, res) {
 			}
 			else if (!!err) {
 				console.log(err)
-				res.sendStatus(500)
+				res.status(500).json('Contains malformed data; please removed any copy-pasted images and re insert them with the editor')
 			}
 			else {
-				res.sendStatus(404)
+				res.status(404).json('Profile not found')
 			}
 		})
 	}
 	else {
-		res.sendStatus(412)
+		res.status(412).json('Missing parameter')
 	}
 })
 
@@ -62,6 +62,7 @@ r.get('/meta', function (req, res) {
 })
 
 r.post('/save', function (req, res) {
+
 	if (!!req.body && !!req.body.data && !!req.body.data.institution) {
 		var data = req.body.data
 		delete data._id
@@ -70,13 +71,13 @@ r.post('/save', function (req, res) {
 			db().collection('profiles').update({'year': (new Date()).getFullYear() - 1, institution: req.body.data.institution}, {$set: {hidden: true}})
 			if (err) {
 				console.log(err)
-				res.sendStatus(500)
+				res.status(500).json('Contains malformed data; please removed any copy-pasted images and re insert them with the editor')
 			}
-			else res.sendStatus(200)
+			else res.status(200).json('OK')
 		})
 	}
 	else {
-		res.sendStatus(412)
+		res.status(412).json('Missing parameter')
 	}
 })
 

@@ -93,6 +93,7 @@ var express = require('express'),
 del.sync('tmp', {force:true})
 
 app.use(require('cors')())
+
 app.use(json2csv.expressDecorator)
 
 app.use(require('body-parser').json())
@@ -118,6 +119,10 @@ app.use('/api/profiles', require('./apis/profiles.js'))
 app.use('/api/benchmarks', require('./apis/benchmarks.js'))
 app.use('/api/institutions', require('./apis/institutions.js'))
 
+app.use(function logErrors(err, req, res, next) {
+	console.error(err.stack)
+	res.sendStatus(500)
+})
 
 db.callback = function (err) {
 	app.listen(port);
