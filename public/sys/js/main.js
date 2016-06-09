@@ -401,11 +401,13 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 
   		tinymce.init({
   			selector:'#text-editor',
-			plugins: 'link image code',
-			toolbar: 'bold italic underline fontsizeselect outdent indent |  alignleft aligncenter alignright  image link  bullist numlist',
+			plugins: 'link image code paste',
+			toolbar: 'bold italic underline fontsizeselect outdent indent |  alignleft aligncenter alignright  image link  bullist numlist | paste',
 			menubar: 'edit insert format ',
 			height: '250px',
-			statusbar: false,  			
+			statusbar: false,
+            paste_data_images: false,
+            paste_as_text: true
   		}).then(function (a, b) {
   			text = a
   			
