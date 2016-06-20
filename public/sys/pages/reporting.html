@@ -17,7 +17,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr ng-repeat="i in $root.meta.institutions">
+		<tr ng-repeat="i in $root.meta.institutions  | orderBy: 'title'">
 			<td class="acode-report-institute-title">
 				<div ng-show="anonymized && i !== $root.view.institution">Inititute {{$index + 1}}</div>
 				<div ng-show="!anonymized || i === $root.view.institution">{{i.title}}</div>
