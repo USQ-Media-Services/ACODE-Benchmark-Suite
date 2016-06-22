@@ -2,7 +2,7 @@
 	<div class="acode-picker-alignment-title" ng-show="!!row.ratings[0].title">{{row.ratings[0].title}}</div>
 	<table class="acode-picker-alignment-wrapper">
 		<tr>
-			<td ng-disabled="readOnly"  usq-click="$root.hasChanged = true; $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] = ($index + 1)" class="acode-picker-alignment" ng-repeat="question in row.ratings[0].options track by $index" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] - 2 === $index}">
+			<td ng-disabled="readOnly" usq-click="$root.hasChanged = true; $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] = ($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] == ($index + 1) ? null : ($index + 1))" class="acode-picker-alignment" ng-repeat="question in row.ratings[0].options track by $index" ng-class="{'green-border': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] === $index + 1, 'green-border-left': $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex]['ratings' + '-0'] - 2 === $index}">
 				{{question}}
 			</td>
 		</tr> 
@@ -11,19 +11,19 @@
 <div class="acode-picker-overall-title">Overall Rating</div>
 <div class="acode-picker-overall">
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-1" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="1" type="radio">
-	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-1">1</label>
+	<label usq-click="$root.hasChanged = true; $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall = ($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall == 1 ? null : 1)" >1</label>
 	
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-2" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="2" type="radio">
-	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-2">2</label>
+	<label usq-click="$root.hasChanged = true; $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall = ($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall == 2 ? null : 2)" >2</label>
 	
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-3" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="3" type="radio">
-	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-3">3</label>
+	<label usq-click="$root.hasChanged = true; $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall = ($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall == 3 ? null : 3)" >3</label>
 	
-	<input usq-click="$root.hasChanged = true" ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-4" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="4" type="radio">
-	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-4">4</label>
+	<input ng-disabled="readOnly" usq-click="$root.hasChanged = true" id="{{bm._id}}-{{rowIndex}}-overall-4" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="4" type="radio">
+	<label usq-click="$root.hasChanged = true; $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall = ($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall == 4 ? null : 4)" >4</label>
 	
 	<input ng-disabled="readOnly" id="{{bm._id}}-{{rowIndex}}-overall-5" name="{{bm._id}}-{{rowIndex}}-overall" ng-model="$root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall" ng-value="5" type="radio">
-	<label usq-click="$root.hasChanged = true" for="{{bm._id}}-{{rowIndex}}-overall-5">5</label>
+	<label usq-click="$root.hasChanged = true; $root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall = ($root.view.profiles[$root.view.institution._id].users[user].benchmarks[bm._id][rowIndex].overall == 5 ? null : 5)" >5</label>
 </div>
 
 <br>

@@ -64,7 +64,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 		}				
 	}
 
-
 	m.$root.view = {}
 
 	m.$root.meta = {}
@@ -555,9 +554,11 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 	return function (scope, element, attrs) {
 		element.bind('click', function () {
 			if (!!element.attr('disabled') || !!element.hasClass('disabled') || (!!element.attr('readonly') || !!element.hasClass('readonly'))) return
-			try {
-				scope.$applyAsync(attrs.usqClick)
-			} catch (e) {}
+			setTimeout(function () {
+				try {
+					scope.$applyAsync(attrs.usqClick)
+				} catch (e) {}
+			}, 16)
 		});
 	};
 })
