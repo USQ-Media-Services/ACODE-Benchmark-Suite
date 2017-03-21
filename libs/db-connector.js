@@ -9,7 +9,7 @@ var mongodb = require('mongodb'),
 	dbHost = uri.hosts[0].host || process.env.mongo_host,
 	dbUser = uri.username || process.env.mongo_user,
 	dbPass = uri.password || process.env.mongo_pass,
-	dbDatabase = uri.database ||'acode_benchmarks',
+	dbDatabase = uri.database ||'acode-uk',
 	db = false,
 	serv,
 	getDB = function getDB () {
@@ -23,6 +23,8 @@ var mongodb = require('mongodb'),
 	    'auto_reconnect': true,
 	    'poolSize': 30
 	})
+
+	console.log(dbHost, dbPort, dbDatabase, dbUser, dbPass)
 	dbManager = new mongodb.Db(dbDatabase, serv, {safe: true})
 	.open(function (error, DB) {
 		if (!error) DB.authenticate(dbUser, dbPass, function (err, res) {

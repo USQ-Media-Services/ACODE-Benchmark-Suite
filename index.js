@@ -3,7 +3,7 @@ var express = require('express'),
 	app = express(),
 	sugar = require('sugar'),
 	port = process.env.PORT || 6871,
-	realSever = (process.env.PORT ? 'https://usq-workwear-form.herokuapp.com/' : 'http://localhost:' + port + '/'),
+	realSever = (process.env.PORT ? 'https://acode-benchmark-tool.herokuapp.com/' : 'http://localhost:' + port + '/'),
 	serverBaseUrl = 'https://acode-benchmark-tool.herokuapp.com/',
 	pleeease = require('pleeease'),
     fs = require('fs'),
@@ -126,6 +126,7 @@ app.use(function logErrors(err, req, res, next) {
 
 db.callback = function (err) {
 	app.listen(port);
+	console.log(324)
 }
 
 

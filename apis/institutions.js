@@ -35,6 +35,27 @@ r.get('/single', function (req, res) {
 	}
 })
 
+r.post('/add', function (req, res) {
+	console.log(req.body)
+	if (req.body && req.body.data.title) {
+	console.log(2)
+		db().collection('institutions').insert({title: req.body.data.title}, function (err, institution) {
+			if (!err) {
+				res.sendStatus(200)
+			}
+			else if (!!err) {
+				res.sendStatus(500)
+			}
+			else {
+				res.sendStatus(404)
+			}
+		})
+	}
+	else {
+		res.sendStatus(412)
+	}
+})
+
 
 
 

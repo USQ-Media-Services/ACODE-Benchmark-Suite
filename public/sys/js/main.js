@@ -34,7 +34,7 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 	}
 
 	m.hash = function hash (data, skipSave) {
-		var j = Qs.parse(decodeURIComponent(location.hash.replace('#/', '').replace('#', '')))
+		var j = querystring.parse(decodeURIComponent(location.hash.replace('#/', '').replace('#', '')))
 		if (j.user) j.user = (parseInt(j.user, 0) !== NaN ? parseInt(j.user, 0) : null)
 		if (j.readOnlyUser) j.readOnlyUser = (parseInt(j.readOnlyUser, 0) !== NaN ? parseInt(j.readOnlyUser, 0) : j.readOnlyUser)
 		if (j.readOnlyProfiles) j.readOnlyProfiles = JSON.parse(j.readOnlyProfiles)
@@ -59,9 +59,39 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 			}
 
 			setTimeout(function () {
-				location.hash = '/' + Qs.stringify(t)
+				location.hash = '/' + querystring.stringify(t)
 			}, 32)
 		}				
+	}
+
+	m.addInstitution = function () {
+		swal({
+			title: "Add an institution",
+			text: "Please enter the full name of your intitution as you want it to appear in the list of institutions",
+			type: "input",
+			showCancelButton: true,
+			closeOnConfirm: false,
+			animation: "slide-from-top",
+			inputPlaceholder: "Institution name"
+		},
+		function (inputValue) {
+			if (inputValue === false) return false;
+
+			if (inputValue === "") {
+				swal.showInputError("You cannot leave this blank");
+				return false
+			}
+
+			m.api.institutions.add({title: inputValue})
+			swal.close()
+	
+	  		m.api.institutions.all().then(function (institutions) {
+	 			m.$root.meta.institutions = institutions
+	 		})
+
+
+
+		});
 	}
 
 	m.$root.view = {}
@@ -155,6 +185,17 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 			},
 			single: function (id) {
 				return $.get(m.baseUrl + 'api/institutions/single?id=' + id, null, 'json')
+			},
+			add: function (data, callback) {
+				return $.ajax({
+					type: "POST",
+					url: m.baseUrl + 'api/institutions/add',
+					dataType: 'json',
+					data: angular.toJson({data: data}),
+				    contentType : 'application/json',
+				    success: callback,
+				    then: callback
+				})
 			},
 			save: function (data) {
 				return $.post(m.baseUrl + 'api/institutions/save', {data: data}, null, 'json')
