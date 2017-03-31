@@ -28,18 +28,17 @@
     overflow:visible
 }
 
-
-div#inst136 .content {
+div#inst136 .content, .side-menu-parent .content {
     padding: 0;
 }
 
-div#inst136 {
+div#inst136, .side-menu-parent {
     background-color: #fff;
     min-width: 227px;
     border: 0;
 }
 
-div#inst136 .content .no-overflow {
+div#inst136 .content .no-overflow, .side-menu-parent .content .no-overflow {
     overflow: visible;
 }
 
