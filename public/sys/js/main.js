@@ -361,7 +361,6 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
 							var sideMenuParent = $($('.acode-side-menu').parent().parent().parent()[1])
 							if (sideMenuParent.hasClass('block_html')) sideMenuParent.addClass('side-menu-parent')
 
-							console.log(sideMenuParent)
 				  			m.$applyAsync()
 				  		})
 			  		})
