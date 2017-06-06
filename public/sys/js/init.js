@@ -11,7 +11,7 @@ var	_scriptTags = document.querySelectorAll('script')
 		'bower_components/markdown/lib/markdown.js',
 		'bower_components/tinymce-dist/tinymce.js',
 		'bower_components/angular-ui-tinymce/src/tinymce.js',
-		'bower_components/toastr/toastr.min.js',
+		'sys/js/toastr.min.js',
 		'bower_components/pen/src/pen.js',
 		'bower_components/querystring/dist/querystring.min.js',
 		'bower_components/sweetalert/dist/sweetalert.min.js',
