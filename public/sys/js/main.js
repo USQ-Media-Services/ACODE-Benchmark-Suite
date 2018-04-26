@@ -370,7 +370,14 @@ angular.module('2015-1858 - acode-benchmark-assessment-tool', ['ui.bootstrap', '
   	}
 
   	m.saveBenchmark = function (test, consolidation) {
-  		if (!m.$root.view.profiles || !m.$root.view.profiles[m.$root.view.institution._id] || !m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user]) return false
+  		if (
+  			!m.$root.view.profiles ||
+  			!m.$root.view.profiles[m.$root.view.institution._id] ||
+  			!m.$root.view.profiles[m.$root.view.institution._id].users ||
+  			!m.$root.view.profiles[m.$root.view.institution._id].users[m.$root.pageData.user]
+  		) return false
+
+
   		if (test) return true
   		m.loading = true;
 	  	m.$applyAsync()
