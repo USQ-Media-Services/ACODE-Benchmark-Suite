@@ -3,7 +3,7 @@ var r = require('express').Router(),
 	db = require('../libs/db-connector.js')
 
 r.get('/all', function (req, res) {
-	db().collection('profiles').find({hidden: {$ne: true}, year: req.query.year || (new Date()).getFullYear()  }).toArray(function (err, profiles) {
+	db().collection('profiles').find({hidden: {$ne: true}}).toArray(function (err, profiles) {
 		if (!err && profiles) {
 			res.json(profiles)
 		}
