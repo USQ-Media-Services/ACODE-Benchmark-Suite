@@ -3,7 +3,9 @@ var r = require('express').Router(),
 	db = require('../libs/db-connector.js')
 
 r.get('/all', function (req, res) {
-	db().collection('profiles').find({hidden: {$ne: true}}).toArray(function (err, profiles) {
+	var t = {hidden: {$ne: true}}
+	if (req.query.year) t.year: req.query.year
+	db().collection('profiles').find(t).toArray(function (err, profiles) {
 		if (!err && profiles) {
 			res.json(profiles)
 		}
@@ -16,7 +18,11 @@ r.get('/all', function (req, res) {
 r.get('/all-from-institution', function (req, res) {
 	if (req.query.id && req.query.id.length === 24) {
 		var _id = ObjectId(req.query.id)
-		db().collection('profiles').find({institution: _id}).toArray(function (err, profiles) {
+
+		var t = {institution: _id}
+		if (req.query.year) t.year: req.query.year
+
+		db().collection('profiles').find(t).toArray(function (err, profiles) {
 			if (!err && profiles.length > 0) {
 				res.json(profiles)
 			}
@@ -37,7 +43,11 @@ r.get('/all-from-institution', function (req, res) {
 r.get('/single', function (req, res) {
 	if (req.query.id && req.query.id.length === 24) {
 		var _id = ObjectId(req.query.id)
-		db().collection('profiles').find({_id: _id}).toArray(function (err, profile) {
+
+		var t = {_id: _id}
+		if (req.query.year) t.year: req.query.year
+
+		db().collection('profiles').find(t).toArray(function (err, profile) {
 			if (!err && profile[0]) {
 				res.json(profile[0])
 			}
