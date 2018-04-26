@@ -4,7 +4,7 @@ var r = require('express').Router(),
 
 r.get('/all', function (req, res) {
 	var t = {hidden: {$ne: true}}
-	if (req.query.year) t.year: req.query.year
+	if (req.query.year) t.year = req.query.year
 	db().collection('profiles').find(t).toArray(function (err, profiles) {
 		if (!err && profiles) {
 			res.json(profiles)
@@ -20,7 +20,7 @@ r.get('/all-from-institution', function (req, res) {
 		var _id = ObjectId(req.query.id)
 
 		var t = {institution: _id}
-		if (req.query.year) t.year: req.query.year
+		if (req.query.year) t.year = req.query.year
 
 		db().collection('profiles').find(t).toArray(function (err, profiles) {
 			if (!err && profiles.length > 0) {
@@ -45,7 +45,7 @@ r.get('/single', function (req, res) {
 		var _id = ObjectId(req.query.id)
 
 		var t = {_id: _id}
-		if (req.query.year) t.year: req.query.year
+		if (req.query.year) t.year = req.query.year
 
 		db().collection('profiles').find(t).toArray(function (err, profile) {
 			if (!err && profile[0]) {
