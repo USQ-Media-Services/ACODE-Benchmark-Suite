@@ -4,7 +4,7 @@ var r = require('express').Router(),
 
 r.get('/all', function (req, res) {
 	var t = {hidden: {$ne: true}}
-	if (req.query.year) t.year = req.query.year
+	if (req.query.year) t.year = req.query.year 
 	db().collection('profiles').find(t).toArray(function (err, profiles) {
 		if (!err && profiles) {
 			res.json(profiles)
