@@ -1,0 +1,1402 @@
+{ 
+    "_id" : ObjectId("57140c822761e3ff4de7080a"), 
+    "title" : "Benchmark 2", 
+    "sub-title" : "Planning for institution-wide quality improvement of technology enhanced learning", 
+    "scoping-statement" : "Institution-wide processes are in place, including, planning, implementation, evaluation and feedback loops, to ensure the effective use of technology enhanced learning and its alignment with external requirements.", 
+    "good-practice-statement" : "Institutions support and encourage the sustainable, effective and efficient use of technology enhanced learning through strategic planning processes at all levels of the institution. The focus is continuous improvement through systematic and regular evaluation of implementation strategies and outcomes. Such evaluation will in turn inform future planning and align with the institutions strategic direction.", 
+    "questions" : [
+        {
+            "title" : "Institution-wide processes for quality assurance are in place and in use to integrate technology enhanced learning at both a program and course level.", 
+            "ratings" : [
+                {
+                    "title" : "Processes in place", 
+                    "options" : [
+                        "None", 
+                        "Limited", 
+                        "Moderate", 
+                        "Extensive", 
+                        "Comprehensive"
+                    ]
+                }, 
+                {
+                    "title" : "At both a Course and Program level", 
+                    "options" : [
+                        "No integration", 
+                        "Across some course and or programs", 
+                        "Across many courses and or programs", 
+                        "Across most Courses and Programs", 
+                        "Across all Courses and Programs"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Comprehensive evaluation processes are in place to support decisions relating to the implementing of technology enhanced learning services.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "None", 
+                        "Limited", 
+                        "Moderate", 
+                        "Substantial", 
+                        "Comprehensive"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Planning for quality improvement of the institution’s technology enhanced learning systems and procedures is resourced.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No resources", 
+                        "Inadequate resources", 
+                        "Moderate resources", 
+                        "Substantial resources", 
+                        "Comprehensive resources"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Evaluation cycles are in place to measure key performance indicators (KPIs) identified by and for all stakeholders, and are integrated in planning for continuous improvement purposes.", 
+            "ratings" : [
+                {
+                    "title" : "KPI's evaluation processes in place ", 
+                    "options" : [
+                        "No evaluation cycles", 
+                        "Limited evaluation cycles of some stakeholders", 
+                        "Evaluation cycles for some stakeholders", 
+                        "Evaluation cycles for most stakeholders", 
+                        "Evaluation cycles of all stakeholders"
+                    ]
+                }, 
+                {
+                    "title" : "Integrated into planning for improvement", 
+                    "options" : [
+                        "No integration", 
+                        "Limited integration", 
+                        "Moderate integration", 
+                        "Extensive integration", 
+                        "Comprehensive integration"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Outcomes are reported to all levels of the institution.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No outcomes are reported", 
+                        "Some outcomes are reported to some levels", 
+                        "Outcomes are reported to the majority of levels", 
+                        "Outcomes are reported to all levels", 
+                        "Comprehensive outcomes are reported to all levels"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+{ 
+    "_id" : "56fe161a2761e9d9c38588c4", 
+    "good-practice-statement" : "The institution has established, well understood strategy, governance mechanisms and policies that guide the selection, deployment, evaluation and improvement of the technologies used to support learning and teaching.", 
+    "questions" : [
+        {
+            "title" : "Institution strategic and operational plans support and promote the use of technology enhanced learning.", 
+            "ratings" : [
+                {
+                    "title" : false, 
+                    "options" : [
+                        "No current strategic or operational plans", 
+                        "Strategic or operational plan but no recognition of technology enhanced learning", 
+                        "Strategic or operational plan includes some recognition of technology enhanced learning", 
+                        "Strategic and operational plans both have some recognition of technology enhanced learning", 
+                        "Strategic and operational plans both have clear recognition of technology enhanced learning"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Specific plans relating to the use of technology enhanced learning are aligned with the institution’s strategic directions and operational plans.", 
+            "ratings" : [
+                {
+                    "title" : "Specific plans exist", 
+                    "options" : [
+                        "No specific plans", 
+                        "Immature plans", 
+                        "Some specific plans", 
+                        "Numerous specific plans", 
+                        "Comprehensive suite of plans"
+                    ]
+                }, 
+                {
+                    "title" : "Plans are aligned", 
+                    "options" : [
+                        "Not aligned to institution strategic and operational plans", 
+                        "Aligned with either institution strategic or operational plans", 
+                        "Aligned with both institution strategic and operational plans", 
+                        "Aligned with either institution strategic or operational plans", 
+                        "Aligned with both institution strategic and operational plans"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Planning for the ongoing use of technology enhanced learning is aligned with the institutions budget process.", 
+            "ratings" : [
+                {
+                    "title" : false, 
+                    "options" : [
+                        "No alignment", 
+                        "Limited alignment", 
+                        "Moderate alignment", 
+                        "Considerable alignment", 
+                        "Complete alignment"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Institution policies, procedures and guidelines provide a framework for how technology enhanced learning should be used at both a course and program level.", 
+            "ratings" : [
+                {
+                    "title" : "Course level", 
+                    "options" : [
+                        "No policies, procedures and guidelines applied at the course level", 
+                        "Little alignment with policies, procedures and guidelines", 
+                        "Some alignment with policies, procedures and guidelines", 
+                        "Good alignment with policies, procedures and guidelines", 
+                        "Comprehensive alignment with policies, procedures and guidelines"
+                    ]
+                }, 
+                {
+                    "title" : "Program level", 
+                    "options" : [
+                        "No policies, procedures and guidelines applied at the program level", 
+                        "Little alignment with policies, procedures and guidelines", 
+                        "Some alignment with policies, procedures and guidelines", 
+                        "Good alignment with policies, procedures and guidelines", 
+                        "Comprehensive alignment with policies, procedures and guidelines"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Policies, procedures and guidelines on the use of technology enhanced learning are well communicated and integrated into processes and systems.", 
+            "ratings" : [
+                {
+                    "title" : "Communicated", 
+                    "options" : [
+                        "Not communicated", 
+                        "Poorly communicated", 
+                        "Moderately communicated", 
+                        "Substantially communicated", 
+                        "Widely communicated"
+                    ]
+                }, 
+                {
+                    "title" : "Integrated", 
+                    "options" : [
+                        "Not integrated", 
+                        "Poorly integrated", 
+                        "Moderately integrated", 
+                        "Substantially integrated", 
+                        "Fully integrated"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "The institution has established mechanisms for the governance of technology enhanced learning that include representation from key stakeholders.", 
+            "ratings" : [
+                {
+                    "title" : "Governance", 
+                    "options" : [
+                        "No governance", 
+                        "Planning for governance", 
+                        "Immature", 
+                        "Established but maturing", 
+                        "Well established and mature"
+                    ]
+                }, 
+                {
+                    "title" : "Stakeholder representation", 
+                    "options" : [
+                        "None", 
+                        "Limited", 
+                        "Moderate", 
+                        "Substantial", 
+                        "Comprehensive"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Authority and responsibility for the operational management of the technologies used to enhance learning and teaching are clearly articulated.", 
+            "ratings" : [
+                {
+                    "title" : "Authority and responsibility", 
+                    "options" : [
+                        "Non-existent", 
+                        "Not well established or defined", 
+                        "Established but only partially defined", 
+                        "Well defined but maturing", 
+                        "Well established and mature"
+                    ]
+                }, 
+                {
+                    "title" : "Clearly articulated", 
+                    "options" : [
+                        "Not articulated", 
+                        "Very limited articulation", 
+                        "Moderately articulated", 
+                        "Substantial articulation", 
+                        "Comprehensively articulated"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "The institution uses a clearly articulated policy framework and governance structure when deciding on the adoption of new technologies.", 
+            "ratings" : [
+                {
+                    "title" : "Policy framework for new technologies", 
+                    "options" : [
+                        "Non-existent", 
+                        "Not well established or defined", 
+                        "Established but only partially defined", 
+                        "Well defined but maturing", 
+                        "Well established and mature"
+                    ]
+                }, 
+                {
+                    "title" : "Clearly articulated", 
+                    "options" : [
+                        "Not articulated", 
+                        "Very limited articulation", 
+                        "Moderately articulated", 
+                        "Substantial articulation", 
+                        "Comprehensively articulated"
+                    ]
+                }
+            ]
+        }
+    ], 
+    "scoping-statement" : "This applies to institution level planning, policy development and implementation in relation to the application of technology enhanced learning. It includes the delegation of authority and responsibility for developing and implementing policy, and strategic and operational plans.", 
+    "sub-title" : "Institution-wide policy and governance for technology enhanced learning", 
+    "title" : "Benchmark 1"
+}
+{ 
+    "_id" : ObjectId("571413432761e3ff4de7080c"), 
+    "good-practice-statement" : "The application of TEL services is:\r\n<ul>\r\n<li>grounded in the institution’s Learning and Teaching strategy;</li>\r\n<li>informed by good pedagogical practice and research;</li>\r\n<li>supported adequately;</li>\r\n<li>deployed and promoted effectively;</li>\r\n<li>evaluated from a number of perspectives; and</li>\r\n<li>advanced appropriately.</li>\r\n</ul>\r\nThe Performance Indicators are organised to reflect these aspects of pedagogical application.", 
+    "questions" : [
+        {
+            "title" : "The application of technology enhanced learning services are grounded in the context of the institution’s learning and teaching strategy.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "Not grounded", 
+                        "Very limited grounding", 
+                        "Modest grounding", 
+                        "Substantially grounded", 
+                        "Comprehensively grounded"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "The pedagogical intent of the application of technology enhanced learning services within individual courses and programs is readily apparent to teaching and support staff.", 
+            "ratings" : [
+                {
+                    "title" : "At a course level", 
+                    "options" : [
+                        "Not apparent", 
+                        "Apparent in only limited cases", 
+                        "Apparent, but not consistently", 
+                        "Mostly apparent", 
+                        "Fully apparent"
+                    ]
+                }, 
+                {
+                    "title" : "At a program level", 
+                    "options" : [
+                        "Not apparent", 
+                        "Apparent in only limited cases", 
+                        "Apparent, but not consistently", 
+                        "Mostly apparent", 
+                        "Fully apparent"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "ratings" : [
+                {
+                    "title" : "Application based on sound research", 
+                    "options" : [
+                        "Not applied", 
+                        "Applied, but only in limited cases", 
+                        "Applied, but not consistently", 
+                        "Mostly applied", 
+                        "Comprehensively applied"
+                    ]
+                }, 
+                {
+                    "options" : [
+                        "None available", 
+                        "Limited availability", 
+                        "Available, but does not cover all areas", 
+                        "Mostly available", 
+                        "Readily available to all"
+                    ], 
+                    "title" : "Guidelines readily available"
+                }
+            ], 
+            "title" : "The pedagogical application of technology enhanced learning is based on sound educational research and guidelines (including compliance with legal requirements, accessibility, and learning designs) are readily available to all teaching and support staff."
+        }, 
+        {
+            "title" : "Collegial communities exist to promote and support the use of technology enhanced learning, for communicating its innovative use and pedagogical application in learning and teaching.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "None in existence", 
+                        "Very few communities exist of this nature and are ad hoc at best", 
+                        "Some communities exist, but have limited exposure and reach", 
+                        "Communities exist and have a reasonable expose and reach", 
+                        "These communities are wide spread and have very good exposure and reach"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Resources are allocated for the ongoing development of technology enhanced learning pedagogies.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No allocation", 
+                        "Very limited resources allocated", 
+                        "Partially funded", 
+                        "Well funded", 
+                        "Fully funded"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "The pedagogical application of technology enhanced learning services is sustainable.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "This is not considered", 
+                        "Usually implemented as one-off’s with little thought for sustainability", 
+                        "Sustainability is sometimes considered during implementation, with ad hoc follow through", 
+                        "Sustainability is usually considered during implementation, with some follow through ", 
+                        "Implementation is well funded with the view to sustaining good practice longer term"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "The pedagogical impact of technology enhanced learning services is regularly evaluated in detail at a course and program level.", 
+            "ratings" : [
+                {
+                    "title" : "At a course level", 
+                    "options" : [
+                        "Not evaluated", 
+                        "Limited evaluation occurs", 
+                        "Evaluated but not in great detail", 
+                        "Evaluated in reasonable detail", 
+                        "Fully evaluated"
+                    ]
+                }, 
+                {
+                    "title" : "At a program level", 
+                    "options" : [
+                        "Not evaluated", 
+                        "Limited evaluation occurs", 
+                        "Evaluated but not in great detail", 
+                        "Evaluated in reasonable detail", 
+                        "Fully evaluated"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Evidence of the impact of technology enhanced learning is integrated into continuous improvement planning for courses and programs.", 
+            "ratings" : [
+                {
+                    "title" : "At a course level", 
+                    "options" : [
+                        "Not apparent", 
+                        "Apparent only in limited cases", 
+                        "Apparent, but not consistently", 
+                        "Mostly apparent", 
+                        "Fully apparent"
+                    ]
+                }, 
+                {
+                    "title" : "At a program level", 
+                    "options" : [
+                        "Not apparent", 
+                        "Apparent only in limited cases", 
+                        "Apparent, but not consistently", 
+                        "Mostly apparent", 
+                        "Fully apparent"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Good practice examples advance the pedagogically sound use of technology enhanced learning services in courses and programs.", 
+            "ratings" : [
+                {
+                    "title" : "At a course level", 
+                    "options" : [
+                        "Not apparent", 
+                        "Apparent only in limited cases", 
+                        "Apparent, but not consistently", 
+                        "Mostly apparent", 
+                        "Fully apparent"
+                    ]
+                }, 
+                {
+                    "title" : "At a program level", 
+                    "options" : [
+                        "Not apparent", 
+                        "Apparent only in limited cases", 
+                        "Apparent, but not consistently", 
+                        "Mostly apparent", 
+                        "Fully apparent"
+                    ]
+                }
+            ]
+        }
+    ], 
+    "scoping-statement" : "This topic addresses the effective application of technology enhanced learning (TEL) services into courses and programs. It encompasses the underlying rationale and strategic intent, how it is embedded into teaching, how it is resourced, evaluated and advanced. The effective pedagogical application of these services is fundamental to the learning and teaching mission of the institution. Failure to apply TEL services in a pedagogically sound way will reduce the value of the investment placed in these services and has the potential to impact on every student and staff member. <br><br><em><b>Out of scope.</b></em> Technological, policy and administrative issues relating to the application of TEL services are the domain of other benchmarks.", 
+    "sub-title" : "The application of technology enhanced learning services", 
+    "title" : "Benchmark 4"
+}
+{ 
+    "_id" : ObjectId("571709fe27615d3657e8589f"), 
+    "good-practice-statement" : "<p>Quality learning and teaching is brought about where people are confident, enthusiastic, skilled and well supported, and learning experiences are designed to engage the learner and employ a variety of approaches.</p><p>Engagement in professional development should not be limited by factors of physical location, equity or technological skills. This means that staff development is offered flexibly, accommodates a range of entry points, is evaluated and is informed by the work of related units.</p><p>A good practice approach to the use of technology enhanced learning reflects an understanding of learners’ characteristics and needs as required by different discipline contexts.</p>", 
+    "questions" : [
+        {
+            "title" : "A framework for staff development in technology enhanced learning is part of the institution's learning and teaching strategy.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No staff development and no alignment with strategy", 
+                        "Some staff development, but not aligned with strategy", 
+                        "Some staff development, partly aligned with strategy", 
+                        "Staff development mostly aligned with strategy", 
+                        "Extensive staff development, fully aligned with strategy"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Processes are in place and in use to identify staff development needs in support of the institution’s strategy for technology enhanced learning.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No processes in place", 
+                        "Some processes exist, but no evidence of use", 
+                        "Some processes exist and they are partly used", 
+                        "Processes are in place and they are partly used", 
+                        "Processes are in place and they are well used"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Educational and technical expertise is used to develop quality programs and resources addressing staff development needs.", 
+            "ratings" : [
+                {
+                    "title" : "Educational expertise is used", 
+                    "options" : [
+                        "No educational program or resources", 
+                        "Limited educational program/resources", 
+                        "Educational program, limited resources", 
+                        "Educational program, good resources", 
+                        "Extensive educational program/resources"
+                    ]
+                }, 
+                {
+                    "title" : "Technical expertise is used", 
+                    "options" : [
+                        "No technical program or resources", 
+                        "Limited technical program/resources", 
+                        "Technical program, limited resources", 
+                        "Technical program, good resources", 
+                        "Extensive technical program/resources"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Coordination occurs between those areas providing staff development for technology enhanced learning across the institution.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No coordination", 
+                        "Ad hoc coordination occurs", 
+                        "Semi regular coordination occurs", 
+                        "Regular coordination occurs", 
+                        "Comprehensive coordination occurs"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Staff development for technology enhanced learning is resourced.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "Not resourced", 
+                        "Inadequately resourced", 
+                        "Moderately resourced", 
+                        "Substantially resourced", 
+                        "Comprehensively resourced"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Staff development programs are delivered flexibly and address differing skill levels.", 
+            "ratings" : [
+                {
+                    "title" : "Delivered flexibly", 
+                    "options" : [
+                        "Not at all", 
+                        "Limited", 
+                        "Moderate ", 
+                        "Substantial ", 
+                        "Fully"
+                    ]
+                }, 
+                {
+                    "title" : "Address differing skill levels", 
+                    "options" : [
+                        "Not at all", 
+                        "Limited", 
+                        "Moderate ", 
+                        "Substantial ", 
+                        "Fully"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Evaluation data is used to inform the planning for continuous improvement of staff development processes.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No integration", 
+                        "Only limited or ad hoc integration exists", 
+                        "Some good examples of integration exist, but not across the board", 
+                        "Regular integration exists across most processes", 
+                        "Systematic integration exists across all programs"
+                    ]
+                }
+            ]
+        }
+    ], 
+    "scoping-statement" : "<p>The key focus is on developing teaching staff to make effective use of a range of approaches to technology enhanced learning (TEL). Staff development activities encompass individual and group delivery, face-to-face, as well as online.</p><p>Self-directed learning activities and resources are also included. Some professional development will be designed and delivered to meet the strategic needs of the organisation, whilst other activities will be provided to meet the demands of teaching staff as they arise.</p>", 
+    "sub-title" : "Staff professional development for the effective use of technology enhanced learning", 
+    "title" : "Benchmark 5"
+}
+{ 
+    "_id" : ObjectId("57170d0627615d3657e858a0"), 
+    "good-practice-statement" : "<p>Staff are made aware of and have access to comprehensive technical and educational support for the use of technology enhanced learning tools and services: prior to and during the implementation of the technology, in formal training sessions, on a just-in-time basis, and for troubleshooting purposes.</p>", 
+    "questions" : [
+        {
+            "title" : "Technical and educational support is aligned with the current and emerging learning technologies being deployed by the institution.", 
+            "ratings" : [
+                {
+                    "title" : "For current technologies", 
+                    "options" : [
+                        "No alignment", 
+                        "Limited alignment", 
+                        "Moderate alignment", 
+                        "Considerable alignment", 
+                        "Full alignment"
+                    ]
+                }, 
+                {
+                    "title" : "For emerging technologies", 
+                    "options" : [
+                        "No alignment", 
+                        "Limited alignment", 
+                        "Moderate alignment", 
+                        "Considerable alignment", 
+                        "Full alignment"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Procedures are in place to identify the support requirements of staff, at individual, team and institutional levels.", 
+            "ratings" : [
+                {
+                    "title" : "For individuals", 
+                    "options" : [
+                        "Not identified", 
+                        "Limited identification", 
+                        "Some identification", 
+                        "Regular identification", 
+                        "Systematic identification"
+                    ]
+                }, 
+                {
+                    "title" : "At a team level", 
+                    "options" : [
+                        "Not identified", 
+                        "Limited identification", 
+                        "Some identification", 
+                        "Regular identification", 
+                        "Systematic identification"
+                    ]
+                }, 
+                {
+                    "title" : "At an institutional level", 
+                    "options" : [
+                        "Not identified", 
+                        "Limited identification", 
+                        "Some identification", 
+                        "Regular identification", 
+                        "Systematic identification"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Procedures are in place to regularly evaluate the support services and resources provided for staff.", 
+            "ratings" : [
+                {
+                    "title" : "Evaluation of support services", 
+                    "options" : [
+                        "No evaluation occurs", 
+                        "Limited or ad hoc evaluation occurs", 
+                        "Semi regular evaluation occurs", 
+                        "Mostly regular evaluation occurs", 
+                        "Fully and regularly evaluated"
+                    ]
+                }, 
+                {
+                    "title" : "Evaluation of resources", 
+                    "options" : [
+                        "No evaluation occurs", 
+                        "Limited or ad hoc evaluation occurs", 
+                        "Semi regular evaluation occurs", 
+                        "Mostly regular evaluation occurs", 
+                        "Fully and regularly evaluated"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Coordination occurs between those areas providing support services for staff across the institution.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No coordination", 
+                        "Ad hoc coordination occurs", 
+                        "Semi regular coordination occurs", 
+                        "Regular coordination occurs", 
+                        "Comprehensive coordination occurs"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Technology enhanced learning support services are accessible and used by staff.", 
+            "ratings" : [
+                {
+                    "title" : "Services are accessible to staff", 
+                    "options" : [
+                        "Not at all", 
+                        "Restricted", 
+                        "Working hours", 
+                        "Extended hours", 
+                        "24 X 7"
+                    ]
+                }, 
+                {
+                    "title" : "Services are used by staff", 
+                    "options" : [
+                        "Not at all", 
+                        "Limited use", 
+                        "Moderate usage", 
+                        "Good usage", 
+                        "Extensively used"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Technology enhanced learning support services are adequately resourced.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "Not resourced", 
+                        "Inadequately resourced", 
+                        "Moderately resourced", 
+                        "Substantially resourced", 
+                        "Comprehensively resourced"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Technology enhanced learning support services are promoted to staff.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "Not promoted", 
+                        "Limited promotion", 
+                        "Moderate promotion", 
+                        "Substantial promotion", 
+                        "Systematically and comprehensively promoted"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "New technology enhanced learning services are fully analysed for staff support requirements, prior to and during the adoption process.", 
+            "ratings" : [
+                {
+                    "title" : "Prior to adoption", 
+                    "options" : [
+                        "No analysis occurs", 
+                        "Limited or ad hoc analysis occurs", 
+                        "Partial analysis occurs", 
+                        "Reasonable analysis occurs", 
+                        "Comprehensive analysis occurs"
+                    ]
+                }, 
+                {
+                    "title" : "During adoption", 
+                    "options" : [
+                        "No analysis occurs", 
+                        "Limited or ad hoc analysis occurs", 
+                        "Partial analysis occurs", 
+                        "Reasonable analysis occurs", 
+                        "Comprehensive analysis occurs"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "There are procedures in place that ensure that evaluation data on technology enhanced learning support services for staff contributes to their continuous improvement.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No integration", 
+                        "Only limited or ad hoc integration exists", 
+                        "Some good examples of integration exist, but not across the board", 
+                        "Regular integration exists across most services", 
+                        "Systematic integration exists across all services"
+                    ]
+                }
+            ]
+        }
+    ], 
+    "scoping-statement" : "<p>Staff support for the use of technology enhanced learning encompasses both technical and educational support.</p><p>Technical support is required to deal with problems or needs related to the technological environment, including hardware and software, communications and connections, and performance.</p><p>Educational support addresses the needs of staff who want to use technologies and/or encounter difficulties while using them, and who need to be able to get ready access to and who want to maximise student learning outcomes.</p> <p><strong><em>Out of scope.</em></strong> This benchmark does not include staff development which forms part of the more formal professional development framework – see Benchmark 5.</p>", 
+    "sub-title" : "Staff support for the use of technology enhanced learning", 
+    "title" : "Benchmark 6"
+}
+{ 
+    "_id" : ObjectId("57170f4a27615d3657e858a1"), 
+    "good-practice-statement" : "<p>The provision of student training for the effective use of the institution’s technology enhanced learning services is aligned with the teaching approaches in use; is adequately resourced; is coordinated with other student support services; is flexible; is focused on the needs of students; covers a range of current technologies and reflects good practice in the use of technology.</p>", 
+    "questions" : [
+        {
+            "title" : "Student training is aligned with the technologies and teaching approaches in use at the institution.", 
+            "ratings" : [
+                {
+                    "title" : "Aligned with the technologies used", 
+                    "options" : [
+                        "No alignment", 
+                        "Limited alignment", 
+                        "Moderate alignment", 
+                        "Considerable alignment", 
+                        "Full alignment"
+                    ]
+                }, 
+                {
+                    "title" : "Aligned with the teaching approaches used", 
+                    "options" : [
+                        "No alignment", 
+                        "Limited alignment", 
+                        "Moderate alignment", 
+                        "Considerable alignment", 
+                        "Full alignment"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Student training for technology enhanced learning is adequately resourced.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "Not resourced", 
+                        "Inadequately resourced", 
+                        "Moderately resourced", 
+                        "Substantially resourced", 
+                        "Comprehensively resourced"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "There are procedures in place to regularly evaluate the training and training resources provided for students.", 
+            "ratings" : [
+                {
+                    "title" : "Evaluation of support services", 
+                    "options" : [
+                        "No evaluation occurs", 
+                        "Limited or ad hoc evaluation occurs", 
+                        "Semi regular evaluation occurs", 
+                        "Mostly regular evaluation occurs", 
+                        "Fully and regularly evaluated"
+                    ]
+                }, 
+                {
+                    "title" : "Evaluation of resources", 
+                    "options" : [
+                        "No evaluation occurs", 
+                        "Limited or ad hoc evaluation occurs", 
+                        "Semi regular evaluation occurs", 
+                        "Mostly regular evaluation occurs", 
+                        "Fully and regularly evaluated"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Coordination occurs between those areas providing training for students across the institution.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No coordination", 
+                        "Ad hoc coordination occurs", 
+                        "Semi regular coordination occurs", 
+                        "Regular coordination occurs", 
+                        "Comprehensive coordination occurs"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Student training programs are delivered flexibly and address differing skill levels.", 
+            "ratings" : [
+                {
+                    "title" : "Training is delivered flexibly", 
+                    "options" : [
+                        "Not at all", 
+                        "Limited", 
+                        "Moderate ", 
+                        "Substantial ", 
+                        "Fully"
+                    ]
+                }, 
+                {
+                    "title" : "Training addresses different skill levels", 
+                    "options" : [
+                        "Not at all", 
+                        "Limited", 
+                        "Moderate ", 
+                        "Substantial ", 
+                        "Fully"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Student training promotes an ethical approach to the use of social media and the technology enhanced learning services provided by the institution.", 
+            "ratings" : [
+                {
+                    "title" : "For social media", 
+                    "options" : [
+                        "Not apparent", 
+                        "Apparent in only limited cases", 
+                        "Apparent, but not consistently applied", 
+                        "Mostly apparent", 
+                        "Fully apparent"
+                    ]
+                }, 
+                {
+                    "title" : "For TEL services", 
+                    "options" : [
+                        "Not apparent", 
+                        "Apparent in only limited cases", 
+                        "Apparent, but not consistently applied", 
+                        "Mostly apparent", 
+                        "Fully apparent"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Evaluation data is used to inform the planning for continuous improvement of student development processes.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No integration", 
+                        "Only limited or ad hoc integration exists", 
+                        "Some good examples of integration exist, but not across the board", 
+                        "Regular integration exists across most processes", 
+                        "Systematic integration exists across all programs"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "There are clearly defined pathways for students to access the training they require.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No pathways defined", 
+                        "Limited definition and not explicit", 
+                        "Defined but not explicit", 
+                        "Defined and mostly explicit", 
+                        "Comprehensively defined and explicit "
+                    ]
+                }
+            ]
+        }
+    ], 
+    "scoping-statement" : "<p>Technology enhanced learning services are the systems and tools used by the institution to support learning and teaching. These can include the use of: required computing equipment and software; learning management systems and associated applications; library systems; cloud-based environments; mobile technologies. Aspects of an ethical approach to technology enhanced learning are also included.</p><p>Student training refers to the applied use of such technologies in a learning context. It can take many forms and be provided by many people, for example through: specific training classes; self-help resources; or as part of a unit of study. Staff providing the training need appropriate skills which require alignment to the professional/staff development benchmark.</p><p><strong><em>Out of Scope</em></strong>. Student training does not encompass training in other aspects of learning development (i.e. general study skills).</p>", 
+    "sub-title" : "Student training for the effective use of technology enhanced learning", 
+    "title" : "Benchmark 7"
+}
+{ 
+    "_id" : ObjectId("5717124827615d3657e858a2"), 
+    "good-practice-statement" : "<p>Students are aware of and have access to effective and well-resourced support for the technology enhanced learning services used by the institution. Student support is responsive to student needs; is coordinated with student training; and is constantly developing in response to changing technology.</p>", 
+    "questions" : [
+        {
+            "title" : "The provision of support for students is aligned with the technology enhanced learning services used by the institution.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No alignment", 
+                        "Limited alignment", 
+                        "Moderate alignment", 
+                        "Considerable alignment", 
+                        "Full alignment"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Student technology enhanced learning support services are resourced.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "Not resourced", 
+                        "Inadequately resourced", 
+                        "Moderately resourced", 
+                        "Substantially resourced", 
+                        "Comprehensively resourced "
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "There are clearly defined pathways for students to access support services and these are promoted to the student body.", 
+            "ratings" : [
+                {
+                    "title" : "Clear pathways to support services", 
+                    "options" : [
+                        "No pathways defined", 
+                        "Limited definition and not explicit", 
+                        "Defined but not explicit", 
+                        "Defined and mostly explicit", 
+                        "Comprehensively defined and explicit "
+                    ]
+                }, 
+                {
+                    "title" : "Support services are promoted ", 
+                    "options" : [
+                        "Not promoted", 
+                        "Limited promotion", 
+                        "Moderate promotion", 
+                        "Substantial promotion", 
+                        "Systematically and comprehensively promoted"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Support sites and resources are accessible from commonly used devices and the analytics of student usage are monitored.", 
+            "ratings" : [
+                {
+                    "title" : "Accessible from commonly used devices", 
+                    "options" : [
+                        "Not accessible", 
+                        "Limited accessibility", 
+                        "Moderately accessible ", 
+                        "Mostly accessible", 
+                        "Fully accessible"
+                    ]
+                }, 
+                {
+                    "title" : "Student usage is monitored ", 
+                    "options" : [
+                        "Not monitored", 
+                        "Limited or ad hoc monitoring", 
+                        "Moderate levels of monitoring occur", 
+                        "Mostly monitored", 
+                        "Comprehensive monitoring"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "There are procedures in place to ensure that student support services and resources are regularly evaluated.", 
+            "ratings" : [
+                {
+                    "title" : "Support services are regularly evaluated", 
+                    "options" : [
+                        "No evaluation occurs", 
+                        "Limited or ad hoc evaluation occurs", 
+                        "Semi regular evaluation occurs", 
+                        "Mostly regular evaluation occurs", 
+                        "Fully and regularly evaluated"
+                    ]
+                }, 
+                {
+                    "title" : "Support resources are regularly evaluated", 
+                    "options" : [
+                        "No evaluation occurs", 
+                        "Limited or ad hoc evaluation occurs", 
+                        "Semi regular evaluation occurs", 
+                        "Mostly regular evaluation occurs", 
+                        "Fully and regularly evaluated"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "There are procedures in place that ensure that evaluation data on technology enhanced learning support services for students contributes to their continuous improvement.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No integration", 
+                        "Only limited or ad hoc integration exists", 
+                        "Some good examples of integration exist, but not across the board", 
+                        "Regular integration exists across most services", 
+                        "Systematic integration exists across all services"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Coordination occurs between those areas providing support for students across the institution.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No coordination", 
+                        "Ad hoc coordination occurs", 
+                        "Semi regular coordination occurs", 
+                        "Regular coordination occurs", 
+                        "Comprehensive coordination occurs"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "There are procedures in place to ensure there is an alignment between student training and student support.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No alignment", 
+                        "Limited alignment", 
+                        "Moderate alignment", 
+                        "Considerable alignment", 
+                        "Full alignment"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Processes are in place to determine the ongoing support requirements of students.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "No processes", 
+                        "Inadequate processes", 
+                        "Some processes", 
+                        "Regular processes", 
+                        "Comprehensive processes "
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "New technology enhanced learning services are fully analysed for student support requirements, prior to and during the adoption process.", 
+            "ratings" : [
+                {
+                    "title" : "Prior to adoption", 
+                    "options" : [
+                        "No analysis occurs", 
+                        "Limited or ad hoc analysis occurs", 
+                        "Partial analysis occurs", 
+                        "Reasonable analysis occurs", 
+                        "Comprehensive analysis occurs"
+                    ]
+                }, 
+                {
+                    "title" : "During adoption", 
+                    "options" : [
+                        "No analysis occurs", 
+                        "Limited or ad hoc analysis occurs", 
+                        "Partial analysis occurs", 
+                        "Reasonable analysis occurs", 
+                        "Comprehensive analysis occurs"
+                    ]
+                }
+            ]
+        }
+    ], 
+    "scoping-statement" : "<p>Support for students in the use of technology enhanced learning services is defined as primarily technical but the learning context should also be acknowledged. Support should be considered in terms of the use of computers and mobile technologies; learning management systems and their associated applications; library systems, and; those cloud-based systems and tools adopted by the institution. The requirements of on-campus and off-campus study should be considered.</p>", 
+    "sub-title" : "Student support for the use of technology enhanced learning", 
+    "title" : "Benchmark 8"
+}
+{ 
+    "_id" : ObjectId("571410132761e3ff4de7080b"), 
+    "good-practice-statement" : "Technical infrastructure, both physical and virtual, is aligned with institutional learning goals and the technologies are resourced, support staff are trained and the infrastructure is implemented, maintained, administered and supported efficiently and effectively.", 
+    "questions" : [
+        {
+            "title" : "Systems and processes are in place to generate learning and educational analytic data to support decision making.", 
+            "ratings" : [
+                {
+                    "title" : "Systems", 
+                    "options" : [
+                        "No systems and no data", 
+                        "Some systems and limited data", 
+                        "Some systems and good data", 
+                        "Substantial systems and data", 
+                        "Comprehensive systems and data"
+                    ]
+                }, 
+                {
+                    "title" : "Processes", 
+                    "options" : [
+                        "No processes in place", 
+                        "Ad hoc processes in place", 
+                        "Limited processes in place", 
+                        "Defined processes in place", 
+                        "Comprehensive processes in place"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "ratings" : [
+                {
+                    "options" : [
+                        "Not articulated", 
+                        "Poorly articulated", 
+                        "Generally articulated", 
+                        "Substantially articulated", 
+                        "Comprehensively articulated"
+                    ], 
+                    "title" : "Processes"
+                }, 
+                {
+                    "options" : [
+                        "Not articulated", 
+                        "Poorly articulated", 
+                        "Generally articulated", 
+                        "Substantially articulated", 
+                        "Comprehensively articulated"
+                    ], 
+                    "title" : "Responsibilities"
+                }
+            ], 
+            "title" : "There are clearly articulated responsibilities, and processes for the implementation and maintenance of the technology enhanced learning systems."
+        }, 
+        {
+            "ratings" : [
+                {
+                    "options" : [
+                        "Not defined", 
+                        "Poorly defined", 
+                        "Generally defined", 
+                        "Substantially defined", 
+                        "Comprehensively defined"
+                    ], 
+                    "title" : "Responsibilities"
+                }, 
+                {
+                    "options" : [
+                        "Not defined", 
+                        "Poorly defined", 
+                        "Generally defined", 
+                        "Substantially defined", 
+                        "Comprehensively defined"
+                    ], 
+                    "title" : "Processes"
+                }
+            ], 
+            "title" : "Responsibilities and processes for support and training of staff and students in the use of the technology enhanced learning systems are clearly defined."
+        }, 
+        {
+            "title" : "Resources are allocated for the implementation and maintenance of IT services that support technology enhanced learning.", 
+            "ratings" : [
+                {
+                    "title" : "Implementation", 
+                    "options" : [
+                        "No resources allocated", 
+                        "Inadequate resources allocated", 
+                        "Moderate resources allocated", 
+                        "Substantial resources allocated", 
+                        "Comprehensive resources allocated"
+                    ]
+                }, 
+                {
+                    "title" : "Maintenance", 
+                    "options" : [
+                        "No resources allocated", 
+                        "Inadequate resources allocated", 
+                        "Moderate resources allocated", 
+                        "Substantial resources allocated", 
+                        "Comprehensive resources allocated"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Experimentation with new and emerging technologies is encouraged and resourced by the institution and supported by procedure.", 
+            "ratings" : [
+                {
+                    "title" : "Encouraged", 
+                    "options" : [
+                        "Not encouraged", 
+                        "Limited encouragement ", 
+                        "Moderate encouragement ", 
+                        "Substantial encouragement", 
+                        "Fully encouraged "
+                    ]
+                }, 
+                {
+                    "title" : "Resourced", 
+                    "options" : [
+                        "No resources ", 
+                        "Inadequate resources ", 
+                        "Moderate resources ", 
+                        "Substantial resources", 
+                        "Comprehensive resources "
+                    ]
+                }, 
+                {
+                    "title" : "Supported by procedure", 
+                    "options" : [
+                        "No procedure", 
+                        "Ad hoc procedures", 
+                        "Partially defined procedures", 
+                        "Defined procedures", 
+                        "Comprehensive procedures"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Professional development occurs for staff managing the services used to support technology enhanced learning (including new and emerging technologies).", 
+            "ratings" : [
+                {
+                    "title" : "For core services", 
+                    "options" : [
+                        "No PD occurs", 
+                        "Ad hoc PD occurs, but only when requested", 
+                        "Semi regular PD occurs for some services", 
+                        "Regular PD occurs for most services", 
+                        "Comprehensive PD occurs for all services"
+                    ]
+                }, 
+                {
+                    "title" : "For new and emerging technologies", 
+                    "options" : [
+                        "No PD occurs", 
+                        "Ad hoc PD occurs, but only when requested", 
+                        "Semi regular (reactive) PD occurs", 
+                        "Regular PD occurs (after implementation)", 
+                        "Comprehensive (pro-active) PD occurs"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "The institution has robust procedures and processes in place to identify and manage risk associated with all the technology enhanced learning services.", 
+            "ratings" : [
+                {
+                    "title" : "", 
+                    "options" : [
+                        "None", 
+                        "Limited", 
+                        "Moderate", 
+                        "Substantial", 
+                        "Comprehensive"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "title" : "Support levels and pathways for assistance for all learning technologies are clearly communicated to staff.", 
+            "ratings" : [
+                {
+                    "title" : "Pathways for support", 
+                    "options" : [
+                        "Not identified", 
+                        "Ill-defined pathways", 
+                        "Some pathways identified", 
+                        "Pathways mostly identified", 
+                        "Comprehensively identified"
+                    ]
+                }, 
+                {
+                    "title" : "Communicated", 
+                    "options" : [
+                        "No communication", 
+                        "Ad hoc communication", 
+                        "Partially communicated", 
+                        "Mostly communicated", 
+                        "Comprehensively communicated"
+                    ]
+                }
+            ]
+        }
+    ], 
+    "scoping-statement" : "Information technology (IT) services describe the range of systems and support required to maintain and update the institution’s approach to technology enhanced learning. This can include the use of: learning management systems and their associated systems; library systems; cloud-based tools and services; mobile technologies. It also includes hardware (computers, telecommunications and ancillary equipment) and networks, both internal and external which are used for the purposes of technology enhanced learning, for both on and off-campus environments. <br><br><em><b>Out of scope.</b></em>  The pedagogical issues relating to the use of IT services is the domain of other benchmarks.", 
+    "sub-title" : "Information technology systems, services and support for technology enhanced learning", 
+    "title" : "Benchmark 3"
+}

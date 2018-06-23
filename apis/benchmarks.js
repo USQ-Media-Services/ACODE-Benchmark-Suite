@@ -43,12 +43,15 @@ r.get('/single', function (req, res) {
 
 r.post('/save', function (req, res, next) {
 	if (!!req.body && !!req.body.data && !!req.body.data.institution) {
-		var data = req.body.data
+		var data = req.body.data,
+			ID = ObjectId(req.body.data.institution),
+			year = (new Date()).getFullYear()
+
 		delete data._id
 		req.body.data.institution = ObjectId(req.body.data.institution)
 		var newData = {}
 		newData['users.' + data.user + '.benchmarks.' + data.benchmarkID] = data.benchmarkData
-		db().collection('profiles').update({'year': (new Date()).getFullYear(), institution: req.body.data.institution}, {$set: newData}, {new: true, doc:true}, function (err, doc) {
+		db().collection('profiles').update({'year': year, institution: ID}, {$set: newData}, {new: true, doc:true}, function (err, doc) {
 			if (err) {
 				console.log(err)
 				res.status(500).json('Contains malformed data; please removed any copy-pasted images and re insert them with the editor')

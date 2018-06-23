@@ -16,6 +16,7 @@ var mongodb = require('mongodb'),
 		return db
 	}
 
+	console.log(dbHost, dbPort)
 
 	getDB.callback = function () {}
 
@@ -24,7 +25,6 @@ var mongodb = require('mongodb'),
 	    'poolSize': 30
 	})
 
-	console.log(dbHost, dbPort, dbDatabase, dbUser, dbPass)
 	dbManager = new mongodb.Db(dbDatabase, serv, {safe: true})
 	.open(function (error, DB) {
 		if (!error) DB.authenticate(dbUser, dbPass, function (err, res) {

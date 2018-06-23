@@ -72,13 +72,16 @@ r.get('/meta', function (req, res) {
 })
 
 r.post('/save', function (req, res) {
-
 	if (!!req.body && !!req.body.data && !!req.body.data.institution) {
-		var data = req.body.data
+		var data = req.body.data,
+			ID,
+			year = (new Date()).getFullYear()
+
 		delete data._id
-		req.body.data.institution = ObjectId(req.body.data.institution)
-		db().collection('profiles').update({'year': (new Date()).getFullYear(), institution: req.body.data.institution}, {$set: data}, {upsert: true, new: true, doc:true}, function (err, doc) {
-			db().collection('profiles').update({'year': (new Date()).getFullYear() - 1, institution: req.body.data.institution}, {$set: {hidden: true}})
+		ID = req.body.data.institution = ObjectId(req.body.data.institution)
+		db().collection('profiles').update({'year': year, institution: ID}, {$set: data}, {upsert: true, new: true, doc:true}, function (err, doc) {
+			console.log(req.body.institution, ID, year)
+			db().collection('profiles').update({'year': year -1, institution: ID}, {$set: {hidden: true}})
 			if (err) {
 				console.log(err)
 				res.status(500).json('Contains malformed data; please removed any copy-pasted images and re insert them with the editor')
@@ -87,6 +90,7 @@ r.post('/save', function (req, res) {
 		})
 	}
 	else {
+		console.log(4)
 		res.status(412).json('Missing parameter')
 	}
 })
